@@ -146,10 +146,6 @@ function load_posts() {
       data.forEach((val, i) => {
       if (search != "") {
         if (val.title.toUpperCase().indexOf(search.toUpperCase()) > -1) {
-          var pos_search = val.title.toUpperCase().indexOf(search.toUpperCase());
-          val.title =
-            val.title.substr(0, pos_search) +
-            "[" + search + "]" + val.title.substr(pos_search + search.length);
           put_posts(val,i);
           count += 1
         }
