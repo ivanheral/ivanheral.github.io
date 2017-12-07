@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "Critica de Cine. Y de repente tu"
+date:   2016-1-10 12:00:00 +0100
+comments: true
+author: ivanheral
+categories: cine
+urlimage: /files/images/critica/trainwreck.jpg
+---
+
+De pequeña,  Amy vivió en sus propias carnes un hecho tan traumático como el divorcio de sus padres lo que cambiaría para siempre su actitud frente a los hombres. Su padre, detonante de esta ruptura, apostó por la poligamia y algo de eso se le pego a Amy que actuando en consonancia aposto durante toda su vida por relaciones más abiertas con varios hombres a la vez sin compromisos ni ataduras. A pesar de esta vida sexual bastante intensa y descontrolada no le impidió cumplir su sueño, ser periodista redactando artículos a cada cual más variopinto.   En uno de esos artículos encargados por su jefa se topará con Aarón, un médico deportivo experto en rodillas, originando los primeros enamoramientos sinceros con los que no contaba en un primer momento.
+ 
+A primera vista puede parecer una comedia de tantas sin mucho pedigrí, pero si mencionamos “Virgen a los 40” o “La boda de mi mejor amiga” es más que posible que nos acordemos de la figura del archiconocido Judd Apatow, un director bastante prolífico en cuanto a comedias personales se refiere y que se aleja bastante de cualquier regla preestablecida sobre lo que es políticamente correctamente y lo que no con tal de sonsacarnos una sonrisa. En esta ocasión, regresa junto a Amy Schumer, actriz televisiva bastante conocida en EEUU pero desconocida en España, que se encarga de la historia y de paso, dar forma el personaje principal del mismo nombre que la actriz.
+
+{% include elem.html img="/files/images/critica/trainwreck_1.jpg" title="LeBron James haciendo de sí mismo, un autentico reto."%}
+
+Pero que no cunda el pánico porque la primeriza Amy se encargue del guion, todo lo contrario, nada más comenzar el guion se puede apreciar que está lleno de momentos picantes demostrando la soltura de Amy Schumer para incorporar su humor sin desvirtuar en exceso la realización de Apatow y sin llegar a lo grotesco formando un tándem bastante compenetrado. En cuanto a Bill Hader, conocido por el famoso programa Saturday Night Live, sigue en su línea cómica que nos tiene acostumbrado con un personaje sosainas como el que más pero con sus momentos álgidos cuando tiene que sacarlos a relucir. Los compañeros de trabajo de Amy, por el contrario, están escasos de gracia ya que en ningún momento convencen en sus respectivos papeles además de que el toque sui géneris de dicha empresa no casa muy bien con el resto de la trama.
+
+En cuanto al resto del reparto tenemos a John Cena, famoso luchador de la WWE interpretando a una de tantas relaciones que mantiene Amy para darnos los momentos más subidos de tono con desnudo púbico incluido. Centrándonos en los cameos, podemos ver a Daniel Radcliffe y Marisa Tomei en una película perruna de lo más peculiar o a Matthew Broderick con cara de no saber muy bien que allí junto a famosos relacionados con el megalómano mundo de la NBA. Espero que no se me mal intérprete, pero parece como si hubieran tirado de la agenda de actores de capa caída, para completar el reparto, en algunos momentos llegue a pensar que saldría Winona Ryder por poner un ejemplo.
+
+{% include elem.html img="/files/images/critica/trainwreck_2.jpg" title="¿sabias que sentados somos de la misma altura?"%}
+
+Pero lo que dejara a más de uno con la boca desencajada es sin duda la aparición estelar de LeBron James. Lo que se suponía que iba a ser un cameo sin importancia como tantos otros acaba convirtiéndose en un personaje bisagra de la pareja principal con la que no contaba en un principio y regalándonos la que es, sin lugar a dudas, la gran sorpresa del film. Es cierto que como actor no es tan bueno como en su faceta deportiva, es algo obvio que no merece discusión alguna, pero algunas escenas denotan una vis cómica por parte de este jugador de baloncesto que sorprenderán a más de uno obligándonos a estar pendientes del inminente anuncio de Space Jam 2 con el de protagonista.
+
+No sabemos hasta qué punto la historia ideada por Amy Schumer tiene algo de autobiográfico, por poner un ejemplo, su personaje sale con el actor John Cena haciendo de fisiculturista mientras que la actriz tuvo su affaire con el luchador Dolph Ziggler para finalmente cortar con él en la vida real cómo en la película. Lo más curioso es que John Cena y Dolph Ziggler son luchadores profesionales de la WWE y quieras que no con la presencia de la actriz es muy difícil no dar pie a posibles teorías morbosas sobre este trio originado fuera de las pantallas cinematográficas.
+
+{% include elem.html video="DMxnMUwO5AQ" title="Tráiler de la película" %}
+
+Metiéndonos en harina de otro costal, la primera parte cumple su cometido de comedia atípica veraniega, esa Amy hermética junto a esa actitud apática cuando los chicos quieren saltar al siguiente es cuanto menos que convincente o la relación que mantiene con su padre en la residencia es un ejemplo de lo difícil que son las relaciones paterno-filiales tras un divorcio amargo. En el tramo final todos estos quebraderos de cabeza se hacen más palpables en Amy aminorando la velocidad en cuanto a agilidad de la película se refiere. Lo que empieza como comedia romántica transgresora acaba cumpliendo con los tan consabidos clichés del género hasta rozar los límites de la cursilería, pero tampoco nos tiraremos los pelos por esto, aunque sí que podría haberse acortado la duración del film para no hacerla demasiado repetitiva como la canción “Uptown Girl” de Billy Joel de la que hace gala en todo momento.
+
+En definitiva, Apatow nos ofrece una comedia bastante correcta - mentiría si dijera que es una de sus mejores películas del director –, una buena oportunidad para conocer de primera mano el primer trabajo cinematográfico con cierta enjundia de Amy Schumer y Bill Hader, bastante desconocidos en nuestras tierras. Estamos ante una película con un humor guasón y distinto a lo que tenemos acostumbrado de películas más comerciales, con una visión bastante realista de lo que son las relaciones de parejas que surgen sin proponérselo y que aporta matices desde el lado más femenino posible. P.D. Habrá que estar al tanto si LeBron James supera a Michael Jordan… cinematográficamente hablando, no seáis mal pensados.
+
+{% include url.html id="http://www.imdb.com/title/tt3152624/" text="INFO TrainWreck" %}

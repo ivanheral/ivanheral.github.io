@@ -1,0 +1,33 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <link rel="stylesheet" href="{{ " /css/app.css " | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <script type="text/javascript">
+        var nav = navigator.userAgent;
+
+        function getc(){
+            var m = nav.match(/Chrom(?:e|ium)\/([0-9\.]+)/);
+            return m ? parseInt(m[1]) : 43;
+        }
+
+        function getf(){
+            var m = nav.match(/Firefox\/([0-9]+)\./);
+            return m ? parseInt(m[1]) : 39;
+        }
+
+        var s = (nav.indexOf("MSIE")>0 || nav.indexOf("Trident")>0 || nav.indexOf("Edge")>0 || getc() < 43 || getf() < 39);
+        if(s) {
+            document.write ("<script src=\"js/promise.js\"></scr"+"ipt>");
+            document.write ("<script src=\"js/fetch.js\"></scr"+"ipt>");
+        }
+    </script>
+    <script type="text/javascript">
+        var disqus_shortname = 'ivanheral';
+        var disqus_identifier = "{{ site.disqusid }}{{ page.url | replace:'index.html','' }}";
+    </script>    
+{% include twittercards.html %}
+</head>

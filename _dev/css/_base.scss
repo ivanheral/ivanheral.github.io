@@ -1,0 +1,59 @@
+html,
+body {
+  background: $background;
+  height: 100%;
+  width: 100%;
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin: 0px;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+a {
+    color: $green;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    &:hover {
+        color: $transparent;
+        text-decoration: none;
+    }
+}
+
+.wrapper {
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 880px;
+    @include media-query($on-desktop) {
+        max-width: 760px;
+    }
+    @include media-query($on-laptop) {
+        max-width: 660px;
+    }
+    @include media-query($on-palm) {
+        max-width: 360px;
+    }
+}
+
+.container {
+    background: $white;
+    box-shadow: 0 0 0 1px #e0e0e0, 0 2px 3px rgba(0,0,0,.2);
+    margin: $unit auto;
+    min-height: 880px;
+    padding-bottom: $unit;
+    @include media-query($on-palm) {
+        margin: 10px 10px;
+        padding-bottom: 0px;
+    }
+}

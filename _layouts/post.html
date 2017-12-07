@@ -1,0 +1,51 @@
+---
+layout: default
+---
+{% include categories.html %}
+<div class="post-list"></div>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="article">
+    <header class="important">
+      <div class="wall_img">
+      {% if page.urlimage %}
+      <img src="{{ page.urlimage | prepend: site.baseurl }}"/>
+      {% else %}
+      {{ page.urlsvg }}
+      {% endif %}
+      </div>
+   <div class="info_post">
+    <div class="post-title post" itemprop="name headline">{{ page.title }}</div>
+    <div class="post-meta">
+    {% if page.author %}<span itemprop="author" itemscope itemtype="http://schema.org/Person"></span><span itemprop="name">{{ page.author }},</span>{% endif %}
+    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished"> {% assign m = page.date | date: "%-m" %}
+{{ page.date | date: "%-d " }}
+{% case m %}
+  {% when '1' %}Enero
+  {% when '2' %}Febrero
+  {% when '3' %}Marzo
+  {% when '4' %}Abril
+  {% when '5' %}Mayo
+  {% when '6' %}Junio
+  {% when '7' %}Julio
+  {% when '8' %}Agosto
+  {% when '9' %}Septiembre
+  {% when '10' %}Octubre
+  {% when '11' %}Noviembre
+  {% when '12' %}Diciembre
+{% endcase %}
+        {{ page.date | date: "%Y" }}</time>
+
+       </div>
+</div>
+  </header>
+    {% include share-page.html %}
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+  {% if page.comments %}
+  <div class="disqus"><div id="disqus_thread"></div></div>
+  {% endif %}
+    </div>
+
+</article>
+
