@@ -130,10 +130,12 @@ div.categories-list {
     .return {
       display: none;
       margin-left: 15px;
+      font-size: .9rem;
       &:hover {
         color: $green;
       }
       @include media-query($on-laptop) {
+        font-size: 1rem;
         width: 100%;
         margin-left: 0px;
         text-align: center;
