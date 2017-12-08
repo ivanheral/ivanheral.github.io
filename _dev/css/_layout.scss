@@ -109,7 +109,7 @@ div.categories-list {
   @include media-query($on-desktop) {
     width: 169px;
   }
-  font-size: 0.9rem;
+
   border-bottom: 1px solid #e0e0e0;
   border-top: 1px solid #e0e0e0;
   -webkit-transition: position 0.5s ease-out;
@@ -141,7 +141,7 @@ div.categories-list {
     }
     & > * {
       line-height: 40px;
-      font-weight: normal;
+
       color: $text;
     }
     .page-link {
@@ -150,16 +150,19 @@ div.categories-list {
       &.select {
         color: $green;
       }
+      font-size: 0.9rem;
       @include media-query($on-laptop) {
         margin-left: 0px;
         padding: 0px;
         width: 25%;
         float: left;
+        font-size: 1rem;
         text-align: center;
       }
     }
     span {
       float: right;
+      font-size: 0.9rem;
       @include media-query($on-laptop) {
         display: none;
       }
