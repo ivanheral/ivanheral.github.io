@@ -3,18 +3,22 @@ html.black {
   body {
     background: #141d26;
   }
-  .header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    @include media-query($on-laptop) {
-      border-bottom: 0px;
+  header {
+    .header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);     
+      @include media-query($on-palm) {
+        border-bottom: 0px;
+      } 
     }
   }
+
   div.trigger {
     background: $black;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);   
   }
   .container {
     background: $black;
-    box-shadow: 0 0 0 1px rgba(0,0,0,.2), 0 2px 3px rgba(0,0,0,.2);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.2);
   }
   div.categories-list {
     color: $white;
@@ -23,7 +27,7 @@ html.black {
     }
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     border-top: 1px solid rgba(0, 0, 0, 0.12);
-    @include media-query($on-palm) {
+    @include media-query($on-laptop) {
       border-top: 0px;
       border-bottom: 0px;
     }
@@ -42,7 +46,8 @@ html.black {
     color: $white;
     text-shadow: 1px 1px 1px #000;
   }
-  .post-title, .post-content .title-photo p {
+  .post-title, header a.site-title,
+  .post-content .title-photo p {
     text-shadow: 1px 1px 1px #000;
   }
   .wall_img {
@@ -66,13 +71,7 @@ html.black {
   #search-container #search-input {
     background: $black;
     color: $white;
-    &::-webkit-input-placeholder {
-      color: $white;
-    }
-    &:-ms-input-placeholder {
-      color: $white;
-    }
-    &::-moz-placeholder {
+    &::placeholder {
       color: $white;
     }
   }

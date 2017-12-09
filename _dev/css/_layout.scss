@@ -12,14 +12,13 @@ header {
     position: relative;
   }
   a.site-title {
-    line-height: 45px;
-    position: absolute;
     &:hover {
       color: $green;
     }
+    float: left;
+    padding: 14.5px 0px;
     padding-left: $unit;
-    padding-right: $unit;
-    left: 0px;
+    height: 16px;
   }
 }
 
@@ -297,7 +296,7 @@ div.categories-list {
     margin-top: 1em;
     strong,
     a {
-      color: $blue;
+      color: $link;
       font-weight: normal;
     }    
     margin-bottom: 2em;
@@ -413,27 +412,17 @@ div.categories-list {
 #search-container {
   position: relative;
   margin-left: 15px;
-  color: $text;
-  #search-input {
+  input {
     -webkit-appearance: none;
-    &::-webkit-input-placeholder {
-      color: $text;
-    }
-    &:-ms-input-placeholder {
-      color: $text;
-    }
-    &::-moz-placeholder {
-      color: $text;
+    &::placeholder {
+      color: $green;
+      opacity: 1;
     }
     text-transform: uppercase;
     border: 0px;
     background-color: $white;
-    width: 70%;
-    float: left;
     padding: 0px;
     margin: 0px;
-    font-size: 1rem;
-    text-align: left;
     height: 44px;
     line-height: 45px;
   }
