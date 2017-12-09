@@ -10,7 +10,7 @@ $on-laptop:'(max-width: 992px)';
 $on-desktop:'(max-width: 1400px)';
 // black theme
 $black:#1b324a;
-$blue: #007ee5;
+$link: #007ee5;
 
 @mixin media-query($device) {
     @media #{$device} {
