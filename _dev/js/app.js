@@ -2,56 +2,47 @@ let section = "all"
 let search = ""
 let stop = false
 let comments = false
+let doc = document
 
 let $ = (v) => {
-  return document.querySelector(v)
+  return doc.querySelector(v)
 }
 
 let All = (v) => {
-  return document.querySelectorAll(v)
+  return doc.querySelectorAll(v)
 }
 
-function addClass(el, name) {
-  el.classList ? el.classList.add(name) 
-  : el.className += ' ' + name
+function addclss(el, nam) {
+  el.classList ? el.classList.add(nam) 
+  : el.className += ' ' + nam
 }
 
-function removeClass(el, name) {
-  el.classList ? el.classList.remove(name) 
-  : el.className = el.className.replace(new RegExp('(^|\\b)' + name.split(' ').join('|') + '(\\b|$)', 'gi'), ' ')
+function delclss(el, nam) {
+  el.classList ? el.classList.remove(nam) 
+  : el.className = el.className.replace(new RegExp('(^|\\b)' + nam.split(' ').join('|') + '(\\b|$)', 'gi'), ' ')
 }
-
-function hasClass(el, nam) {
-  if (el.classList)
-    return el.classList.contains(nam);
-  else
-    return new RegExp('(^| )' + nam + '( |$)', 'gi').test(el.className)
-} 
 
 $("#toggle").addEventListener("click", theme)
-$("#cine").addEventListener("click", change_section)
-$("#random").addEventListener("click", change_section)
-$("#opiniones").addEventListener("click", change_section)
-$("#tutorial").addEventListener("click", change_section)
+$("#test").addEventListener("click", change_section)
 $("#menu-icon").addEventListener("click", open)
 $("#return_post").addEventListener("click", return_post)
 $("#search-input").addEventListener("keyup", search_post)
-document.addEventListener("scroll", scroll)
+doc.addEventListener("scroll", scroll)
 
 let act_disqus = () => {
-    let dsq = document.createElement('script'); 
+    let dsq = doc.createElement('script'); 
     dsq.type = 'text/javascript'; 
     dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    document.getElementsByTagName('head')[0].appendChild(dsq)
+    doc.getElementsByTagName('head')[0].appendChild(dsq)
 }
 
 let vendors = () => {
   if (window.location.pathname.indexOf('tutorial') >= 0) {
-    let vendor = document.createElement('script')
+    let vendor = doc.createElement('script')
     vendor.type = 'text/javascript'
     vendor.src = '/js/prism.js'
-    document.getElementsByTagName('head')[0].appendChild(vendor)
+    doc.getElementsByTagName('head')[0].appendChild(vendor)
   }
 }
 
@@ -61,10 +52,8 @@ function scroll() {
     $("div.categories-list").style.marginTop = "0px"
     if (scroll > 45) {
       $("div.categories-list").style.marginTop =  (scroll - 30).toString() + "px"
-      addClass($("div.categories-list"),"scroll-fixed")
+      addclss($("div.categories-list"),"scroll-fixed")
     }
-  } else if ($("a.menu-icon").style.display = "block") {
-      $("div.categories-list").style.marginTop = "0px"
   }
   showitem()
 }
@@ -72,36 +61,32 @@ function scroll() {
 function search_post(e) {
   $(".header .site-title").innerHTML = 'BLOG'
   All('.categories .page-link').forEach(function(elem) {
-    removeClass(elem,'select')      
+    delclss(elem,'select')      
   }) 
-  if ($("article") !== null)
-    $("article").style.display = 'none'
+  if ($("article") !== null) $("article").style.display = 'none'
   search = e.target.value;
   if (search != "") {
-    if ($("article.post") !== null) 
-      $(".return").style.display = 'block'
+    if ($("article.post") !== null) $(".return").style.display = 'block'
   } else section = "all"
   $(".post-list").innerHTML = ''
-  load_posts()
+  load()
 }
 
 function change_section(e) {
   window.scrollTo(0, 0)
   search = "";
   [].forEach.call(All('.categories .page-link'), function(elem){
-    removeClass(elem,'select')
+    delclss(elem,'select')
   })
-  section = e.target.id;
-  addClass($('#'+section),'select')
-  if ($("article") !== null) 
-    $("article").style.display = 'none'
+  section = e.originalTarget.id;
+  addclss($('#'+section),'select')
+  if ($("article") !== null) $("article").style.display = 'none'
   $("#search-input").value = ''
 
   $(".header .site-title").innerHTML = section.toUpperCase()
-  if ($("article.post") !== null) 
-    $(".return").style.display = 'block'
+  if ($("article.post") !== null) $(".return").style.display = 'block'
   $(".post-list").innerHTML = '';
-  load_posts()
+  load()
 }
 
 function open() {
@@ -120,37 +105,35 @@ function return_post() {
   $(".post-list").innerHTML = ''
   $("article").style.display = 'block'
   $('#return_post').style.display = 'none';
-  [].forEach.call(All('.categories .page-link'), function(elem){
-    removeClass(elem,'select')
+  [].forEach.call(All('.categories .page-link'), function(el){
+    delclss(el,'select')
   })
 }
 
-function put_posts(v,i) {
+function posts(v,i) {
   var elem = "";
   v.img != "" ? elem = "<div class='wall_img'><img src='" + v.img + "'></div>" : elem = "<div class='wall_img'>" + v.svg + "</div>"
-          var post = document.createElement('a')
+          var post = doc.createElement('a')
           post.className = 'post'
           post.href = v.url
           post.id = i.toString()
           $(".post-list").appendChild(post)
-          var d1 = document.getElementById(i.toString());
-          d1.insertAdjacentHTML('beforeend', '<div class="wall_img"><img src="'+v.img
-          +'"></div><div class="info_post"><div class="post-title">'
-          +v.title+'</div><div class="post-meta">'+v.date+'</div></div>')         
+          doc.getElementById(i.toString()).insertAdjacentHTML('beforeend','<div class="wall_img"><img src="'+v.img
+          +'"></div><div class="info_post"><div class="post-title">'+v.title+'</div><div class="post-meta">'+v.date+'</div></div>')         
 }
 
-function load_posts() {
+function load() {
  let count = 0;
  fetch("/json/search.json").then(response =>
     response.json().then(data =>       
       data.forEach((val, i) => {
       if (search != "") {
         if (val.title.toUpperCase().indexOf(search.toUpperCase()) > -1) {
-          put_posts(val,i);
+          posts(val,i);
           count += 1
         }
       } else if ((section == "all") || (val.category == section)) { 
-          put_posts(val,i)
+          posts(val,i)
       }
       if ((i == data.length - 1) && (search != "")) {
           $('.header .site-title').innerHTML = 'RESULTADOS: ' + count
@@ -159,11 +142,11 @@ function load_posts() {
  })))
 }
 
-document.addEventListener('DOMContentLoaded', () => { 
+doc.addEventListener('DOMContentLoaded', () => { 
   vendors()
-  localStorage.getItem("theme") == "black" ? addClass($("html"), "black") 
-  : removeClass($("html"), "black")
-  if ($(".important") === null) load_posts()
+  localStorage.getItem("theme") == "black" ? addclss($("html"), "black") 
+  : delclss($("html"), "black")
+  if ($(".important") === null) load()
 }, false)
 
 function isscroll(elem, n) {
@@ -191,7 +174,7 @@ function showitem() {
         if (src.indexOf("mqdefault") >= 0) {
           val.children[0].src = ""
           val.innerHTML = ''
-          var overflow = document.createElement('div')
+          var overflow = doc.createElement('div')
           overflow.className = 'wall_overflow'
           val.appendChild(overflow)
           val.children[0].outerHTML = '<iframe src="//www.youtube.com/embed/' +
