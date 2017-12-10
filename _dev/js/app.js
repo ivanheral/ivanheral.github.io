@@ -78,7 +78,7 @@ function change_section(e) {
   [].forEach.call(All('.categories .page-link'), function(elem){
     delclss(elem,'select')
   })
-  section = e.originalTarget.id;
+  section = e.target.id;
   addclss($('#'+section),'select')
   if ($("article") !== null) $("article").style.display = 'none'
   $("#search-input").value = ''
