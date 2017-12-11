@@ -25,7 +25,6 @@ function delclss(el, nam) {
 $("#toggle").addEventListener("click", theme)
 $("#test").addEventListener("click", change_section)
 $("#menu-icon").addEventListener("click", open)
-$("#return_post").addEventListener("click", return_post)
 $("#search-input").addEventListener("keyup", search_post)
 doc.addEventListener("scroll", scroll)
 
@@ -80,6 +79,7 @@ function change_section(e) {
   })
   section = e.target.id;
   addclss($('#'+section),'select')
+    if (section != 'blog') {
   if ($("article") !== null) $("article").style.display = 'none'
   $("#search-input").value = ''
 
@@ -87,6 +87,12 @@ function change_section(e) {
   if ($("article.post") !== null) $(".return").style.display = 'block'
   $(".post-list").innerHTML = '';
   load()
+    } else {
+        $(".post-list").styleheight = '0px'
+        $(".post-list").innerHTML = ''
+        $("article").style.display = 'block'
+        $('#blog').style.display = 'none';
+  }
 }
 
 function open() {
@@ -96,18 +102,6 @@ function open() {
 function theme() {
   $('html').classList.toggle('black')
   localStorage.getItem("theme") == "black" ? localStorage.setItem("theme", "white") : localStorage.setItem("theme", "black")
-}
-
-function return_post() {
-  window.scrollTo(0, 0)
-  $(".header .site-title").innerHTML = 'BLOG'
-  $(".post-list").styleheight = '0px'
-  $(".post-list").innerHTML = ''
-  $("article").style.display = 'block'
-  $('#return_post').style.display = 'none';
-  [].forEach.call(All('.categories .page-link'), function(el){
-    delclss(el,'select')
-  })
 }
 
 function posts(v,i) {
