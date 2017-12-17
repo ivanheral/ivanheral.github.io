@@ -1,1 +1,1 @@
-require('../../../node_modules/promise/polyfill.js');
+require('../../../node_modules/promise/polyfill.js')()

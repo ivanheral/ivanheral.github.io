@@ -108,8 +108,6 @@ div.categories-list {
   @include media-query($on-desktop) {
     width: 169px;
   }
-
-  border-bottom: 1px solid #e0e0e0;
   border-top: 1px solid #e0e0e0;
   -webkit-transition: position 0.5s ease-out;
   cursor: pointer;
