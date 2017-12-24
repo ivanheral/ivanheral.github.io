@@ -170,19 +170,20 @@ function showitem() {
     act_disqus()        
   }}
   total.map((val, i) => {
-    var src = val.children[0].currentSrc; 
+    var src = val.children[0].src; 
       if (src !== undefined) {    
         if (isscroll(val, -90)) {
         if (src.indexOf('giphy_s.gif') >= 0) 
           val.children[0].src = src.replace('giphy_s.gif', 'giphy.gif')  
         if (src.indexOf('mqdefault') >= 0) {
+          var id = val.children[0].id
           val.children[0].src = ''
           val.innerHTML = ''
           var overflow = doc.createElement('div')
           overflow.className = 'wall_overflow'
-          val.appendChild(overflow)
+          val.appendChild(overflow)          
           val.children[0].outerHTML = '<iframe src="//www.youtube.com/embed/' +
-          val.children[0].id + '" frameborder="0" allowfullscreen></iframe>'
+          id + '" frameborder="0" allowfullscreen></iframe>'
         }      
     }
     }  

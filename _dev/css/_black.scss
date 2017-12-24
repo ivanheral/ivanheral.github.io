@@ -5,16 +5,15 @@ html.black {
   }
   header {
     .header {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);     
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
       @include media-query($on-palm) {
         border-bottom: 0px;
-      } 
+      }
     }
   }
-
   div.trigger {
     background: $black;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);   
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
   .container {
     background: $black;
@@ -32,28 +31,29 @@ html.black {
       border-bottom: 0px;
     }
   }
-  .post-content > p a,
-  .post-content > p strong {
+  .post-content>p a,
+  .post-content>p strong {
     color: #00ab6c;
     font-weight: 400;
   }
   .toggle i {
     background: $black;
   }
-  .post-content > p,
+  .post-content>p,
   .info_post .post-meta,
-  div.categories-list .categories > * {
+  div.categories-list .categories>* {
     color: $white;
     text-shadow: 1px 1px 1px #000;
   }
-  .post-title, header a.site-title,
+  .post-title,
+  header a.site-title,
   .post-content .title-photo p {
     text-shadow: 1px 1px 1px #000;
   }
   .wall_img {
     background: $black;
   }
-  .post-list > .post {
+  .post-list>.post {
     @include media-query($on-palm) {
       box-shadow: none;
       outline: 0px;

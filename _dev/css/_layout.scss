@@ -97,8 +97,8 @@ nav.site-nav {
 
 .twitter-tweet {
   @include media-query($on-palm) {
-      margin-left: 15px !important;
-      margin-right: 15px !important;
+      margin-left: $unit !important;
+      margin-right: $unit !important;
       width: auto !important; 
   }
 }
@@ -109,6 +109,7 @@ div.categories-list {
     width: 169px;
   }
   border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
   -webkit-transition: position 0.5s ease-out;
   cursor: pointer;
   float: right;
@@ -126,7 +127,7 @@ div.categories-list {
     }
     .return {
       display: none;
-      margin-left: 15px;
+      margin-left: $unit;
       font-size: .9rem;
       &:hover {
         color: $green;
@@ -198,7 +199,7 @@ div.categories-list {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
     width: 315px;
     color: $green;
-    margin: 15px;
+    margin: $unit;
     @include media-query($on-desktop) {
       width: 285px;
       margin: 5px;
@@ -214,7 +215,7 @@ div.categories-list {
     }
     @include media-query($on-laptop) {
       width: 300px;
-      margin: 15px;
+      margin: $unit;
     }
     @include media-query($on-palm) {
       width: 100%;
@@ -409,7 +410,7 @@ div.categories-list {
 
 #search-container {
   position: relative;
-  margin-left: 15px;
+  margin-left: $unit;
   input {
     -webkit-appearance: none;
     &::placeholder {
