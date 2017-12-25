@@ -1,19 +1,12 @@
-*:focus {
-  outline: 0;
-}
-
 header {
   .header {
     overflow: hidden;
-    border-bottom: 1px solid #e0e0e0;
-    @include media-query($on-palm) {
-      border-bottom: none;
-    }
+    border-bottom: 1px solid $b_white;
     position: relative;
   }
   a.site-title {
     &:hover {
-      color: $green;
+      color: $blue;
     }
     float: left;
     padding: 14.5px 0px;
@@ -31,7 +24,7 @@ nav.site-nav {
     transition: 0.75s all;
     width: 100%;
     height: 45px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid $b_white;
     &.open {
       top: 0px;
     }
@@ -45,7 +38,7 @@ nav.site-nav {
     border: 1px solid transparent;
     height: 45px;
     svg {
-      stroke: $green;
+      stroke: $blue;
       stroke-width: 2px;
       width: 44px;
       height: 44px;
@@ -64,21 +57,12 @@ nav.site-nav {
   svg {
     width: 45px;
     display: inline-block;
-    fill: $transparent;
-    &:hover {
-      fill: $green;
-    }
+    fill: $blue;
   }
 }
 
 .share-page {
-  .social-media-list {
     margin-bottom: $unit*2;
-    svg {
-      width: 36px;
-      height: 36px;
-    }
-  }
 }
 
 .disqus {
@@ -108,8 +92,8 @@ div.categories-list {
   @include media-query($on-desktop) {
     width: 169px;
   }
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid $b_white;
+  border-bottom: 1px solid $b_white;
   -webkit-transition: position 0.5s ease-out;
   cursor: pointer;
   float: right;
@@ -130,7 +114,7 @@ div.categories-list {
       margin-left: $unit;
       font-size: .9rem;
       &:hover {
-        color: $green;
+        color: $blue;
       }
       @include media-query($on-laptop) {
         font-size: 1rem;
@@ -148,7 +132,7 @@ div.categories-list {
       padding: 0px $unit;
       &:hover,
       &.select {
-        color: $green;
+        color: $blue;
       }
       font-size: 0.9rem;
       @include media-query($on-laptop) {
@@ -176,8 +160,8 @@ div.categories-list {
   @include media-query($on-desktop) {
     width: 590px;
   }
-  border-right: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid $b_white;
+  border-bottom: 1px solid $b_white;
   @include media-query($on-palm) {
     border: 0px;
   }
@@ -198,7 +182,7 @@ div.categories-list {
     overflow: hidden;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
     width: 315px;
-    color: $green;
+    color: $blue;
     margin: $unit;
     @include media-query($on-desktop) {
       width: 285px;
@@ -222,7 +206,7 @@ div.categories-list {
       padding: $unit;
       margin: 0px;
       box-shadow: none;
-      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      border-top: 1px solid $b_black;
     }
   }
 }
@@ -250,14 +234,14 @@ div.categories-list {
   font-size: 1.25rem;
   min-height: 50px;
   text-align: left;
-  color: $green;
+  color: $blue;
   @include media-query($on-palm) {
     font-size: 1.6rem;
   }
   &.page {
     float: left;
     text-align: left;
-    color: $green;
+    color: $blue;
     margin-top: 2em;
     padding: $unit;
     font-size: 2.4rem;
@@ -270,7 +254,7 @@ div.categories-list {
   }
   &.post {
     font-size: 2.4rem;
-    color: $green;
+    color: $blue;
     @include media-query($on-palm) {
       font-size: 1.6rem;
       width: 100%;
@@ -319,7 +303,7 @@ div.categories-list {
     white-space: nowrap;
     text-shadow: none;
     -webkit-appearance: none;
-    background: $green;
+    background: $blue;
     * {
       color: $white;
     }
@@ -376,7 +360,7 @@ div.categories-list {
   .title-photo {
     position: relative;
     p {
-      color: $green;
+      color: $blue;
       padding: 0px 5%;
       padding-bottom: $unit*2;
       margin-bottom: 0;
@@ -414,7 +398,7 @@ div.categories-list {
   input {
     -webkit-appearance: none;
     &::placeholder {
-      color: $green;
+      color: $blue;
       opacity: 1;
     }
     text-transform: uppercase;
@@ -441,8 +425,8 @@ article {
   @include media-query($on-desktop) {
     max-width: 560px;
   }
-  border-right: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid $b_white;
+  border-bottom: 1px solid $b_white;
   padding: $unit;
   @include media-query($on-laptop) {
     width: 100%;

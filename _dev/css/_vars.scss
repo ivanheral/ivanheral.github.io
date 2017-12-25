@@ -1,15 +1,16 @@
 $white: #fff;
-$green: #0080bd;
-$transparent: #cbcbca;
-$text: #4B4F56;
-$background: #f4f4f2;
+$blue: #0080bd;
+$b_black: rgba(0, 0, 0, 0.12);
+$b_white: #e0e0e0;
+$text: #4b4f56;
+$bg: #f4f4f2;
 $unit: 15px;
 $on-palm: '(max-width: 690px)';
 $on-laptop:'(max-width: 992px)';
 $on-desktop:'(max-width: 1400px)';
-// black theme
 $black:#1b324a;
 $link: #007ee5;
+
 
 @mixin media-query($device) {
     @media #{$device} {

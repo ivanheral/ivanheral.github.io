@@ -1,6 +1,6 @@
 html,
 body {
-  background: $background;
+  background: $bg;
   height: 100%;
   width: 100%;
   margin: 0px;
@@ -14,12 +14,11 @@ body {
 }
 
 a {
-    color: $green;
+    color: $blue;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
     &:hover {
-        color: $transparent;
         text-decoration: none;
     }
 }
@@ -41,7 +40,7 @@ a {
 
 .container {
     background: $white;
-    box-shadow: 0 0 0 1px #e0e0e0, 0 2px 3px rgba(0,0,0,.2);
+    box-shadow: 0 0 0 1px $b_white, 0 2px 3px rgba(0,0,0,.2);
     margin: $unit auto;
     min-height: 880px;
     padding-bottom: $unit;

@@ -5,15 +5,12 @@ html.black {
   }
   header {
     .header {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-      @include media-query($on-palm) {
-        border-bottom: 0px;
-      }
+      border-bottom: 1px solid $b_black;
     }
   }
   div.trigger {
     background: $black;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid $b_black;
   }
   .container {
     background: $black;
@@ -24,8 +21,8 @@ html.black {
     @include media-query($on-laptop) {
       color: $text;
     }
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid $b_black;
+    border-top: 1px solid $b_black;
     @include media-query($on-laptop) {
       border-top: 0px;
       border-bottom: 0px;
@@ -62,8 +59,8 @@ html.black {
   }
   article,
   .post-list {
-    border-right: 1px solid rgba(0, 0, 0, 0.12);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-right: 1px solid $b_black;
+    border-bottom: 1px solid $b_black;
     @include media-query($on-palm) {
       border: 0px;
     }
