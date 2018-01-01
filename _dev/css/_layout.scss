@@ -380,6 +380,9 @@ div.categories-list {
   overflow: hidden;
   position: relative;
   background-color: $white;
+  @include media-query($on-palm) {
+    border: 1px solid $b_white;
+  }
   img,
   svg {
     position: absolute;
@@ -437,5 +440,11 @@ article {
     .social-media-list {
       margin: $unit;
     }
+  }
+}
+
+.important {
+  .wall_img {
+    border: 1px solid $b_white;
   }
 }
