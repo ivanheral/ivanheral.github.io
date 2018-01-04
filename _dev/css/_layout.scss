@@ -243,7 +243,10 @@ div.categories-list {
     text-align: left;
     color: $blue;
     margin-top: 2em;
-    padding: $unit;
+    padding: $unit 0px;
+    @include media-query($on-laptop) {
+      padding: $unit;
+    }
     font-size: 2.4rem;
     @include media-query($on-laptop) {
       font-size: 2.25rem;
@@ -275,7 +278,10 @@ div.categories-list {
     margin-bottom: 4em;
   }
   & > p {
-    padding: $unit;
+    padding: $unit 0px;
+    @include media-query($on-laptop) {
+      padding: $unit;
+    }
     margin-top: 1em;
     strong,
     a {

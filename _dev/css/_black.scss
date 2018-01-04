@@ -8,6 +8,13 @@ html.black {
       border-bottom: 1px solid $b_black;
     }
   }
+
+  .important {
+    .wall_img {
+      border: 1px solid $b_black;
+    }
+  }
+
   div.trigger {
     background: $black;
     border-bottom: 1px solid $b_black;
@@ -49,6 +56,9 @@ html.black {
   }
   .wall_img {
     background: $black;
+    @include media-query($on-palm) {
+      border: 1px solid $b_black;
+    }
   }
   .post-list>.post {
     @include media-query($on-palm) {
