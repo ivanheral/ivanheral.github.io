@@ -9,7 +9,7 @@ header {
       color: $blue;
     }
     float: left;
-    padding: 14.5px 0px;
+    padding: 12px 0px;
     padding-left: $unit;
     height: 16px;
   }
@@ -62,7 +62,7 @@ nav.site-nav {
 }
 
 .share-page {
-    margin-bottom: $unit*2;
+  margin-bottom: $unit*2;
 }
 
 .disqus {
@@ -72,8 +72,8 @@ nav.site-nav {
   border-radius: 2px;
   @include media-query($on-palm) {
     border-radius: 0px;
-}
-  & > * {
+  }
+  &>* {
     margin-left: $unit;
     margin-right: $unit;
   }
@@ -81,9 +81,9 @@ nav.site-nav {
 
 .twitter-tweet {
   @include media-query($on-palm) {
-      margin-left: $unit !important;
-      margin-right: $unit !important;
-      width: auto !important; 
+    margin-left: $unit !important;
+    margin-right: $unit !important;
+    width: auto !important;
   }
 }
 
@@ -123,13 +123,12 @@ div.categories-list {
         text-align: center;
       }
     }
-    & > * {
+    &>* {
       line-height: 40px;
-
       color: $text;
     }
     .page-link {
-      padding: 0px $unit;
+      padding: 1px $unit;
       &:hover,
       &.select {
         color: $blue;
@@ -175,12 +174,12 @@ div.categories-list {
   padding: 0px;
   display: flex;
   flex-wrap: wrap;
-
-  > .post {
+  >.post {
     transition: opacity 0.75s ease-out;
     -webkit-transition: opacity 0.75s ease-out;
     overflow: hidden;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
     width: 315px;
     color: $blue;
     margin: $unit;
@@ -195,7 +194,6 @@ div.categories-list {
       @include media-query($on-laptop) {
         font-size: 1rem;
       }
-
     }
     @include media-query($on-laptop) {
       width: 300px;
@@ -229,6 +227,7 @@ div.categories-list {
     font-size: 1rem;
   }
 }
+
 .post-title {
   font-weight: bold;
   font-size: 1.25rem;
@@ -268,6 +267,9 @@ div.categories-list {
 .post-content {
   float: left;
   margin: 0px;
+  .chart {
+    margin: 15px;
+  }
   pre {
     position: relative;
     font-weight: 400;
@@ -277,7 +279,7 @@ div.categories-list {
     display: block;
     margin-bottom: 4em;
   }
-  & > p {
+  &>p {
     padding: $unit 0px;
     @include media-query($on-laptop) {
       padding: $unit;
@@ -287,12 +289,12 @@ div.categories-list {
     a {
       color: $link;
       font-weight: normal;
-    }    
+    }
     margin-bottom: 2em;
     color: $text;
     display: block;
     clear: both;
-    line-height: 24px;
+    line-height: 1.5;
     font-weight: normal;
     font-size: 1rem;
     text-align: left;
@@ -313,7 +315,8 @@ div.categories-list {
     * {
       color: $white;
     }
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
+    0 2px 3px rgba(0, 0, 0, 0.2);
     font-weight: bold;
     padding: 10px 15px;
     @include media-query($on-laptop) {
@@ -371,7 +374,7 @@ div.categories-list {
       padding-bottom: $unit*2;
       margin-bottom: 0;
       text-align: center;
-      font-size: 1.2rem; 
+      font-size: 1.2rem;
       float: left;
       font-weight: 600;
       width: 90%;
@@ -442,7 +445,7 @@ article {
     max-width: none;
     padding: 0px;
     padding-top: 1px;
-    .article > header,
+    .article>header,
     .social-media-list {
       margin: $unit;
     }
