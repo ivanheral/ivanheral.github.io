@@ -9,9 +9,8 @@ header {
       color: $blue;
     }
     float: left;
-    padding: 12px 0px;
-    padding-left: $unit;
-    height: 16px;
+    padding: 12px $unit;
+    height: 20px;
   }
 }
 
@@ -269,7 +268,9 @@ div.categories-list {
   float: left;
   margin: 0px;
   .chart {
-    margin: 15px;
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 360px;
   }
   pre {
     position: relative;
