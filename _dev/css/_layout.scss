@@ -291,6 +291,9 @@ div.categories-list {
     a {
       color: $link;
       font-weight: normal;
+	  @include media-query($on-laptop) {
+      font-size: 1.1rem;
+    }
     }
     margin-bottom: 2em;
     color: $text;
