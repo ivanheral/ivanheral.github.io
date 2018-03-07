@@ -300,6 +300,9 @@ div.categories-list {
     font-weight: normal;
     font-size: 1rem;
     text-align: left;
+	@include media-query($on-laptop) {
+      font-size: 1.1rem;
+    }
   }
   .btn {
     margin-bottom: 6em;
