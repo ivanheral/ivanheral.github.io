@@ -14,6 +14,7 @@ header {
     float: left;
     padding: 12.5px $unit;
     height: 20px;
+    line-height: 25px;
   }
 }
 
@@ -255,7 +256,7 @@ div.categories-list {
       font-size: 2.25rem;
     }
     @include media-query($on-palm) {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
   }
   &.post {
