@@ -1,4 +1,5 @@
 header {
+
   .header {
     overflow: hidden;
     border-bottom: 1px solid $b_white;
@@ -8,8 +9,10 @@ header {
     &:hover {
       color: $blue;
     }
+    font-size: 1.1rem;
+    font-weight: bold;
     float: left;
-    padding: 12px $unit;
+    padding: 12.5px $unit;
     height: 20px;
   }
 }
@@ -30,17 +33,15 @@ nav.site-nav {
   }
   a.menu-icon {
     position: absolute;
-    top: 0px;
     cursor: pointer;
-    right: 0px;
+    right: 0;
+    padding: 10.5px;
+    width: 24px;
+    margin: 0px;
+    height: 24px;
     z-index: 1;
-    border: 1px solid transparent;
-    height: 45px;
     svg {
       stroke: $blue;
-      stroke-width: 2px;
-      width: 44px;
-      height: 44px;
     }
   }
 }
@@ -69,6 +70,9 @@ nav.site-nav {
   display: table;
   width: 100%;
   border-radius: 2px;
+  #disqus_thread > div {
+    margin-bottom: $unit*2;
+  }
   @include media-query($on-palm) {
     border-radius: 0px;
   }
@@ -310,26 +314,26 @@ div.categories-list {
   .btn {
     margin-bottom: 6em;
     border-radius: 2px;
-    display: inline-block;
+    float: left;
     width: auto;
     cursor: pointer;
-    overflow: visible;
-    text-decoration: none;
     text-align: center;
-    white-space: nowrap;
-    text-shadow: none;
-    -webkit-appearance: none;
     background: $blue;
-    * {
-      color: $white;
-    }
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
-    0 2px 3px rgba(0, 0, 0, 0.2);
-    font-weight: bold;
     padding: 10px 15px;
-    @include media-query($on-laptop) {
-      margin-left: $unit;
+    svg {
+      color: $white;
+      height: 24px;
+      margin-right: 10px;
+      float: left;
+      line-height: 24px;
     }
+    .url {
+      color: $white;
+      float: right;
+      height: 24px;
+      line-height: 24px;
+    }
+    font-weight: 600;
   }
   .elem {
     width: 100%;

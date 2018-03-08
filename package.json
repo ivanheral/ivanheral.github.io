@@ -24,7 +24,12 @@
       "semi": "off",
       "camelcase": "off"
     },
-    "globals": ["document","localStorage","window","fetch"]
+    "globals": [
+      "document",
+      "localStorage",
+      "window",
+      "fetch"
+    ]
   },
   "homepage": "https://github.com/ivanheral/ivanheral.github.io#readme",
   "devDependencies": {
@@ -48,6 +53,7 @@
     "ga-lite": "^2.0.1",
     "prismjs": "^1.8.1",
     "promise": "^8.0.1",
+    "randomcolor": "^0.5.3",
     "taskr": "^1.1.0",
     "taskr-autoprefixer": "^1.0.0",
     "taskr-xo": "^1.0.0",
