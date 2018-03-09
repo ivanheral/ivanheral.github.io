@@ -24,7 +24,7 @@ function delclss(el, nam) {
 }
 
 $('#toggle').addEventListener('click', theme)
-$('#test').addEventListener('click', change_section)
+$('#links').addEventListener('click', change_section)
 $('#menu-icon').addEventListener('click', open)
 $('#search-input').addEventListener('keyup', search_post)
 doc.addEventListener('scroll', scroll)
