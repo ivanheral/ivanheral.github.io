@@ -1,5 +1,4 @@
 header {
-
   .header {
     overflow: hidden;
     border-bottom: 1px solid $b_white;
@@ -71,16 +70,18 @@ nav.site-nav {
   background: $white;
   display: table;
   width: 100%;
-  border-radius: 2px;
-  #disqus_thread > div {
+  padding: 15px;
+  margin-left: -15px;
+  #disqus_thread>div {
     margin-bottom: $unit*2;
   }
   @include media-query($on-palm) {
-    border-radius: 0px;
-  }
-  &>* {
-    margin-left: $unit;
-    margin-right: $unit;
+    padding: 0px;
+    margin-left: 0px;
+    &>* {
+      margin-left: $unit;
+      margin-right: $unit;
+    }
   }
 }
 
@@ -100,7 +101,6 @@ div.categories-list {
   border-top: 1px solid $b_white;
   border-bottom: 1px solid $b_white;
   border-left: 1px solid $b_white;
-
   -webkit-transition: position 0.5s ease-out;
   cursor: pointer;
   float: right;
@@ -181,7 +181,6 @@ div.categories-list {
     -webkit-transition: opacity 0.75s ease-out;
     overflow: hidden;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
     width: 315px;
     color: $blue;
     margin: $unit;
@@ -294,9 +293,9 @@ div.categories-list {
     a {
       color: $link;
       font-weight: normal;
-	  @include media-query($on-laptop) {
-      font-size: 1.1rem;
-    }
+      @include media-query($on-laptop) {
+        font-size: 1.1rem;
+      }
     }
     margin-bottom: 2em;
     color: $text;
@@ -306,7 +305,7 @@ div.categories-list {
     font-weight: normal;
     font-size: 1rem;
     text-align: left;
-	@include media-query($on-laptop) {
+    @include media-query($on-laptop) {
       font-size: 1.1rem;
     }
   }
@@ -330,7 +329,7 @@ div.categories-list {
       color: $white;
       float: right;
       height: 24px;
-      line-height: 24px;
+      line-height: 30px;
     }
     font-weight: 600;
   }
@@ -454,6 +453,7 @@ article {
   border-right: 1px solid $b_white;
   border-bottom: 1px solid $b_white;
   padding: $unit;
+  padding-bottom: 0px;
   @include media-query($on-laptop) {
     width: 100%;
     max-width: none;
