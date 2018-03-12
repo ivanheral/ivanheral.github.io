@@ -416,8 +416,20 @@ div.categories-list {
 
 #search-container {
   position: relative;
-  margin-left: $unit;
+  padding: 12px $unit;
   overflow: hidden;
+  input::-webkit-input-placeholder {
+    line-height: 1.5em;
+  }
+  input:-moz-placeholder {
+    line-height: 1.5em;
+  }
+  input::-moz-placeholder {
+    line-height: 1.5em;
+  }
+  input:-ms-input-placeholder {
+    line-height: 1.5em;
+  }
   input {
     -webkit-appearance: none;
     &::placeholder {
@@ -428,11 +440,9 @@ div.categories-list {
       outline: none;
     }
     text-transform: uppercase;
+    vertical-align: middle;
     border: 0px;
-    margin: 0px;
     background-color: $white;
-    padding: 0px;
-    line-height: 50px;
   }
 }
 
