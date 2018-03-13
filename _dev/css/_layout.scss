@@ -75,7 +75,7 @@ nav.site-nav {
   #disqus_thread>div {
     margin-bottom: $unit*2;
   }
-  @include media-query($on-palm) {
+  @include media-query($on-laptop) {
     padding: 0px;
     margin-left: 0px;
     &>* {
@@ -325,12 +325,7 @@ div.categories-list {
       float: left;
       line-height: 24px;
     }
-    .url {
-      color: $white;
-      float: right;
-      height: 24px;
-      line-height: 30px;
-    }
+    color: $white !important;
     font-weight: 600;
   }
   .elem {
