@@ -411,7 +411,7 @@ div.categories-list {
 
 #search-container {
   position: relative;
-  padding: 12px $unit;
+  padding: 10px $unit;
   overflow: hidden;
   input::-webkit-input-placeholder {
     line-height: 1.5em;
@@ -435,7 +435,6 @@ div.categories-list {
       outline: none;
     }
     text-transform: uppercase;
-    vertical-align: middle;
     border: 0px;
     background-color: $white;
   }
