@@ -37,13 +37,17 @@ const act_disqus = () => {
     doc.getElementsByTagName('head')[0].appendChild(dsq)
 }
 
+const add_script = (script) => {
+  const vendor = doc.createElement('script')
+  vendor.type = 'text/javascript'
+  vendor.src = '/js/'+script+'.js'
+  doc.getElementsByTagName('head')[0].appendChild(vendor)
+}
+
 const vendors = () => {
-  if (window.location.pathname.indexOf('tutorial') >= 0) {
-    const vendor = doc.createElement('script')
-    vendor.type = 'text/javascript'
-    vendor.src = '/js/prism.js'
-    doc.getElementsByTagName('head')[0].appendChild(vendor)
-  }
+  if (window.location.pathname.indexOf('tutorial') >= 0) 
+    add_script('prism')
+  if ($('div.chart')) add_script('chart')
 }
 
 function scroll() {
