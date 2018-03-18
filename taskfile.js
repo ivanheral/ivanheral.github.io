@@ -6,7 +6,6 @@ export default async function (task) {
     await task.clear(['css','js']).parallel(['js', 'vendors', 'fetch', 'css']).start('jekyll').start('server')
     await task.watch('_dev/css/**/*.*', 'css')
     await task.watch('_dev/js/**/*.js', 'changes')
-    await task.watch('_post/*.markdown', 'markdown')
 }
 
 export async function xo(task) {
@@ -22,12 +21,7 @@ export async function css(task) {
 
 export async function changes(task) {
     await task.start('js')
-    await task.start('vendors')
-    bs.reload('js/**/*.js')
-}
-
-export async function vendors(task) {
-    bs.reload('index.html')
+    bs.reload('*')
 }
 
 export async function vendors(task) {

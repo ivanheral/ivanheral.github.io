@@ -120,7 +120,7 @@ function posts(v, i) {
           post.href = v.url
           post.id = i.toString()
           $('.post-list').appendChild(post)
-          doc.getElementById(i.toString()).insertAdjacentHTML('beforeend', '<div class="wall_img"><img src="' + v.img + '"></div><div class="info_post"><div class="post-title">' + 
+          doc.getElementById(i.toString()).insertAdjacentHTML('beforeend', '<div class="wall_img"><img data-src="' + v.img + '"></div><div class="info_post"><div class="post-title">' + 
           v.title + '</div><div class="post-meta">' + v.date + '</div></div>')         
 }
 
@@ -140,7 +140,9 @@ function load() {
       if ((i === data.length - 1) && (search !== '')) {
           $('.header .site-title').innerHTML = 'RESULTADOS: ' + count
           $('.post-list').style.height = 'auto'
+          showitem()
       }
+      if (i === data.length - 1) showitem()
  })))
 }
 
@@ -173,6 +175,8 @@ function showitem() {
     var src = val.children[0].src; 
       if (src !== undefined) {    
         if (isscroll(val, -90)) {
+        if (val.children[0].getAttribute("data-src"))  
+          val.children[0].src = val.children[0].getAttribute("data-src") 
         if (src.indexOf('giphy_s.gif') >= 0) 
           val.children[0].src = src.replace('giphy_s.gif', 'giphy.gif')  
         if (src.indexOf('mqdefault') >= 0) {

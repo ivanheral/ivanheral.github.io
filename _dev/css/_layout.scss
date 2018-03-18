@@ -4,20 +4,25 @@ header {
     border-bottom: 1px solid $b_white;
     position: relative;
   }
-  a.site-title {
-    &:hover {
-      color: $blue;
-    }
+  .site-title {
     font-size: 1.1rem;
     font-weight: bold;
     float: left;
     padding: 12.5px $unit;
     height: 20px;
-    line-height: 25px;
+    line-height: 20px;
   }
-}
 
-nav.site-nav {
+  a.social {
+      float: left;
+      height: 45px;
+      svg {
+        width: 45px;
+        display: inline-block;
+        fill: $blue;
+      }
+    }    
+
   div.trigger {
     position: absolute;
     background-color: $white;
@@ -33,32 +38,15 @@ nav.site-nav {
     }
   }
   a.menu-icon {
-    position: absolute;
-    cursor: pointer;
-    right: 0;
+    cursor: pointer;   
     padding: 10.5px;
-    width: 24px;
-    margin: 0px;
-    height: 24px;
-    z-index: 1;
+    height: 24px;    
+    z-index: 1;    
+    position: absolute;
+    right: 0px;
     svg {
       stroke: $blue;
     }
-  }
-}
-
-.social {
-  float: right;
-  margin-right: 45px;
-  a {
-    float: left;
-    height: 45px;
-    margin-right: 0px;
-  }
-  svg {
-    width: 45px;
-    display: inline-block;
-    fill: $blue;
   }
 }
 
