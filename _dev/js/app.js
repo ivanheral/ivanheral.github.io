@@ -141,12 +141,13 @@ function load() {
       } else if ((section === 'all') || (val.category === section)) { 
           posts(val, i)
       }
-      if ((i === data.length - 1) && (search !== '')) {
-          $('.header .site-title').innerHTML = 'RESULTADOS: ' + count
-          $('.post-list').style.height = 'auto'
+      if (i === data.length - 1) {
+          if (search !== '') {
+            $('.header .site-title').innerHTML = 'RESULTADOS: ' + count
+            $('.post-list').style.height = 'auto'
+          }
           showitem()
       }
-      if (i === data.length - 1) showitem()
  })))
 }
 
