@@ -1,3 +1,4 @@
+/* Vars */
 let section = 'all'
 let search = ''
 const stop = false
@@ -5,6 +6,7 @@ let comments = false
 const doc = document
 const loc = localStorage
 
+/* Not jQuery */
 const $ = v => {
   return doc.querySelector(v)
 }
@@ -23,11 +25,14 @@ function delclss(el, nam) {
   el.className = el.className.replace(new RegExp('(^|\\b)' + nam.split(' ').join('|') + '(\\b|$)', 'gi'), ' ')
 }
 
+/* Events */
 $('#toggle').addEventListener('click', theme)
 $('#links').addEventListener('click', change_section)
 $('#menu-icon').addEventListener('click', open)
 $('#search-input').addEventListener('keyup', search_post)
 doc.addEventListener('scroll', scroll)
+
+
 
 const act_disqus = () => {
     const dsq = doc.createElement('script');
@@ -124,7 +129,8 @@ function posts(v, i) {
           post.href = v.url
           post.id = i.toString()
           $('.post-list').appendChild(post)
-          doc.getElementById(i.toString()).insertAdjacentHTML('beforeend', '<div class="wall_img"><img data-src="' + v.img + '"></div><div class="info_post"><div class="post-title">' + 
+          var text = v.img.indexOf('giphy') ? 'data-src' : 'src'
+          doc.getElementById(i.toString()).insertAdjacentHTML('beforeend', '<div class="wall_img"><img '+ text +'="' + v.img + '"></div><div class="info_post"><div class="post-title">' + 
           v.title + '</div><div class="post-meta">' + v.date + '</div></div>')         
 }
 
