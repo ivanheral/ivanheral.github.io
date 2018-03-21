@@ -129,7 +129,7 @@ function posts(v, i) {
           post.href = v.url
           post.id = i.toString()
           $('.post-list').appendChild(post)
-          var text = v.img.indexOf('giphy') ? 'data-src' : 'src'
+          var text = v.img.indexOf('giphy') ? 'src' : 'data-src'
           doc.getElementById(i.toString()).insertAdjacentHTML('beforeend', '<div class="wall_img"><img '+ text +'="' + v.img + '"></div><div class="info_post"><div class="post-title">' + 
           v.title + '</div><div class="post-meta">' + v.date + '</div></div>')         
 }
