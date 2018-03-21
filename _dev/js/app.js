@@ -1,4 +1,3 @@
-/* Vars */
 let section = 'all'
 let search = ''
 const stop = false
@@ -6,7 +5,6 @@ let comments = false
 const doc = document
 const loc = localStorage
 
-/* Not jQuery */
 const $ = v => {
   return doc.querySelector(v)
 }
@@ -17,40 +15,37 @@ const all = v => {
 
 function addclss(el, nam) {
   el.classList ? el.classList.add(nam) :
-  el.className += ' ' + nam
+    el.className += ' ' + nam
 }
 
 function delclss(el, nam) {
   el.classList ? el.classList.remove(nam) :
-  el.className = el.className.replace(new RegExp('(^|\\b)' + nam.split(' ').join('|') + '(\\b|$)', 'gi'), ' ')
+    el.className = el.className.replace(new RegExp('(^|\\b)' + nam.split(' ').join('|') + '(\\b|$)', 'gi'), ' ')
 }
 
-/* Events */
 $('#toggle').addEventListener('click', theme)
 $('#links').addEventListener('click', change_section)
 $('#menu-icon').addEventListener('click', open)
 $('#search-input').addEventListener('keyup', search_post)
 doc.addEventListener('scroll', scroll)
 
-
-
 const act_disqus = () => {
-    const dsq = doc.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    doc.getElementsByTagName('head')[0].appendChild(dsq)
+  const dsq = doc.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  doc.getElementsByTagName('head')[0].appendChild(dsq)
 }
 
 const add_script = (script) => {
   const vendor = doc.createElement('script')
   vendor.type = 'text/javascript'
-  vendor.src = '/js/'+script+'.js'
+  vendor.src = '/js/' + script + '.js'
   doc.getElementsByTagName('head')[0].appendChild(vendor)
 }
 
 const vendors = () => {
-  if (window.location.pathname.indexOf('tutorial') >= 0) 
+  if (window.location.pathname.indexOf('tutorial') >= 0)
     add_script('prism')
   if ($('div.chart')) add_script('chart')
 }
@@ -70,8 +65,8 @@ function scroll() {
 function search_post(e) {
   $('.header .site-title').innerHTML = 'BLOG'
   all('.categories .page-link').forEach(elem => {
-    delclss(elem, 'select')      
-  }) 
+    delclss(elem, 'select')
+  })
   if ($('article') !== null) {
     $('article').style.display = 'none'
   }
@@ -79,7 +74,7 @@ function search_post(e) {
   if (search === '') {
     section = 'all'
   } else if ($('article.post') !== null) {
-      $('.return').style.display = 'block'
+    $('.return').style.display = 'block'
   }
   $('.post-list').innerHTML = ''
   load()
@@ -94,10 +89,10 @@ function change_section(e) {
   section = e.target.id;
   addclss($('#' + section), 'select')
   if (section === 'blog') {
-        $('.post-list').styleheight = '0px'
-        $('.post-list').innerHTML = ''
-        $('article').style.display = 'block'
-        $('#blog').style.display = 'none';
+    $('.post-list').styleheight = '0px'
+    $('.post-list').innerHTML = ''
+    $('article').style.display = 'block'
+    $('#blog').style.display = 'none';
   } else {
     if ($('article') !== null) {
       $('article').style.display = 'none'
@@ -110,7 +105,7 @@ function change_section(e) {
     }
     $('.post-list').innerHTML = '';
     load()
-  } 
+  }
 }
 
 function open() {
@@ -119,48 +114,48 @@ function open() {
 
 function theme() {
   $('html').classList.toggle('black')
-  loc.getItem('theme') === 'black' ? loc.setItem('theme', 'white') : 
-  loc.setItem('theme', 'black')
+  loc.getItem('theme') === 'black' ? loc.setItem('theme', 'white') :
+    loc.setItem('theme', 'black')
 }
 
 function posts(v, i) {
-          const post = doc.createElement('a')
-          post.className = 'post'
-          post.href = v.url
-          post.id = i.toString()
-          $('.post-list').appendChild(post)
-          var text = (v.img.indexOf('giphy')>0) ? 'src' : 'data-src'
-          doc.getElementById(i.toString()).insertAdjacentHTML('beforeend', '<div class="wall_img"><img '+ text +'="' + v.img + '"></div><div class="info_post"><div class="post-title">' + 
-          v.title + '</div><div class="post-meta">' + v.date + '</div></div>')         
+  const post = doc.createElement('a')
+  post.className = 'post'
+  post.href = v.url
+  post.id = i.toString()
+  $('.post-list').appendChild(post)
+  var text = (v.img.indexOf('giphy') > 0) ? 'src' : 'data-src'
+  doc.getElementById(i.toString()).insertAdjacentHTML('beforeend', '<div class="wall_img"><img ' + text + '="' + v.img + '"></div><div class="info_post"><div class="post-title">' +
+    v.title + '</div><div class="post-meta">' + v.date + '</div></div>')
 }
 
 function load() {
- let count = 0;
- fetch('/json/search.json').then(response =>
-    response.json().then(data =>       
+  let count = 0;
+  fetch('/json/search.json').then(response =>
+    response.json().then(data =>
       data.forEach((val, i) => {
-      if (search !== '') {
-        if (val.title.toUpperCase().indexOf(search.toUpperCase()) > -1) {
-          posts(val, i);
-          count += 1
-        }
-      } else if ((section === 'all') || (val.category === section)) { 
+        if (search !== '') {
+          if (val.title.toUpperCase().indexOf(search.toUpperCase()) > -1) {
+            posts(val, i);
+            count += 1
+          }
+        } else if ((section === 'all') || (val.category === section)) {
           posts(val, i)
-      }
-      if (i === data.length - 1) {
+        }
+        if (i === data.length - 1) {
           if (search !== '') {
             $('.header .site-title').innerHTML = 'RESULTADOS: ' + count
             $('.post-list').style.height = 'auto'
           }
           showitem()
-      }
- })))
+        }
+      })))
 }
 
-doc.addEventListener('DOMContentLoaded', () => { 
+doc.addEventListener('DOMContentLoaded', () => {
   vendors()
   loc.getItem('theme') === 'black' ? addclss($('html'), 'black') :
-  delclss($('html'), 'black')
+    delclss($('html'), 'black')
   if ($('.important') === null) {
     load()
   }
@@ -179,28 +174,24 @@ function showitem() {
   let disqus = $(".disqus")
   if (disqus != undefined && !comments) {
     if (isscroll(disqus, 720)) {
-    comments = true;
-    act_disqus()        
-  }}
-  total.map((val, i) => {
-    var src = val.children[0].src; 
-      if (src !== undefined) {    
-        if (isscroll(val, -90)) {
-        if (val.children[0].getAttribute("data-src"))  
-          val.children[0].src = val.children[0].getAttribute("data-src") 
-        if (src.indexOf('giphy_s.gif') >= 0) 
-          val.children[0].src = src.replace('giphy_s.gif', 'giphy.gif')  
-        if (src.indexOf('mqdefault') >= 0) {
-          var id = val.children[0].id
-          val.children[0].src = ''
-          val.innerHTML = ''
-          var overflow = doc.createElement('div')
-          overflow.className = 'wall_overflow'
-          val.appendChild(overflow)          
-          val.children[0].outerHTML = '<iframe src="//www.youtube.com/embed/' +
-          id + '" frameborder="0" allowfullscreen></iframe>'
-        }      
+      comments = true;
+      act_disqus()
     }
-    }  
+  }
+  total.map((val, i) => {
+    var src = val.children[0].src;
+    if (src !== undefined) {
+      if (isscroll(val, -90)) {
+        if (val.children[0].getAttribute("data-src"))
+          val.children[0].src = val.children[0].getAttribute("data-src")
+        if (src.indexOf('giphy_s.gif') >= 0)
+          val.children[0].src = src.replace('giphy_s.gif', 'giphy.gif')
+        if (src.indexOf('mqdefault') >= 0) {
+          val.innerHTML = ''
+          val.insertAdjacentHTML('beforeend', '<iframe src="//www.youtube.com/embed/' +
+            val.children[0].id + '" frameborder="0" allowfullscreen></iframe>')
+        }
+      }
+    }
   })
 }
