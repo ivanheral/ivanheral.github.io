@@ -33,7 +33,7 @@ export async function fetch(task) {
             transform: [require("babelify").configure({
                 presets: ['env']
             })]
-        }).target('js')
+        }).uglify().target('js')
 }
 
 export async function js(task) {
@@ -41,7 +41,7 @@ export async function js(task) {
             transform: [require("babelify").configure({
                 presets: ['env']
             })]
-        }).target('js')
+        }).uglify().target('js')
 }
 
 export async function jekyll(task) {
