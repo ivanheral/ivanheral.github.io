@@ -1,4 +1,3 @@
-var randomColor = require('randomcolor'); 
 
 var myCanvas = document.getElementById("test");
 
@@ -37,11 +36,7 @@ function BarGraph(options) {
         var maxBarHeight;
         var gradient;
         var largestValue;
-        var colors = randomColor({
-            count: arr.length,
-            luminosity: 'light',
-            hue: 'blue'
-         });
+        var colors = ['#4285f4','#34a853','#fbbc05','#ea4335'];
 
 
         var s = getComputedStyle(this.canvas)

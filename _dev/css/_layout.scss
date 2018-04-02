@@ -4,50 +4,47 @@ header {
     border-bottom: 1px solid $b_white;
     position: relative;
   }
-  .site-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    float: left;
-    padding: 12.5px $unit;
-    height: 20px;
-    line-height: 20px;
-  }
-
-  a.social {
-      float: right;
-      margin-right: 45px;
-      height: 45px;
-      svg {
-        width: 45px;
-        display: inline-block;
-        fill: $blue;
-      }
-    }    
-
-  div.trigger {
-    position: absolute;
-    background-color: $white;
-    top: -125%;
-    font-size: 0.9rem;
-    transition: 0.75s all;
-    width: 100%;
+  .test {
+    display: table;
     height: 45px;
-    overflow: hidden;
-    border-bottom: 1px solid $b_white;
-    &.open {
-      top: 0px;
+    a {
+      display: table-cell;
+      font-size: 1.1rem;
+      font-weight: bold;
+      vertical-align: middle;
+      padding: 0px $unit;
     }
   }
-  a.menu-icon {
-    cursor: pointer;   
-    padding: 10.5px;
-    height: 24px;    
-    z-index: 1;    
+ 
+  #search-input {
+    -webkit-appearance: none;
+    width: 120px;
+    box-shadow:0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
+    border-radius: 25px;
+    padding: 3px;
+    margin: 6.5px;
     position: absolute;
+    top: 0px;
     right: 0px;
     svg {
-      stroke: $blue;
+      color: $blue;
+      float: left;
     }
+    input {
+      width: 90px;      
+      float: right;      
+      color: #1da1f2;      
+      border: none;      
+      background: none;      
+      height: 24px;      
+      line-height: 24px;
+    &:focus {
+      outline: none;
+    }
+  }
+   
+    float: right;
+    margin-right: 70px;
   }
 }
 
@@ -83,19 +80,20 @@ header {
 }
 
 div.categories-list {
-  width: 189px;
-  @include media-query($on-desktop) {
-    width: 169px;
-  }
-  border-top: 1px solid $b_white;
-  border-bottom: 1px solid $b_white;
-  border-left: 1px solid $b_white;
+  width: 180px;
+  margin: 5px;
+  margin-top: 15px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
   -webkit-transition: position 0.5s ease-out;
+  @include media-query($on-desktop) {
+    width: 160px;
+  }
   cursor: pointer;
   float: right;
   @include media-query($on-laptop) {
-    border: none;
     width: 100%;
+    box-shadow: none;
+    margin: 0px;
     margin-top: 0px !important;
   }
   &.scroll-fixed {
@@ -108,7 +106,6 @@ div.categories-list {
     .return {
       display: none;
       margin-left: $unit;
-      font-size: .9rem;
       &:hover {
         color: $blue;
       }
@@ -129,7 +126,6 @@ div.categories-list {
       &.select {
         color: $blue;
       }
-      font-size: 0.9rem;
       @include media-query($on-laptop) {
         margin-left: 0px;
         padding: 0px;
@@ -179,7 +175,7 @@ div.categories-list {
     }
     float: left;
     .post-meta {
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: $text;
       @include media-query($on-laptop) {
         font-size: 1rem;
@@ -221,7 +217,7 @@ div.categories-list {
 
 .post-title {
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1.26rem;
   min-height: 50px;
   text-align: left;
   color: $blue;
@@ -392,26 +388,6 @@ div.categories-list {
     bottom: 0px;
     width: 100%;
     height: 100%;
-  }
-}
-
-#search-container {
-  position: relative;
-  
-  overflow: hidden;
-  input {
-    -webkit-appearance: none;
-    &:focus {
-      outline: none;
-    }
-    margin: 5px;
-    padding: 4.5px 10px;
-    height: 24px;
-    color: $blue;
-    border: none;
-    box-shadow:0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
-    text-transform: uppercase;
-    background-color: $white;
   }
 }
 

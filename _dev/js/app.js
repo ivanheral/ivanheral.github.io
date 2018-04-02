@@ -25,7 +25,6 @@ function delclss(el, nam) {
 
 $('#toggle').addEventListener('click', theme)
 $('#links').addEventListener('click', change_section)
-$('#menu-icon').addEventListener('click', open)
 $('#search-input').addEventListener('keyup', search_post)
 doc.addEventListener('scroll', scroll)
 
@@ -53,7 +52,7 @@ const vendors = () => {
 function scroll() {
   const scroll = $('html').scrollTop
   if (!stop) {
-    $('div.categories-list').style.marginTop = '0px'
+    $('div.categories-list').style.marginTop = '15px'
     if (scroll > 45) {
       $('div.categories-list').style.marginTop = (scroll - 30).toString() + 'px'
       addclss($('div.categories-list'), 'scroll-fixed')
@@ -108,10 +107,6 @@ function change_section(e) {
   }
 }
 
-function open() {
-  $('.trigger').classList.toggle('open')
-}
-
 function theme() {
   $('html').classList.toggle('black')
   loc.getItem('theme') === 'black' ? loc.setItem('theme', 'white') :
@@ -144,7 +139,7 @@ function load() {
         }
         if (i === data.length - 1) {
           if (search !== '') {
-            $('.header .site-title').innerHTML = 'RESULTADOS: ' + count
+            $('.header .site-title').innerHTML = count + ' posts'
             $('.post-list').style.height = 'auto'
           }
           showitem()

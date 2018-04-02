@@ -13,10 +13,6 @@ html.black {
       border: 1px solid $b_black;
     }
   }
-  div.trigger {
-    background: $black;
-    border-bottom: 1px solid $b_black;
-  }
   .container {
     background: $black;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.2);
@@ -26,9 +22,6 @@ html.black {
     @include media-query($on-laptop) {
       color: $text;
     }
-    border-bottom: 1px solid $b_black;
-    border-top: 1px solid $b_black;
-    border-left: 1px solid $b_black;
     @include media-query($on-laptop) {
       border-top: 0px;
       border-bottom: 0px;
@@ -70,11 +63,5 @@ html.black {
     border-right: 1px solid $b_black;
     border-bottom: 1px solid $b_black;
   }
-  #search-container #search-input {
-    background: $black;
-    color: $white;
-    &::placeholder {
-      color: $white;
-    }
-  }
+
 }
