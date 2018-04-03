@@ -52,7 +52,7 @@ const vendors = () => {
 function scroll() {
   const scroll = $('html').scrollTop
   if (!stop) {
-    $('div.categories-list').style.marginTop = '15px'
+    $('div.categories-list').style.marginTop = '5px'
     if (scroll > 45) {
       $('div.categories-list').style.marginTop = (scroll - 30).toString() + 'px'
       addclss($('div.categories-list'), 'scroll-fixed')

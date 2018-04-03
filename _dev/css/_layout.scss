@@ -1,25 +1,19 @@
 header {
   .header {
-    overflow: hidden;
-    border-bottom: 1px solid $b_white;
     position: relative;
-  }
-  .test {
-    display: table;
     height: 45px;
-    a {
-      display: table-cell;
-      font-size: 1.1rem;
-      font-weight: bold;
-      vertical-align: middle;
-      padding: 0px $unit;
-    }
   }
- 
+  a {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px $unit;
+    float: left;
+    text-transform: uppercase;
+  }
   #search-input {
     -webkit-appearance: none;
-    width: 120px;
-    box-shadow:0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
+    width: 100px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
     border-radius: 25px;
     padding: 3px;
     margin: 6.5px;
@@ -31,18 +25,17 @@ header {
       float: left;
     }
     input {
-      width: 90px;      
-      float: right;      
-      color: #1da1f2;      
-      border: none;      
-      background: none;      
-      height: 24px;      
+      width: 70px;
+      float: right;
+      color: #1da1f2;
+      border: none;
+      background: none;
+      height: 24px;
       line-height: 24px;
-    &:focus {
-      outline: none;
+      &:focus {
+        outline: none;
+      }
     }
-  }
-   
     float: right;
     margin-right: 70px;
   }
