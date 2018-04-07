@@ -47,9 +47,7 @@ a {
     box-shadow: 0 0 0 1px $b_white, 0 2px 3px rgba(0,0,0,.2);
     margin: $unit auto;
     min-height: 880px;
-    padding-bottom: $unit;
     @include media-query($on-palm) {
-        margin: 10px 10px;
-        padding-bottom: 0px;
+        margin: 10px;
     }
 }
