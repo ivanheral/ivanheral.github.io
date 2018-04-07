@@ -10,7 +10,7 @@ header {
     float: left;
     text-transform: uppercase;
   }
-  #search-input {
+  #search {
     -webkit-appearance: none;
     width: 100px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
@@ -303,9 +303,7 @@ header {
   overflow: hidden;
   position: relative;
   background-color: $white;
-  @include media-query($on-palm) {
-    border: 1px solid $b_white;
-  }
+  border: 1px solid $b_white;
   img,
   svg {
     position: absolute;
@@ -331,6 +329,7 @@ article {
   }
   padding: $unit;
   padding-bottom: 0px;
+  padding-top: 5px;
   @include media-query($on-laptop) {
     width: 100%;
     max-width: none;

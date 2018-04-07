@@ -25,7 +25,7 @@ function delclss(el, nam) {
 
 $('#toggle').addEventListener('click', theme)
 $('#links').addEventListener('click', change_section)
-$('#search-input').addEventListener('keyup', search_post)
+$('#search').addEventListener('keyup', search_post)
 doc.addEventListener('scroll', scroll)
 
 const act_disqus = () => {
@@ -46,23 +46,23 @@ const add_script = (script) => {
 const vendors = () => {
   if (window.location.pathname.indexOf('tutorial') >= 0)
     add_script('prism')
-  if ($('div.chart')) add_script('chart')
+  if ($('.chart')) add_script('chart')
 }
 
 function scroll() {
   const scroll = $('html').scrollTop
   if (!stop) {
-    $('div.categories-list').style.marginTop = '5px'
+    $('.tags').style.marginTop = '5px'
     if (scroll > 45) {
-      $('div.categories-list').style.marginTop = (scroll - 30).toString() + 'px'
-      addclss($('div.categories-list'), 'scroll-fixed')
+      $('.tags').style.marginTop = (scroll - 30).toString() + 'px'
+      addclss($('.tags'), 'fixed')
     }
   }
   showitem()
 }
 
 function search_post(e) {
-  $('.header .site-title').innerHTML = 'BLOG'
+  $('.site-title').innerHTML = 'BLOG'
   all('.categories .page-link').forEach(elem => {
     delclss(elem, 'select')
   })
@@ -96,7 +96,7 @@ function change_section(e) {
     if ($('article') !== null) {
       $('article').style.display = 'none'
     }
-    $('#search-input').value = ''
+    $('#search').value = ''
 
     $('.header .site-title').innerHTML = section.toUpperCase()
     if ($('article.post') !== null) {

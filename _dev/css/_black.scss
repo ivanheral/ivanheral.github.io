@@ -12,7 +12,7 @@ html.black {
     background: $black;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.2);
   }
-  div.categories-list {
+  div.tags {
     color: $white;
     @include media-query($on-laptop) {
       color: $text;
@@ -32,7 +32,7 @@ html.black {
   }
   .post-content>p,
   .info_post .post-meta,
-  div.categories-list .categories>* {
+  div.tags .categories>* {
     color: $white;
     text-shadow: 1px 1px 1px #000;
   }
