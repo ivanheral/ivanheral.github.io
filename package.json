@@ -50,7 +50,7 @@
     "cssnano": "^3.10.0",
     "execa": "^0.8.0",
     "frappe-charts": "^0.0.4",
-    "ga-lite": "^2.0.1",
+    "ganalytics": "^3.0.0",
     "prismjs": "^1.8.1",
     "promise": "^8.0.1",
     "randomcolor": "^0.5.3",
