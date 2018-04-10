@@ -309,6 +309,9 @@ header {
   overflow: hidden;
   position: relative;
   background-color: $white;
+  @include media-query($on-palm) {
+    border: 1px solid $b_white;
+  }
   img {
     position: absolute;
     top: 0px;
