@@ -32,7 +32,7 @@
         padding: 1px $unit;
         &:hover,
         &.select {
-            color: $blue;
+            color: $blue !important;
         }
         @include media-query($on-laptop) {
             margin-left: 0px;

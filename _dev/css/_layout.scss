@@ -297,15 +297,19 @@ header {
   width: 100%;
 }
 
+.important {
+  .wall_img {
+    border: 1px solid $b_white;
+  }
+}
+
 .wall_img {
   width: 100%;
   padding-bottom: 56.25%;
   overflow: hidden;
   position: relative;
   background-color: $white;
-  border: 1px solid $b_white;
-  img,
-  svg {
+  img {
     position: absolute;
     top: 0px;
     left: 0px;

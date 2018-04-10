@@ -12,16 +12,7 @@ html.black {
     background: $black;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.2);
   }
-  div.tags {
-    color: $white;
-    @include media-query($on-laptop) {
-      color: $text;
-    }
-    @include media-query($on-laptop) {
-      border-top: 0px;
-      border-bottom: 0px;
-    }
-  }
+
   .post-content>p a,
   .post-content>p strong {
     color: #00ab6c;
@@ -32,7 +23,7 @@ html.black {
   }
   .post-content>p,
   .info_post .post-meta,
-  div.tags .categories>* {
+  .categories .page-link, a.return {
     color: $white;
     text-shadow: 1px 1px 1px #000;
   }
