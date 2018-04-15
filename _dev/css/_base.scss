@@ -29,16 +29,13 @@ a {
 
 .wrapper {
     margin: 0 auto;
-    min-width: 360px;
-    max-width: 880px;
-    @include media-query($on-desktop) {
-        max-width: 760px;
-    }
+    min-width: $width_mobile;
+    max-width: $width;
     @include media-query($on-laptop) {
         max-width: 660px;
     }
     @include media-query($on-palm) {
-        max-width: 360px;
+        max-width: $width_mobile;
     }
 }
 
@@ -48,6 +45,6 @@ a {
     margin: $unit auto;
     min-height: 880px;
     @include media-query($on-palm) {
-        margin: 10px;
+        margin: $unit;
     }
 }

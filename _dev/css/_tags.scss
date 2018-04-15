@@ -1,14 +1,21 @@
 .tags {
-    width: 180px;
-    margin: 5px;
-    margin-top: 5px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
+    .title {
+        a {
+            padding: 10px;
+            float: left;
+            border-right: 1px solid $b_white;
+        }
+        border-bottom: 1px solid $b_white;
+        float: left;
+        width: 100%;
+    }
+    width: $width_tags;
+    margin: $unit;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
+    0 2px 3px rgba(0, 0, 0, 0.2);
     -webkit-transition: position 0.5s ease-out;
     cursor: pointer;
     float: right;
-    @include media-query($on-desktop) {
-        width: 160px;
-    }
     @include media-query($on-laptop) {
         width: 100%;
         box-shadow: none;
@@ -17,13 +24,27 @@
     }
     &.fixed {
         transition: 1s margin-top ease-out;
+        @include media-query($on-laptop) {
+        transition: none;
+        }
+    }
+}
+
+#search {
+    -webkit-appearance: none;
+    input {
+        float: right;
+        width: 60px;
+        border: none;
+        background: none;
+        padding: 10px;
+        &:focus {
+            outline: none;
+        }
     }
 }
 
 .categories {
-    @include media-query($on-laptop) {
-        width: 100%;
-    }
     &>* {
         line-height: 40px;
         color: $text;

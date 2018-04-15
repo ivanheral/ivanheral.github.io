@@ -1,0 +1,23 @@
+<div class="tags">
+    <div class="title">
+        <a class="site-title" href="{{ site.baseurl }}/">BLOG</a>
+        <div id="search">
+            <input placeholder="SEARCH" type="text" maxlength="5">
+        </div>
+    </div>
+    <div class="categories" id="links">
+        <div class="page-link" id="cine">Cine
+            <span>{{ site.categories.cine | size }}</span>
+        </div>
+        <div class="page-link" id="random">Random
+            <span>{{ site.categories.random | size }}</span>
+        </div>
+        <div class="page-link" id="opiniones">Opinión
+            <span>{{ site.categories.opiniones | size }}</span>
+        </div>
+        <div class="page-link" id="tutorial">Tutorial
+            <span>{{ site.categories.tutorial | size }}</span>
+        </div>
+        <a class="return" id="blog">Volver al post</a>
+    </div>
+</div>

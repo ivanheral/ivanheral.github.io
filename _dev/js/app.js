@@ -23,7 +23,6 @@ function delclss(el, nam) {
     el.className = el.className.replace(new RegExp('(^|\\b)' + nam.split(' ').join('|') + '(\\b|$)', 'gi'), ' ')
 }
 
-$('#toggle').addEventListener('click', theme)
 $('#links').addEventListener('click', change_section)
 $('#search').addEventListener('keyup', search_post)
 doc.addEventListener('scroll', scroll)
@@ -52,9 +51,9 @@ const vendors = () => {
 function scroll() {
   const scroll = $('html').scrollTop
   if (!stop) {
-    $('.tags').style.marginTop = '5px'
+    $('.tags').style.marginTop = '15px'
     if (scroll > 45) {
-      $('.tags').style.marginTop = (scroll - 30).toString() + 'px'
+      $('.tags').style.marginTop = (scroll - 10).toString() + 'px'
       addclss($('.tags'), 'fixed')
     }
   }
@@ -98,19 +97,13 @@ function change_section(e) {
     }
     $('#search').value = ''
 
-    $('.header .site-title').innerHTML = section.toUpperCase()
+    $('.site-title').innerHTML = section.toUpperCase()
     if ($('article.post') !== null) {
       $('.return').style.display = 'block'
     }
     $('.post-list').innerHTML = '';
     load()
   }
-}
-
-function theme() {
-  $('html').classList.toggle('black')
-  loc.getItem('theme') === 'black' ? loc.setItem('theme', 'white') :
-    loc.setItem('theme', 'black')
 }
 
 function posts(v, i) {
@@ -139,7 +132,7 @@ function load() {
         }
         if (i === data.length - 1) {
           if (search !== '') {
-            $('.header .site-title').innerHTML = count + ' posts'
+            $('.site-title').innerHTML = count + ' posts'
             $('.post-list').style.height = 'auto'
           }
           showitem()
@@ -149,8 +142,6 @@ function load() {
 
 doc.addEventListener('DOMContentLoaded', () => {
   vendors()
-  loc.getItem('theme') === 'black' ? addclss($('html'), 'black') :
-    delclss($('html'), 'black')
   if ($('.important') === null) {
     load()
   }
