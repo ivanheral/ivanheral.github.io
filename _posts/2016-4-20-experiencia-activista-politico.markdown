@@ -4,7 +4,7 @@ title:  "Mi experiencia como activista politico"
 date:   2016-4-20 10:00:00 +0100
 comments: true
 author: ivanheral
-categories: opiniones
+categories: opinión
 urlimage: //media.giphy.com/media/3o7btXGnVi5f8WjWQU/giphy_s.gif
 ---
 Corría el año 2005 y España vivía un momento de gran esplendor. La natalidad subía como la espuma al mismo ritmo que lo hacían los pisos y los medios de comunicación se hacían eco de la buena nueva sin importarles el porqué de ese eufórico crecimiento. Eran tiempos de jolgorio en el periodismo nacional, nada se ponía en tela de juicio y los telediarios destinaban gran parte de su tiempo en anestesiar a la población con noticias muy positivas al respecto de nuestra economía y adulando a la elite política por el buen trabajo realizado.

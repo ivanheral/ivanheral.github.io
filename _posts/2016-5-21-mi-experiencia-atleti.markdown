@@ -4,7 +4,7 @@ title:  "Mi experiencia como colchonero"
 date:   2016-5-21 15:00:00 +0100
 comments: true
 author: ivanheral
-categories: opiniones
+categories: opinión
 urlimage: /files/images/blog/atleti.jpg
 ---
 

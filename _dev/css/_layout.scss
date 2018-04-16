@@ -53,8 +53,8 @@
         font-size: 1rem;
       }
     }
-    @include media-query($on-desktop) {
-      width: $width_post - 5px;
+    @include media-query($on-laptop) {
+      width: 300px;
     }
     @include media-query($on-palm) {
       width: 100%;

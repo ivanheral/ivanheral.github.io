@@ -4,7 +4,7 @@ title:  "Mi experiencia con el cubo de rubik"
 date:   2016-2-19 12:00:00 +0100
 comments: true
 author: ivanheral
-categories: opiniones
+categories: opinión
 urlimage: //media1.giphy.com/media/CMXt6nwp1B172/giphy_s.gif
 ---
 Han pasado muchos años desde entonces pero recuerdo como empecé con esta afición que me condujo un poco a la perdición. Era 2006 y por lo visto estaban promocionando la película <strong>En busca de la felicidad</strong>, un biopic que permitió a  Will Smith optar a una estatuilla para los Oscars interpretando a <strong>Chris Gardner</strong>, un hombre  cuyos problemas económicos le llevan a tomar decisiones arriesgadas para salvaguardar a su hijo pequeño.

@@ -4,7 +4,7 @@ title:  "Mi experiencia como critico de cine"
 date:   2016-3-12 10:00:00 +0100
 comments: true
 author: ivanheral
-categories: opiniones
+categories: opinión
 urlimage: //media1.giphy.com/media/8ksjhVAQw0KGs/giphy_s.gif
 ---
 Allí estaba yo, esperando en una sala de cine para ver una película de la cual no había oído hablar en mi vida invitado por un medio, había comenzado mi etapa como crítico de cine y yo sin enterarme. Aunque la verdad la palabra «critico» me viene un poco grande, en ningún momento me considero un experto en la materia y aunque es verdad que lo hacía por el amor arte, eso no me eximia de hacer el trabajo de manera responsable. Pero supongo que algo en mi interior me llevo a dejar mis posaderas en esa butaca con el único de propósito de saber cómo funcionaban las distribuidoras y exhibidores. Tras este pequeño inciso pasare a enumerar alguna de mis experiencias vividas y que os servirán por si algún día os pica el gusanillo.
