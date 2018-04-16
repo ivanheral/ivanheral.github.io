@@ -5,6 +5,9 @@
             float: left;
             max-width: 75px;
             border-right: 1px solid $b_white;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         border-bottom: 1px solid $b_white;
         float: left;
@@ -26,7 +29,7 @@
     &.fixed {
         transition: 1s margin-top ease-out;
         @include media-query($on-laptop) {
-        transition: none;
+            transition: none;
         }
     }
 }
