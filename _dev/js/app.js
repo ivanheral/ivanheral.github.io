@@ -90,7 +90,7 @@ function change_section(e) {
     $('.post-list').styleheight = '0px'
     $('.post-list').innerHTML = ''
     $('article').style.display = 'block'
-    $('#blog').style.display = 'none';
+    $('#blog').style.display = 'none'
   } else {
     if ($('article') !== null) {
       $('article').style.display = 'none'
