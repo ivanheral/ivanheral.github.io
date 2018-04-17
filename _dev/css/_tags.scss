@@ -52,36 +52,34 @@
     &>* {
         line-height: 40px;
         color: $text;
-    }
-    .page-link {
-        padding: 1px $unit;
         &:hover,
         &.select {
             color: $blue !important;
         }
-        @include media-query($on-laptop) {
-            margin-left: 0px;
-            padding: 0px;
-            width: 25%;
-            float: left;
-            font-size: 1rem;
-            text-align: center;
-        }
     }
+}
+
+.link {
+    padding: 1px $unit;
     span {
         float: right;
         @include media-query($on-laptop) {
             display: none;
         }
     }
+    @include media-query($on-laptop) {
+        margin-left: 0px;
+        padding: 0px;
+        width: 25%;
+        float: left;
+        font-size: 1rem;
+        text-align: center;
+    }
 }
 
 .return {
     display: none;
     margin-left: $unit;
-    &:hover {
-        color: $blue;
-    }
     @include media-query($on-laptop) {
         margin-left: 0px;
         text-align: center;

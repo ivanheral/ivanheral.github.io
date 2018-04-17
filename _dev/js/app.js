@@ -62,7 +62,7 @@ function scroll() {
 
 function search_post(e) {
   $('.site-title').innerHTML = 'BLOG'
-  all('.categories .page-link').forEach(elem => {
+  all('.tags .link').forEach(elem => {
     delclss(elem, 'select')
   })
   if ($('article') !== null) {
@@ -81,7 +81,7 @@ function search_post(e) {
 function change_section(e) {
   window.scrollTo(0, 0)
   search = '';
-  [].forEach.call(all('.categories .page-link'), elem => {
+  [].forEach.call(all('.categories .link'), elem => {
     delclss(elem, 'select')
   })
   section = e.target.id;
@@ -173,7 +173,7 @@ function showitem() {
         if (src.indexOf('giphy_s.gif') >= 0)
           val.children[0].src = src.replace('giphy_s.gif', 'giphy.gif')
         if (src.indexOf('mqdefault') >= 0) {
-          val.innerHTML = ''
+          val.children[0].src = ''
           val.insertAdjacentHTML('beforeend', '<iframe src="//www.youtube.com/embed/' +
             val.children[0].id + '" frameborder="0" allowfullscreen></iframe>')
         }
