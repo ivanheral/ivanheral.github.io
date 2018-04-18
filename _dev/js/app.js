@@ -61,10 +61,6 @@ function scroll() {
 }
 
 function search_post(e) {
-  $('.site-title').innerHTML = 'BLOG'
-  all('.tags .link').forEach(elem => {
-    delclss(elem, 'select')
-  })
   if ($('article') !== null) {
     $('article').style.display = 'none'
   }
