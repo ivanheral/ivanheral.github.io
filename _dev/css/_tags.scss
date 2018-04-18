@@ -48,19 +48,14 @@
     }
 }
 
-.categories {
-    &>* {
-        line-height: 40px;
-        color: $text;
-        &:hover,
-        &.select {
-            color: $blue !important;
-        }
-    }
-}
-
 .link {
     padding: 1px $unit;
+    line-height: 40px;
+    color: $text;
+    &:hover,
+    &.select {
+        color: $blue !important;
+    }
     span {
         float: right;
         @include media-query($on-laptop) {
@@ -79,9 +74,8 @@
 
 .return {
     display: none;
-    margin-left: $unit;
+    width: 100%;
     @include media-query($on-laptop) {
-        margin-left: 0px;
         text-align: center;
     }
 }

@@ -1,9 +1,13 @@
+/* Vars */
+
 let section = 'all'
 let search = ''
 const stop = false
 let comments = false
 const doc = document
 const loc = localStorage
+
+/* jQuery */
 
 const $ = v => {
   return doc.querySelector(v)
@@ -23,9 +27,7 @@ function delclss(el, nam) {
     el.className = el.className.replace(new RegExp('(^|\\b)' + nam.split(' ').join('|') + '(\\b|$)', 'gi'), ' ')
 }
 
-$('#links').addEventListener('click', change_section)
-$('#search').addEventListener('keyup', search_post)
-doc.addEventListener('scroll', scroll)
+/* vendors */
 
 const act_disqus = () => {
   const dsq = doc.createElement('script');
@@ -42,37 +44,23 @@ const add_script = (script) => {
   doc.getElementsByTagName('head')[0].appendChild(vendor)
 }
 
-const vendors = () => {
-  if (window.location.pathname.indexOf('tutorial') >= 0)
-    add_script('prism')
-  if ($('.chart')) add_script('chart')
-}
 
-function scroll() {
-  const scroll = $('html').scrollTop
-  if (!stop) {
-    $('.tags').style.marginTop = '15px'
-    if (scroll > 45) {
-      $('.tags').style.marginTop = (scroll - 10).toString() + 'px'
-      addclss($('.tags'), 'fixed')
-    }
-  }
-  showitem()
-}
+/* search posts */
+
+$('#search').addEventListener('keyup', search_post)
 
 function search_post(e) {
-  if ($('article') !== null) {
-    $('article').style.display = 'none'
-  }
+
   search = e.target.value;
   if (search === '') {
     section = 'all'
-  } else if ($('article.post') !== null) {
-    $('.return').style.display = 'block'
   }
-  $('.post-list').innerHTML = ''
-  load()
+  load_posts()
 }
+
+/* change section */
+
+$('#links').addEventListener('click', change_section)
 
 function change_section(e) {
   window.scrollTo(0, 0)
@@ -81,25 +69,29 @@ function change_section(e) {
     delclss(elem, 'select')
   })
   section = e.target.id;
-  addclss($('#' + section), 'select')
   if (section === 'blog') {
-    $('.post-list').styleheight = '0px'
     $('.post-list').innerHTML = ''
     $('article').style.display = 'block'
     $('#blog').style.display = 'none'
   } else {
-    if ($('article') !== null) {
-      $('article').style.display = 'none'
-    }
-    $('#search').value = ''
-
+    addclss($('#' + section), 'select')
     $('.site-title').innerHTML = section.toUpperCase()
-    if ($('article.post') !== null) {
-      $('.return').style.display = 'block'
-    }
-    $('.post-list').innerHTML = '';
-    load()
+    load_posts()
   }
+}
+
+/* load posts */
+
+function load_posts() {
+  if ($('article.post') !== null) {
+    $('.return').style.display = 'block'
+  }
+  if ($('article') !== null) {
+    $('article').style.display = 'none'
+  }
+  $('.post-list').innerHTML = ''
+  load()
+
 }
 
 function posts(v, i) {
@@ -136,12 +128,33 @@ function load() {
       })))
 }
 
+/* ready */
+
 doc.addEventListener('DOMContentLoaded', () => {
-  vendors()
+  if (window.location.pathname.indexOf('tutorial') >= 0)
+    add_script('prism')
+  if ($('.chart')) add_script('chart')
   if ($('.important') === null) {
     load()
   }
 }, false)
+
+
+/* lazy-load */
+
+doc.addEventListener('scroll', scroll)
+
+function scroll() {
+  const scroll = $('html').scrollTop
+  if (!stop) {
+    $('.tags').style.marginTop = '15px'
+    if (scroll > 45) {
+      $('.tags').style.marginTop = (scroll - 10).toString() + 'px'
+      addclss($('.tags'), 'fixed')
+    }
+  }
+  showitem()
+}
 
 function isscroll(elem, n) {
   const dim = elem.getBoundingClientRect()

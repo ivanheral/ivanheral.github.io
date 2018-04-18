@@ -21,14 +21,14 @@
     width: $width_posts;
     display: inline-block;
     height: auto;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
     @include media-query($on-laptop) {
         width: 100%;
         margin-left: 0px;
         margin-top: 0px;
     }
-    padding: 0px;
-    display: flex;
-    flex-wrap: wrap;
     >.post {
         transition: opacity 0.75s ease-out;
         -webkit-transition: opacity 0.75s ease-out;
@@ -41,9 +41,6 @@
         .post-meta {
             font-size: 1rem;
             color: $text;
-            @include media-query($on-laptop) {
-                font-size: 1rem;
-            }
         }
         @include media-query($on-laptop) {
             width: 300px;
@@ -60,14 +57,13 @@
 }
 
 .info_post {
+    width: 90%;
+    padding: 0 5%;
     @include media-query($on-palm) {
         width: 100%;
         padding: 0px;
         padding-top: $unit;
     }
-    width: 90%;
-    padding: 0 5%;
-    padding-top: $unit;
     .post-meta {
         color: $text;
         padding-top: $unit;
@@ -90,20 +86,16 @@
     &.page {
         float: left;
         text-align: left;
-        color: $blue;
         margin-top: 2em;
         padding: $unit 0px;
-        @include media-query($on-laptop) {
-            padding: $unit;
-        }
         font-size: 2.4rem;
         @include media-query($on-laptop) {
             font-size: 2.25rem;
+            padding: $unit;
         }
     }
     &.post {
         font-size: 2.4rem;
-        color: $blue;
         @include media-query($on-palm) {
             font-size: 1.6rem;
             width: 100%;
@@ -118,15 +110,6 @@
         padding: 15px;
         margin: 15px auto;
         max-width: 360px;
-    }
-    pre {
-        position: relative;
-        font-weight: 400;
-        overflow: hidden;
-        width: auto;
-        float: none;
-        display: block;
-        margin-bottom: 4em;
     }
     &>p {
         padding: $unit 0px;
@@ -185,7 +168,7 @@
         margin-bottom: 1em;
         clear: both;
     }
-    &.gif {
+    .gif {
         padding-bottom: 0%;
     }
     iframe {
