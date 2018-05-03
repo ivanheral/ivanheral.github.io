@@ -3,7 +3,7 @@
         a {
             padding: 10px;
             float: left;
-            max-width: 75px;
+            max-width: 85px;
             border-right: 1px solid $b_white;
             overflow: hidden;
             white-space: nowrap;
@@ -45,6 +45,7 @@
         &:focus {
             outline: none;
         }
+        color: $text;
     }
 }
 
