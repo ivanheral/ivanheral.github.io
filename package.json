@@ -52,11 +52,7 @@
     "frappe-charts": "^0.0.4",
     "ganalytics": "^3.0.0",
     "prismjs": "^1.8.1",
-    "promise": "^8.0.1",
-    "randomcolor": "^0.5.3",
     "taskr": "^1.1.0",
-    "taskr-autoprefixer": "^1.0.0",
-    "taskr-xo": "^1.0.0",
-    "whatwg-fetch": "^2.0.3"
+    "taskr-autoprefixer": "^1.0.0"
   }
 }

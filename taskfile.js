@@ -3,13 +3,9 @@ var bs = require('browser-sync')
 var historyApiFallback = require('connect-history-api-fallback')
 
 export default async function (task) {
-    await task.clear(['css','js']).parallel(['js', 'vendors', 'fetch', 'css']).start('jekyll').start('server')
+    await task.clear(['css','js']).parallel(['js', 'vendors', 'css']).start('jekyll').start('server')
     await task.watch('_dev/css/**/*.*', 'css')
     await task.watch('_dev/js/**/*.js', 'changes')
-}
-
-export async function xo(task) {
-    await task.source('_dev/js/app.js').xo()
 }
 
 export async function css(task) {
@@ -26,14 +22,6 @@ export async function changes(task) {
 
 export async function vendors(task) {
     await task.source('_dev/js/vendors/*.js').browserify().uglify().target('js')
-}
-
-export async function fetch(task) {
-    await task.source('_dev/js/vendors/ie/fetch.js').browserify({
-            transform: [require("babelify").configure({
-                presets: ['env']
-            })]
-        }).uglify().target('js')
 }
 
 export async function js(task) {

@@ -73,11 +73,6 @@ function BarGraph(options) {
                 this.height - barHeight,
                 barWidth,
                 barHeight-45);
-            
-
-
-
-
             this.ctx.shadowBlur = 0;
             this.ctx.fillStyle = "#263238";
             this.ctx.font = "28px sans-serif";
