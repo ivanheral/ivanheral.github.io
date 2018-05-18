@@ -1,14 +1,11 @@
 /* Vars */
-
 let section = 'all'
 let search = ''
 const stop = false
 let comments = false
 const doc = document
-const loc = localStorage
 
 /* jQuery */
-
 const $ = v => {
     return doc.querySelector(v)
 }
@@ -28,7 +25,6 @@ function delclss(el, nam) {
 }
 
 /* vendors */
-
 const act_disqus = () => {
     const dsq = doc.createElement('script');
     dsq.type = 'text/javascript';
@@ -46,7 +42,6 @@ const add_script = (script) => {
 
 
 /* search posts */
-
 $('#search').addEventListener('keyup', search_post)
 
 function search_post(e) {
@@ -59,7 +54,6 @@ function search_post(e) {
 }
 
 /* change section */
-
 $('#links').addEventListener('click', change_section)
 
 function change_section(e) {
@@ -81,7 +75,6 @@ function change_section(e) {
 }
 
 /* load posts */
-
 function load_posts() {
     if ($('article.post') !== null) {
         $('.return').style.display = 'block'
@@ -137,7 +130,6 @@ function load() {
 }
 
 /* ready */
-
 doc.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.indexOf('tutorial') >= 0)
         add_script('prism')
@@ -149,7 +141,6 @@ doc.addEventListener('DOMContentLoaded', () => {
 
 
 /* lazy-load */
-
 doc.addEventListener('scroll', scroll)
 
 function scroll() {
@@ -188,7 +179,7 @@ function showitem() {
                 if (val.children[0].getAttribute("data-src"))
                     val.children[0].src = val.children[0].getAttribute("data-src")
                 if (src.indexOf('giphy_s.gif') >= 0)
-                    val.children[0].src = src.replace('giphy_s.gif', 'giphy.gif')
+                    val.children[0].src = src.replace('_s.gif', '.gif')
                 if (src.indexOf('mqdefault') >= 0) {
                     val.children[0].src = ''
                     val.insertAdjacentHTML('beforeend', '<iframe src="//www.youtube.com/embed/' +
