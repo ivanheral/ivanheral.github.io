@@ -41,6 +41,7 @@
         margin: $unit;
         float: left;
         &.null {
+            box-shadow: none;
             .post-meta, .post-title { 
                 background: #e3e3e3;
             }
