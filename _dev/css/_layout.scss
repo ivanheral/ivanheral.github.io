@@ -24,6 +24,8 @@
     padding: 0px;
     display: flex;
     flex-wrap: wrap;
+    background: $white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
     @include media-query($on-laptop) {
         width: 100%;
         margin-left: 0px;
@@ -38,6 +40,11 @@
         color: $blue;
         margin: $unit;
         float: left;
+        &.null {
+            .post-meta, .post-title { 
+                background: #e3e3e3;
+            }
+        }
         .post-meta {
             font-size: 1rem;
             color: $text;
@@ -214,7 +221,7 @@
     padding-bottom: 56.25%;
     overflow: hidden;
     position: relative;
-    background-color: $white;
+    background-color: #e3e3e3;
     @include media-query($on-palm) {
         border: 1px solid $b_white;
     }
@@ -232,6 +239,8 @@
 article {
     width: $width_article;
     max-width: $width_article;
+    background: $white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
     .info_post {
         width: 100%;
         padding: 0px;

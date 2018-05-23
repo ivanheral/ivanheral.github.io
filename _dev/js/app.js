@@ -105,6 +105,8 @@ function load() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
+          
+
             data.forEach((val, i) => {
                 if (search !== '') {
                     if (val.title.toUpperCase().indexOf(search.toUpperCase()) > -1) {
@@ -118,6 +120,14 @@ function load() {
                     if (search !== '') {
                         $('.site-title').innerHTML = count + ' posts'
                         $('.post-list').style.height = 'auto'
+                        if (count == 0) {
+                            for(i = 0; i<6; i++){
+                            const post = doc.createElement('a')
+                            post.className = 'post null'                            
+                            post.innerHTML = "<div class='wall_img'></div><div class='info_post'><div class='post-title'></div><div class='post-meta'></div></div>"
+                            $('.post-list').appendChild(post)    
+                            }                        
+                        }
                     }
                     showitem()
                 }

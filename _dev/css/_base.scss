@@ -1,9 +1,6 @@
 html,
 body {
   background: $bg;
-  height: 100%;
-  width: 100%;
-  margin: 0px;
 }
 
 img[src=""] {
@@ -40,8 +37,6 @@ a {
 }
 
 .container {
-    background: $white;
-    box-shadow: 0 0 0 1px $b_white, 0 2px 3px rgba(0,0,0,.2);
     margin: $unit auto;
     min-height: 880px;
     @include media-query($on-palm) {
