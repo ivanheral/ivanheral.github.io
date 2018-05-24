@@ -156,7 +156,7 @@ doc.addEventListener('scroll', scroll)
 function scroll() {
     const scroll = $('html').scrollTop
     if (!stop) {
-        $('.tags').style.marginTop = '15px'
+        $('.tags').style.marginTop = '0px'
         if (scroll > 45) {
             $('.tags').style.marginTop = (scroll - 10).toString() + 'px'
             addclss($('.tags'), 'fixed')
