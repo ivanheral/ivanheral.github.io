@@ -29,7 +29,7 @@
         min-height: 300px;
     }
     background: $white;
-    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
     @include media-query($on-laptop) {
         width: 100%;
         margin-left: 0px;
@@ -39,7 +39,7 @@
         transition: opacity 0.75s ease-out;
         -webkit-transition: opacity 0.75s ease-out;
         overflow: hidden;
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
         width: $width_post;
         color: $blue;
         margin: $unit;
@@ -51,7 +51,7 @@
             }
         }
         .post-meta {
-            font-size: 1rem;
+            font-size: .95rem;
             color: $text;
         }
         @include media-query($on-laptop) {
@@ -245,7 +245,7 @@ article {
     width: $width_article;
     max-width: $width_article;
     background: $white;
-    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
     .info_post {
         width: 100%;
         padding: 0px;
