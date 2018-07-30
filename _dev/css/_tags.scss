@@ -37,11 +37,11 @@
 #search {
     -webkit-appearance: none;
     input {
-        float: right;
         width: 60px;
         border: none;
         background: none;
         padding: 10px;
+        font-size: 1rem;
         &:focus {
             outline: none;
         }

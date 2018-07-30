@@ -1,11 +1,24 @@
-<div class="elem"> {% if include.video %}
+<div class="elem"> 
+    {% if include.video %}
         <div class="wall_overflow">
-           <img src="http://img.youtube.com/vi/{{include.video}}/mqdefault.jpg" id="{{include.video}}">
-
-        </div> {% endif %} {% if include.svg %} {{ include.svg }} {% endif %} {% if include.gif %}
+        <img src="http://img.youtube.com/vi/{{include.video}}/mqdefault.jpg" id="{{include.video}}">
+        </div> 
+    {% endif %}
+    {% if include.coub %}
+    <div style="padding-top: 56.25%; position: relative;">
+            <iframe src="//coub.com/embed/{{include.coub}}?" allowfullscreen="" frameborder="0" height="100%" width="100%" allow="autoplay"></iframe>
+    </div>
+    {% endif %}
+    {% if include.gif %}
         <div class="wall_overflow gif">
-        <img class="gif" src="//media2.giphy.com/media/{{include.gif}}/giphy_s.gif"></div> {% endif %} {% if include.img %} <img src="{{ include.img | prepend: site.baseurl }}">
-         {% endif %} {% if include.title %}
+        <img class="gif" src="//media2.giphy.com/media/{{include.gif}}/giphy_s.gif"></div> 
+    {% endif %} 
+    {% if include.img %} 
+        <img src="{{ include.img | prepend: site.baseurl }}">
+    {% endif %} 
+    {% if include.title %}
         <div class="title-photo">
             <p>{{include.title}}</p>
-</div> {% endif %} </div>
+        </div> 
+    {% endif %} 
+</div>

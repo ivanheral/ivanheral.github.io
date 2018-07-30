@@ -29,27 +29,43 @@
         min-height: 300px;
     }
     background: $white;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .25);
     @include media-query($on-laptop) {
         width: 100%;
         margin-left: 0px;
         margin-top: 0px;
     }
+    >.square {
+        width: 100%;
+        & > .table {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        .table > div {
+            text-align: center;
+            vertical-align: middle;
+            display: table-cell;
+            color: gray;
+            font-size: 92px;
+        }
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+    }
     >.post {
         transition: opacity 0.75s ease-out;
         -webkit-transition: opacity 0.75s ease-out;
         overflow: hidden;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .2);
+        border-radius: 2px;
+        overflow: hidden;
         width: $width_post;
         color: $blue;
         margin: $unit;
         float: left;
-        &.null {
-            box-shadow: none;
-            .post-meta, .post-title { 
-                background: #e3e3e3;
-            }
-        }
         .post-meta {
             font-size: .95rem;
             color: $text;
@@ -216,6 +232,9 @@
 }
 
 .important {
+    width: auto;   
+    float: none; 
+    margin-bottom: 0em;
     .wall_img {
         border: 1px solid $b_white;
     }
@@ -245,7 +264,7 @@ article {
     width: $width_article;
     max-width: $width_article;
     background: $white;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .25);
     .info_post {
         width: 100%;
         padding: 0px;

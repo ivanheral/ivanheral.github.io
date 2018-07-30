@@ -1,13 +1,32 @@
 
-var myCanvas = document.getElementById("test");
+var mytest = document.getElementById("test");
+var mykb = document.getElementById("kb");
 
-var Test = new BarGraph({
-    canvas: myCanvas
+var Posts = new BarGraph({
+    canvas: mytest
 });
 
-Test.draw([{
+var Testing = new BarGraph({
+    canvas: mykb
+});
+
+Posts.draw([{
     title: "cine",
     val: 3
+}, {
+    title: "random",
+    val: 2
+}, {
+    title: "opinión",
+    val: 4
+}, {
+    title: "tutorial",
+    val: 9
+}]);
+
+Testing.draw([{
+    title: "cine",
+    val: 13
 }, {
     title: "random",
     val: 2
@@ -61,11 +80,6 @@ function BarGraph(options) {
                 ratio = arr[i].val / this.maxValue;
 
             barHeight = ratio * maxBarHeight;
-            this.ctx.fillStyle='#ddd';
-            this.ctx.fillRect((this.margin + i * this.width / numOfBars) -1,
-                this.height - barHeight + 2,
-                barWidth+1,
-                barHeight-45);
 
             this.ctx.fillStyle = colors[i];
  

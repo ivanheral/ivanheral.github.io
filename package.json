@@ -15,22 +15,6 @@
   "bugs": {
     "url": "https://github.com/ivanheral/ivanheral.github.io/issues"
   },
-  "xo": {
-    "semicolon": false,
-    "space": true,
-    "rules": {
-      "no-trailing-spaces": "off",
-      "indent": "off",
-      "semi": "off",
-      "camelcase": "off"
-    },
-    "globals": [
-      "document",
-      "localStorage",
-      "window",
-      "fetch"
-    ]
-  },
   "homepage": "https://github.com/ivanheral/ivanheral.github.io#readme",
   "devDependencies": {
     "@taskr/browserify": "^1.1.0",

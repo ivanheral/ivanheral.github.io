@@ -59,7 +59,7 @@ $('#links').addEventListener('click', change_section)
 function change_section(e) {
     window.scrollTo(0, 0)
     search = '';
-  [].forEach.call(all('.categories .link'), elem => {
+    [].forEach.call(all('.categories .link'), elem => {
         delclss(elem, 'select')
     })
     section = e.target.id;
@@ -89,7 +89,7 @@ function load_posts() {
 
 function posts(v, i) {
     const post = doc.createElement('a')
-    post.className = 'post'
+    post.className = 'post elem'
     post.href = v.url
     post.id = i.toString()
     $('.post-list').appendChild(post)
@@ -105,8 +105,6 @@ function load() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
-          
-
             data.forEach((val, i) => {
                 if (search !== '') {
                     if (val.title.toUpperCase().indexOf(search.toUpperCase()) > -1) {
@@ -121,12 +119,10 @@ function load() {
                         $('.site-title').innerHTML = count + ' posts'
                         $('.post-list').style.height = 'auto'
                         if (count == 0) {
-                            for(i = 0; i<6; i++){
-                            const post = doc.createElement('a')
-                            post.className = 'post null'                            
-                            post.innerHTML = "<div class='wall_img'></div><div class='info_post'><div class='post-title'></div><div class='post-meta'></div></div>"
-                            $('.post-list').appendChild(post)    
-                            }                        
+                            const post = doc.createElement('div')
+                            post.className = 'square'
+                            post.innerHTML = "<div class='table'><div>¿?</div></div>"
+                            $('.post-list').appendChild(post)
                         }
                     }
                     showitem()
@@ -134,13 +130,13 @@ function load() {
             })
         }
     }
-
     xhttp.open("GET", '/json/search.json', true);
     xhttp.send();
 }
 
 /* ready */
 doc.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("search_input").focus();
     if (window.location.pathname.indexOf('tutorial') >= 0)
         add_script('prism')
     if ($('.chart')) add_script('chart')
@@ -172,15 +168,11 @@ function isscroll(elem, n) {
 }
 
 function showitem() {
-    const n = [].slice.call(all('.wall_img'))
-    const n_2 = [].slice.call(all('.wall_overflow'))
-    let total = n.concat(n_2)
+    let total = [].slice.call(all('.elem > div'))
     let disqus = $(".disqus")
-    if (disqus != undefined && !comments) {
-        if (isscroll(disqus, 720)) {
-            comments = true;
-            act_disqus()
-        }
+    if (disqus != undefined && !comments && isscroll(disqus, 720)) {
+        comments = true;
+        act_disqus()
     }
     total.map((val, i) => {
         var src = val.children[0].src;

@@ -5,7 +5,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
 # Site settings
-title: blog
+title: Escribo cosas
 email: ivanheral@domain.com
 description: "Blog sobre cine, linux, desarrollo y opiniones."
 baseurl: "" # the subpath of your site, e.g. /blog
