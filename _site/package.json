@@ -1,0 +1,42 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Blog de Ivan Heral",
+  "main": "index.js",
+  "scripts": {
+    "start": "taskr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanheral/ivanheral.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanheral/ivanheral.github.io/issues"
+  },
+  "homepage": "https://github.com/ivanheral/ivanheral.github.io#readme",
+  "devDependencies": {
+    "@taskr/browserify": "^1.1.0",
+    "@taskr/clear": "^1.1.0",
+    "@taskr/esnext": "^1.1.0",
+    "@taskr/htmlmin": "^1.1.0",
+    "@taskr/postcss": "^1.1.2",
+    "@taskr/sass": "^1.1.0",
+    "@taskr/uglify": "^1.1.0",
+    "@taskr/watch": "^1.1.0",
+    "babel-core": "^6.26.0",
+    "babel-minify": "^0.2.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.18.13",
+    "connect-history-api-fallback": "^1.3.0",
+    "cssnano": "^3.10.0",
+    "execa": "^0.8.0",
+    "frappe-charts": "^0.0.4",
+    "ganalytics": "^3.0.0",
+    "prismjs": "^1.8.1",
+    "taskr": "^1.1.0",
+    "taskr-autoprefixer": "^1.0.0"
+  }
+}

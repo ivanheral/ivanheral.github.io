@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <title>Tutorial. Entorno con Taskr, Rollup y Yarn</title>
+    <meta name="description" content="Tutorial. Entorno con Taskr, Rollup y Yarn">
+    <link rel="stylesheet" href=" /css/app.css ">
+    <link rel="canonical" href="http://localhost:4000/tutorial/2017/02/11/entorno-desarrollo-taskr-rollup-yarn.html">
+    <link rel="apple-touch-icon" sizes="57x57" href="/files/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/files/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/files/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/files/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/files/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/files/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/files/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/files/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/files/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/files/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/files/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/files/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/files/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/files/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script type="text/javascript">
+        var disqus_shortname = 'ivanheral';
+        var disqus_identifier = "/tutorial/2017/02/11/entorno-desarrollo-taskr-rollup-yarn.html";
+    </script>
+    <!-- Enables twitter cards on posts -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@ivanheral" />
+<meta name="twitter:title" content="Tutorial. Entorno con Taskr, Rollup y Yarn" />
+<meta name="twitter:description" content="Tutorial. Entorno con Taskr, Rollup y Yarn" />
+<meta name="twitter:url" content="http://localhost:4000/tutorial/2017/02/11/entorno-desarrollo-taskr-rollup-yarn.html" />
+<meta name="twitter:image" content="http://localhost:4000/files/images/desarrollo/yarn.png" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container"><div class="tags">
+    <div class="title">
+        <a class="site-title" href="/">BLOG</a>
+        <div id="search">
+            <input id="search_input" type="text" maxlength="5">
+        </div>
+    </div>
+    <div class="categories" id="links">
+        <div class="link" id="cine">Cine
+            <span>3</span>
+        </div>
+        <div class="link" id="random">Random
+            <span>2</span>
+        </div>
+        <div class="link" id="opinion">Opinión
+            <span>4</span>
+        </div>
+        <div class="link" id="tutorial">Tutorial
+            <span>9</span>
+        </div>
+        <a class="link return" id="blog">Volver al post</a>
+    </div>
+</div>
+<div class="post-list"></div>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="article">
+    <header class="elem important">
+      <div class="wall_img">
+      
+      <img src="/files/images/desarrollo/yarn.png"/>
+      
+      </div>
+   <div class="info_post">
+    <div class="post-title post" itemprop="name headline">Tutorial. Entorno con Taskr, Rollup y Yarn</div>
+    <div class="post-meta">
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person"></span><span itemprop="name">ivanheral,</span>
+    <time datetime="2017-02-11T15:00:00+01:00" itemprop="datePublished"> 
+11 
+Febrero
+  
+        2017</time>
+
+       </div>
+</div>
+  </header>
+    <div class="share-page">
+    <div class="social-media-list">
+        <a href="https://twitter.com/intent/tweet?text=Tutorial. Entorno con Taskr, Rollup y Yarn&url=http://http://localhost:4000/tutorial/2017/02/11/entorno-desarrollo-taskr-rollup-yarn.html">
+            <svg viewBox="0 0 32 32" fill="#1da1f2" width="36">
+                <path d="M 16,2 C 8.2680079,2 2,8.2680053 2,16 2,23.731995 8.2680079,30 16,30 23.731992,30 30,23.731995 30,16 30,8.2680053 23.731992,2 16,2 Z" fill="#fff"></path>
+                <path d="M 16,1 C 7.7157227,1 1,7.71572 1,16 1,24.28428 7.7157227,31 16,31 24.284277,31 31,24.28428 31,16 31,7.71572 24.284277,1 16,1 Z m 7.45541,11.17617 c 0.0074,0.165 0.01113,0.33094 0.01113,0.4977 0,5.0833 -3.869238,10.94496 -10.944844,10.94496 -2.172363,0 -4.1943748,-0.63686 -5.8967576,-1.7284 0.3009375,0.0357 0.6071484,0.0539 0.9176367,0.0539 1.8022852,0 3.4609569,-0.615 4.7774999,-1.64678 -1.68334,-0.0309 -3.1039452,-1.14316 -3.593496,-2.67141 0.2349024,0.0449 0.4758985,0.0691 0.72375,0.0691 0.3508594,0 0.690762,-0.0472 1.013438,-0.13506 -1.759688,-0.35349 -3.0857231,-1.90816 -3.0857231,-3.77197 0,-0.0162 0,-0.0323 3.5e-4,-0.0484 0.5185547,0.28811 1.1117579,0.46119 1.7422852,0.48118 -1.0321875,-0.68983 -1.7113477,-1.86727 -1.7113477,-3.20192 0,-0.705 0.1897266,-1.36582 0.5208985,-1.93389 1.8972656,2.32735 4.7317391,3.85875 7.9287311,4.01924 -0.06557,-0.2816 -0.09961,-0.57515 -0.09961,-0.87668 0,-2.12437 1.722421,-3.84662 3.846797,-3.84662 1.106425,0 2.10621,0.46711 2.807871,1.21471 0.876211,-0.17244 1.699454,-0.4926 2.442774,-0.93346 -0.287227,0.8983 -0.897188,1.65217 -1.691367,2.12824 0.778125,-0.093 1.519511,-0.29976 2.209336,-0.60568 -0.515451,0.77133 -1.167599,1.44885 -1.919356,1.99119 z"></path>
+            </svg>
+        </a>
+        <a href="https://facebook.com/sharer.php?u=http://localhost:4000/tutorial/2017/02/11/entorno-desarrollo-taskr-rollup-yarn.html" rel="nofollow" target="_blank" title="Compartir en Facebook">
+            <svg viewBox="0 0 32 32" fill="#3b5998" width="36">
+                <path d="M 16,2 C 8.2680079,2 2,8.2680053 2,16 2,23.731995 8.2680079,30 16,30 23.731992,30 30,23.731995 30,16 30,8.2680053 23.731992,2 16,2 Z" fill="#fff"></path>
+                <path d="M 16 1 C 7.7157227 1 1 7.71572 1 16 C 1 24.28428 7.7157227 31 16 31 C 24.284277 31 31 24.28428 31 16 C 31 7.71572 24.284277 1 16 1 z M 18.220703 8.9140625 L 19.433594 8.9140625 L 19.433594 10.189453 L 19.433594 11.462891 L 18.636719 11.472656 C 17.779565 11.483924 17.67147 11.497903 17.478516 11.595703 C 17.353545 11.659021 17.271471 11.750554 17.212891 11.896484 C 17.168061 12.009479 17.168333 12.03027 17.158203 12.873047 C 17.150928 13.346665 17.150391 13.7418 17.150391 13.75 C 17.153718 13.75825 17.674335 13.765625 18.306641 13.765625 L 19.457031 13.765625 L 19.445312 13.849609 C 19.439383 13.89588 19.379257 14.469009 19.310547 15.125 L 19.183594 16.320312 L 18.158203 16.320312 L 17.134766 16.320312 L 17.134766 19.703125 C 17.134766 21.563327 17.148438 23.085938 17.148438 23.085938 L 14.068359 23.085938 L 14.068359 20.007812 L 14.068359 16.320312 L 13.306641 16.320312 L 12.542969 16.320312 L 12.542969 15.042969 L 12.542969 13.765625 L 13.304688 13.765625 L 14.064453 13.765625 L 14.074219 12.730469 C 14.084268 11.66864 14.094057 11.525352 14.179688 11.103516 C 14.263218 10.691927 14.451439 10.255344 14.673828 9.9589844 C 15.112819 9.3740849 15.82538 9.031279 16.789062 8.9375 C 16.915264 8.925205 17.512171 8.9140625 18.220703 8.9140625 z"></path>
+            </svg>
+        </a>
+        <a href="https://plus.google.com/share?url=http://localhost:4000/tutorial/2017/02/11/entorno-desarrollo-taskr-rollup-yarn.html" rel="nofollow" target="_blank" title="Compartir en Google+">
+            <svg viewBox="0 0 32 32" fill="#dd4b39" width="36">
+                <path d="M 16,2 C 8.2680079,2 2,8.2680053 2,16 2,23.731995 8.2680079,30 16,30 23.731992,30 30,23.731995 30,16 30,8.2680053 23.731992,2 16,2 Z" fill="#fff"></path>
+                <path d="M 16,1 C 7.7148437,1 1,7.71484 1,16 1,24.28516 7.7148437,31 16,31 24.285156,31 31,24.28516 31,16 31,7.71484 24.285156,1 16,1 Z m -3.75,22.5 c -4.1484375,0 -7.5,-3.35156 -7.5,-7.5 0,-4.14844 3.3515625,-7.5 7.5,-7.5 2.027344,0 3.720703,0.73828 5.027344,1.96289 l -2.039063,1.95703 c -0.55664,-0.5332 -1.529297,-1.1543 -2.988281,-1.1543 -2.5605469,0 -4.6523438,2.1211 -4.6523438,4.73438 0,2.61328 2.0917969,4.73437 4.6523438,4.73437 2.970703,0 4.083984,-2.13281 4.253906,-3.23437 l -4.253906,0 0,-2.57227 7.083984,0 c 0.06445,0.375 0.117188,0.75 0.117188,1.24219 0,4.28906 -2.871094,7.33008 -7.201172,7.33008 z m 13.125,-7.5 0,1.875 -1.875,0 0,-1.875 -1.875,0 0,-1.875 1.875,0 0,-1.875 1.875,0 0,1.875 1.875,0 0,1.875 -1.875,0 z"></path>
+            </svg>
+        </a>
+        <a href="whatsapp://send?text=http://localhost:4000/tutorial/2017/02/11/entorno-desarrollo-taskr-rollup-yarn.html" data-action="share/whatsapp/share" title="Compartir en Whatsapp">
+            <svg viewBox="0 0 32 32" fill="#25d366" width="36">
+               <path d="M 16,2 C 8.2680079,2 2,8.2680053 2,16 2,23.731995 8.2680079,30 16,30 23.731992,30 30,23.731995 30,16 30,8.2680053 23.731992,2 16,2 Z" fill="#fff"></path>
+                <path d="M 16 1 C 7.714844 1 1 7.71484 1 16 C 1 24.28516 7.714844 31 16 31 C 24.285156 31 31 24.28516 31 16 C 31 7.71484 24.285156 1 16 1 z M 15.826172 7.96875 C 17.719967 7.9190994 19.609469 8.5444916 21.119141 9.8046875 C 24.251463 12.419388 24.922373 16.966902 22.673828 20.349609 C 21.35021 22.340858 19.208051 23.635369 16.826172 23.884766 C 16.289167 23.940993 15.212259 23.90964 14.738281 23.824219 C 13.934021 23.679273 13.258955 23.465333 12.552734 23.130859 L 12.193359 22.960938 L 10.144531 23.498047 C 9.0180753 23.79335 8.0754821 24.035156 8.0488281 24.035156 C 8.0221746 24.035156 7.9998695 24.021696 8 24.005859 C 8.000096 23.990023 8.2492788 23.069482 8.5527344 21.960938 L 9.1035156 19.945312 L 8.9023438 19.542969 C 7.372748 16.484356 7.9255017 12.863186 10.300781 10.392578 C 10.924939 9.7433704 11.6449 9.2195778 12.494141 8.796875 C 13.552189 8.2702394 14.689895 7.9985404 15.826172 7.96875 z M 15.896484 9.3183594 C 14.280513 9.3509895 12.677611 9.9703301 11.441406 11.169922 C 10.819174 11.773725 10.410007 12.336431 10.054688 13.074219 C 9.0784067 15.10138 9.1903409 17.458003 10.357422 19.388672 C 10.453152 19.547035 10.532851 19.712452 10.533203 19.755859 C 10.533539 19.799266 10.394964 20.341707 10.224609 20.960938 C 10.054254 21.580168 9.9280422 22.100094 9.9453125 22.117188 C 9.9625823 22.134281 10.495452 22.012921 11.128906 21.845703 C 11.76236 21.678486 12.316185 21.541487 12.359375 21.541016 C 12.402565 21.540536 12.61012 21.635573 12.820312 21.751953 C 13.515098 22.136644 14.317945 22.40404 15.125 22.519531 C 15.672283 22.597849 16.72143 22.568401 17.265625 22.460938 C 19.313646 22.056509 21.027607 20.754669 21.958984 18.892578 C 23.292575 16.226351 22.666178 12.98848 20.427734 10.988281 C 19.142242 9.8396084 17.512456 9.2857292 15.896484 9.3183594 z M 13.398438 12.248047 C 13.690698 12.247778 13.85018 12.302382 13.933594 12.429688 C 14.051098 12.609023 14.679687 14.177516 14.679688 14.291016 C 14.679688 14.449536 14.568539 14.64278 14.279297 14.988281 C 14.140282 15.154336 14.027341 15.32567 14.027344 15.371094 C 14.027355 15.552239 14.682081 16.444515 15.091797 16.820312 C 15.582564 17.270452 16.269579 17.700422 16.837891 17.912109 C 17.007093 17.975135 17.027281 17.974924 17.117188 17.916016 C 17.170255 17.881244 17.343528 17.69297 17.503906 17.498047 C 18.023563 16.866461 17.961155 16.919637 18.154297 16.941406 C 18.342782 16.962651 19.918558 17.714868 20.011719 17.828125 C 20.051765 17.87681 20.060192 17.971843 20.044922 18.208984 C 20.022075 18.563771 19.922439 18.865285 19.765625 19.052734 C 19.596505 19.254893 19.250926 19.494809 18.941406 19.625 C 18.683166 19.733621 18.606544 19.747361 18.193359 19.759766 C 17.82738 19.770753 17.676379 19.759365 17.462891 19.701172 C 16.760643 19.509755 15.828554 19.105949 15.296875 18.761719 C 13.991747 17.91673 12.491111 16.13101 12.113281 14.974609 C 11.81718 14.068352 11.993186 13.222995 12.607422 12.589844 C 12.885638 12.30306 13.008745 12.248403 13.398438 12.248047 z"></path>
+            </svg>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/tutorial/2017/02/11/entorno-desarrollo-taskr-rollup-yarn.html&title=Tutorial. Entorno con Taskr, Rollup y Yarn&source=/files/images/desarrollo/yarn.png" title="Compartir en LinkedIn">
+            <svg viewBox="0 0 32 32" fill="#0077b5" width="36">
+                <path d="M 16,2 C 8.2680079,2 2,8.2680053 2,16 2,23.731995 8.2680079,30 16,30 23.731992,30 30,23.731995 30,16 30,8.2680053 23.731992,2 16,2 Z" fill="#fff"></path>
+                <path d="M 14.750337,30.980631 C 11.17024,30.656347 7.8226318,29.093744 5.3272841,26.582118 3.1212435,24.361686 1.7152719,21.645388 1.1520474,18.515682 1.0164827,17.762381 0.99864679,17.462107 0.99997912,15.955503 1.0016539,14.142483 1.051403,13.682363 1.3950298,12.307035 1.8987338,10.291011 2.9195695,8.237465 4.2442783,6.575391 6.2514462,4.057055 9.1924166,2.166258 12.316314,1.385751 c 1.375328,-0.343626 1.835447,-0.39344797 3.648467,-0.39504997 1.506605,-0.0013 1.806879,0.01651 2.56018,0.15206897 3.129706,0.563223 5.846004,1.969195 8.066436,4.175236 2.294872,2.279998 3.737464,5.132894 4.28353,8.471189 0.165625,1.012553 0.166777,3.312326 0.0022,4.363097 -1.03618,6.614843 -6.081773,11.68267 -12.647554,12.703277 -0.663339,0.10311 -2.852718,0.181807 -3.47922,0.125061 z M 12.1085,17.941284 l 0.01683,-5.10395 h -1.667343 c -1.4598428,0 -1.6723022,0.01293 -1.7071891,0.103836 -0.073098,0.190488 -0.045297,9.872703 0.028701,10.01105 0.065564,0.122505 0.1396105,0.127346 1.6903771,0.110564 l 1.62181,-0.01754 z m 5.333309,1.920136 c 0.03246,-3.148941 0.0345,-3.187143 0.18248,-3.487575 0.186714,-0.37897 0.529009,-0.736132 0.887956,-0.926511 0.217563,-0.115392 0.385427,-0.146254 0.800464,-0.147153 0.453135,-9.3e-4 0.566391,0.02308 0.825723,0.175557 0.347514,0.204302 0.59225,0.542414 0.756127,1.044636 0.101156,0.310008 0.120242,0.738848 0.153075,3.439511 l 0.03751,3.085346 h 1.641137 1.641143 v -3.544863 c 0,-3.505479 -0.0017,-3.550667 -0.151193,-4.067071 -0.43951,-1.518032 -1.401927,-2.465659 -2.802862,-2.75979 -1.357005,-0.284908 -2.577712,0.05401 -3.45786,0.960048 -0.240985,0.248071 -0.45405,0.451045 -0.473468,0.451045 -0.01944,0 -0.0438,-0.273246 -0.05421,-0.607222 l -0.0189,-0.607221 h -1.673914 -1.673964 l -0.01696,5.021893 c -0.0093,2.76204 -0.0027,5.059328 0.01475,5.10508 0.02476,0.06477 0.399095,0.0793 1.690934,0.06564 l 1.659179,-0.01754 z m -6.039402,-8.654896 c 0.402282,-0.209419 0.573796,-0.379057 0.773722,-0.765257 C 12.418167,9.973719 12.416447,9.330638 12.171929,8.856 11.839233,8.210295 11.286981,7.913907 10.416554,7.913907 c -1.1085148,0 -1.8525148,0.704625 -1.8530653,1.754996 -3.725e-4,0.742231 0.4383106,1.366358 1.1529114,1.640214 0.1214466,0.04654 0.4565609,0.07404 0.7998319,0.06564 0.472865,-0.01156 0.649783,-0.04518 0.886216,-0.168237 z"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+  <div class="post-content" itemprop="articleBody">
+    <p>¿Cansado de utilizar grunt/gulp para tus proyectos web? ¿Has intentado dar el salto a webpack pero te ha parecido engorroso y poco intuitivo? No te preocupes. Hoy te presentamos <strong>Taskr</strong>, una alternativa que te permitirá realizar proyectos sencillos con una curva de aprendizaje muy baja.</p>
+
+<p><strong>Taskr</strong> es un generador de tareas/rutinas que se caracteriza por su sencillez y velocidad con respecto a otras alternativas. Estaba un poco abandonado, aunque en estos últimos meses ha podido resurgir de sus cenizas gracias a la ayuda  de <a href="http://github.com/lukeed">lukeed</a> y otros tantos.</p>
+
+<p>Antes que nada, necesitaremos una versión actualizada de node (mínimo 6.9), es importante recalcar esto para evitarnos sorpresas inesperadas cuando arranquemos con esto. En este tutorial os explicaremos como usarlo de manera rápida y clara para un proyecto de <strong>AngularJs</strong> como ejemplo. Sin más preámbulos, comenzamos.</p>
+
+<div class="elem"> 
+    
+    
+    
+        <div class="wall_overflow gif">
+        <img class="gif" src="//media2.giphy.com/media/5iAHCEdbyEZCo/giphy_s.gif" /></div> 
+     
+     
+    
+        <div class="title-photo">
+            <p>Es un pájaro, es un avión, no... Es Taskr!</p>
+        </div> 
+     
+</div>
+
+<p>Lo primero que tendremos que hacer es crearnos una carpeta llamada Taskr, en ella generaremos un <strong>package.json</strong> y un <strong>bower.json</strong> con los comandos <strong>npm init</strong> y <strong>bower init</strong> respectivamente. En estos ficheros instalaremos todo aquello que sea necesario para montar nuestra web, es importante recalcar que tendreis que instalar npm y bower previamente.</p>
+
+<p>A continuación, crearemos una carpeta <strong>src</strong> en la carpeta Taskr donde alojaremos las carpetas divididas según el tipo de ficheros que contengan: javascript, css, html, imagenes y vendors. Más adelante explicaremos que ficheros contendrán dichas carpetas con sus correspondientes rutas para no liarnos.</p>
+
+<p>Ahora pasaremos a generar nuestro <strong>taskfile.js</strong> en <strong>src</strong>, este fichero actuara como archivo de configuración cuando ejecutemos el comando <strong>taskr</strong>. En este fichero se escribirán las tareas que necesitemos. La estructura de ficheros y carpetas quedaría del siguiente modo:</p>
+<pre>
+    <code class="language-files">
+Taskr/ /* Carpeta raiz */
+--- src/ /* Carpeta src */
+-------- /css /* Los estilos */
+-------- /html /* Los htmls */
+-------- /img /* Las imagenes */
+-------- /js /* Los javascripts */
+-------- /vendors /* Librerias externas */
+--- package.json
+--- bower.json
+--- taskfile.js
+    </code>    
+</pre>
+
+<p>Bueno, ahora pasamos al quid de la cuestión. Nuestra aplicación de ejemplo estará basada en <strong>AngularJs</strong> como ya he dicho anteriormente con las siguientes características: tendrá dos páginas y estará en español/ingles. Por si esto no fuera suficiente, incluiremos librerías externas como leaflet para que muestren un mapa y darle un poco de vidilla. Todo esto lo instalaremos con los siguientes comandos desde la carpeta <strong>Taskr</strong>:</p>
+<pre>
+    <code class="language-bash">
+/* Instalamos angular y otros componentes relacionados con npm */
+npm install --save angular angular-ui-router angular-translate 
+
+/* Instalamos leaflet y su directiva para angular con bower. Escoger la 1.0.0 */
+bower install --save leaflet angular-leaflet-directive
+    </code>    
+</pre>
+
+<p>Ahora toca lo más importante. Instalamos Taskr junto a los siguientes plugins para echar a rodar el proyecto -&gt; <strong>@taskr/esnext:</strong> nos permitirá usar sintaxis ES6/7 en nuestro taskfile.js y crear tareas asíncronas. <strong>@taskr/clear:</strong> plugin para realizar borrados de ficheros. <strong>@taskr/watch:</strong> plugin que nos permite lanzar tareas cuando se produzcan modificaciones. Este sería el comando para empezar a “volar”:</p>
+<pre>
+<code class="language-bash">
+/* Instalamos taskr y algunos de sus plugins  */
+npm install --save-dev taskr @taskr/esnext @taskr/clear @taskr/watch
+</code>    
+</pre>
+
+<p><strong>taskfile.js:</strong> Retomamos con el archivo de configuración para centrarnos en su contenido. Este fichero se dividirá en 3 partes: (1) Declaración de variables, (2) Tarea <strong>default</strong> que se ejecutara al arrancar con el comando <strong>taskr</strong> por terminal y (3) Definición de nuestras propias tareas:</p>
+
+<pre>
+    <code class="language-js">
+/* (1) Declaración de variables */
+
+/* Tarea default */
+export default async function (task) {
+/* (2) Arranque de tareas */
+}
+/* (3) Definición de tareas */
+    </code>    
+</pre>
+
+<p>A partir de aquí nos centraremos en añadir tareas de forma acumulativa en la parte <strong>(3)</strong> desglosándolas en función del tipo de ficheros que vayamos a tratar (html, css, imagenes, js y vendors).</p>
+
+<p>Después de esto, incluiremos eventos <strong>@taskr/watch</strong> por cada una de estas tareas en la tarea <strong>default</strong>  (parte <strong>(2)</strong>, que no es os olvide). De este modo, nuestras tareas se ejecutarán cada vez que modifiquemos los ficheros que nosotros fijemos, ya sea mediante rutas o por extensiones de ficheros. 
+En la parte <strong>(1)</strong> se incluirán aquellos elementos ajenos a taskr y sus plugins pero que son fundamentales para generar nuestro proyecto. Os dejo a continuación las tareas que tendremos que añadir para realizar nuestra web de manera correcta según lo descrito anteriormente:</p>
+
+<div class="post-title page">Browser-sync</div>
+
+<p>Nuestra 1º tarea será montar todo nuestro proyecto en una carpeta denominada dist para posteriormente desplegarla y poder trabajar con ella en caliente. Esto no se conseguiría si no fuera por la inestimable ayuda de <strong>browser-sync</strong> y <strong>connect-history-api-fallback</strong>, así que pasamos a instalarlos:</p>
+<pre>
+    <code class="language-bash">
+/* Instalamos browser-sync y connect-history-api-fallback */
+npm install --save-dev browser-sync connect-history-api-fallback
+    </code>    
+</pre>
+
+<p><strong>Tarea serve.</strong> Ahora toca modificar nuestro <strong>taskfile.js</strong>. Definiremos unas variables para agregar browser-sync y connect-history-api-fallback. Declararemos una tarea <strong>serve</strong> para poder inicializar nuestro servidor de “pruebas” en la carpeta dist por el puerto 3000. Finalmente añadiremos la tarea <strong>serve</strong> en la tarea <strong>default</strong> de <strong>taskfile.js</strong> para que arranque con <strong>task.start</strong>:</p>
+<pre>
+    <code class="language-js">
+/* (1) Declaración de variables */
+var bs = require('browser-sync');
+var historyApiFallback = require('connect-history-api-fallback');
+
+export default async function (task) {
+/* (2) Arranque de tareas */
+    await task.start('serve')
+}
+
+/* (3) Definición de tareas */
+export async function serve(task) {
+    bs({
+        server: 'dist'
+        , middleware: [historyApiFallback()]
+    });
+}
+    </code>    
+</pre>
+
+<div class="post-title page">Imagenes</div>
+
+<p><strong>Tarea copyImg.</strong> Copiaremos nuestras imágenes de <strong>src/img</strong> a <strong>dist/img</strong>, ningún misterio al respecto. La tarea se llamará <strong>copyImg</strong> que se encargará de borrar con <strong>clear</strong> cualquier imagen de dist, recolectar todas las imágenes de <strong>src/img</strong> con <strong>source</strong> y finalmente duplicarlas a la carpeta <strong>dist/img</strong> con <strong>target</strong>.</p>
+
+<p>Añadiremos la tarea <strong>copyImg</strong> en la tarea <strong>default</strong> de <strong>taskfile.js</strong> y usaremos el evento <strong>task.watch</strong> para que se vuelva a ejecutar cada vez que detecte modificaciones en <strong>src/img</strong>:</p>
+
+<pre>
+    <code class="language-js">
+export default async function (task) {
+/* (2) Arranque de tareas */
+    await task.watch('src/img/**/*.*', 'copyImg')
+}
+
+/* (3) Definición de tarea copyImg */
+export async function copyImg(task) {
+    await task.clear(['dist/img/**/*.*']).source('src/img/**/*.*').target('dist/img')
+}
+    </code>    
+</pre>
+
+<div class="post-title page">Css</div>
+
+<p>Ahora toca un tema peliagudo como son los estilos. Necesitaremos dos plugins de Taskr: <strong>@taskr/sass</strong> (para usar precompiladores como sass) y <strong>taskr-autoprefixer</strong> (para añadir autoprefixer). También instalaremos <strong>bootstrap-sass</strong> para tener algo de chicha y poder trabajar:</p>
+
+<pre>
+    <code class="language-bash">
+/* Instalamos @taskr/sass, taskr-autoprefixer y bootstrap */
+npm install --save-dev @taskr/sass taskr-autoprefixer bootstrap-sass
+    </code>    
+</pre>
+
+<p><strong>src/css/app.sass:</strong> A continuación crearemos un fichero <strong>app.sass</strong> en la ruta <strong>src/css</strong> con los módulos necesarios para que nuestra web se muestre correctamente. Importaremos bootstrap desde <strong>node_modules</strong> y copiaremos el contenido del fichero <strong>bower_components/leaflet/dist/leaflet.css</strong> (previamente instalado con bower) en <strong>src/css/modules</strong> con el nombre <strong>leaflet.scss</strong>. Finalmente nuestro fichero app.sass quedaría del siguiente modo:</p>
+<pre>
+    <code class="language-sass">
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss'
+@import 'modules/leaflet.scss'
+    </code>    
+</pre>
+
+<p><strong>Tarea copyStyles.</strong> Esta tarea compilara el fichero <strong>src/css/app.sass</strong> gracias a los plugins <strong>@taskr/sass</strong> y <strong>taskr-autoprefixer</strong> dejando el resultado en la carpeta dist.</p>
+
+<p>Solo falta añadir un <strong>@taskr/watch</strong> en la tarea <strong>default</strong> de <strong>taskfile.js</strong> para que se vuelva a construir nuestro <strong>css</strong> cuando detecte modificaciones en algún fichero scss de <strong>src/css</strong> o en <strong>src/css/app.sass</strong>. Nuestro browser-sync (bs) se encargará de refrescar el <strong>app.css</strong> de dist cada vez que se ejecute <strong>copyStyles</strong>:</p>
+<pre>
+    <code class="language-js">
+export default async function (task) {
+/* (2) Arranque de tareas */
+    await task.watch(['src/css/**/*.scss', 'src/css/app.sass'], 'copyStyles')
+}
+
+/* (3) Definición de tarea copyStyles */
+export async function copyStyles(task) {
+    await task.source('src/css/app.sass').sass().autoprefixer().target('dist')
+    /* reload */
+    bs.reload('app.css')
+}
+    </code>    
+</pre>
+
+<div class="post-title page">Vendors</div>
+
+<p>Pasamos a las librerías externas. Necesitaremos el plugin <strong>@taskr/browserify</strong> para empaquetar todas estas librerías en un solo fichero <strong>vendors.js</strong> siendo posteriormente trasladado a la carpeta dist:</p>
+<pre>
+    <code class="language-bash">
+/* Instalamos @taskr/browserify */
+npm install --save-dev @taskr/browserify
+    </code>    
+</pre>
+
+<p><strong>src/vendors/vendors.js:</strong> Aquí indicaremos la ruta de los ficheros que necesitamos obligatoriamente para dibujar nuestro mapa con <strong>leaflet</strong> y que previamente instalamos con <strong>bower</strong>:</p>
+<pre>
+    <code class="language-js">
+require('../../bower_components/leaflet/dist/leaflet.js');
+require('../../bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js');
+    </code>    
+</pre>
+
+<p><strong>Tarea copyVendors.</strong> Esta tarea cogerá el fichero <strong>src/vendors/vendors.js</strong>, lo empaquetara y lo entregara en dist. Añadiremos un <strong>@taskr/watch</strong> que lance <strong>copyVendors</strong> cada vez que modifiquemos el fichero <strong>src/vendors/vendors.js</strong>. 
+Nuestro browser-sync (bs) se encargará de refrescar <strong>vendors.js</strong> de la carpeta dist cada vez que se ejecute <strong>copyVendors</strong>:</p>
+
+<pre>
+    <code class="language-js">
+export default async function (task) {
+/* (2) Arranque de tareas */
+    await task.watch('src/vendors/vendors.js', 'copyVendors')
+}
+
+/* (3) Definición de tareas */
+export async function copyVendors(task) {
+    await task.source('src/vendors/vendors.js').browserify().target('dist')
+    /* reload */
+    bs.reload('vendors.js')
+}
+    </code>    
+</pre>
+
+<div class="post-title page">Javascript</div>
+
+<p>Usaremos nuevamente el plugin @taskr/browserify para empaquetar toda nuestra app con <strong>AngularJs</strong> pero con el añadido de usar babel para pasar nuestro código de ES6 a ES5. Necesitaremos instalar los siguientes paquetes:</p>
+<pre>
+    <code class="language-bash">
+/* Instalamos babelify y babel-preset-es2015 */
+npm install --save-dev babelify babel-preset-es2015
+    </code>    
+</pre>
+
+<p>Pasaremos a enumerar los 4 ficheros que contendrá <strong>src/js</strong> para completar el armazón de nuestra aplicación:</p>
+
+<p><strong>src/js/app.js.</strong> Este fichero importara angular y sus módulos (<strong>app.modules.js</strong>) junto a los dos controladores (<strong>header</strong> y <strong>home</strong>). Tan solo nos quedara configurar las traducciones y las rutas:</p>
+<pre>
+    <code class="language-js">
+import * as App from './app.modules.js'
+import * as Home from './controllers/home-controller.js'
+import * as Header from './controllers/header-controller.js'
+let app = angular.module('app', ['app.map', 'app.header', 'ui.router', 'pascalprecht.translate', 'leaflet-directive'])
+router.$inject = ['$stateProvider', '$urlRouterProvider']
+
+function router($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/map/ivan')
+    var mapState = {
+        url: '/map/:id'
+        , views: {
+            '@': {
+                templateUrl: './views/map.html'
+            }
+        }
+    }
+    var aboutState = {
+        url: '/about'
+        , views: {
+            '@': {
+                templateUrl: './views/about.html'
+            }
+        }
+    }
+    $stateProvider.state('map', mapState)
+    $stateProvider.state('about', aboutState)
+}
+translation.$inject = ['$translateProvider']
+
+function translation($translateProvider) {
+    $translateProvider.translations('es', {
+        MAP: 'Mapa'
+        , ABOUT: 'Sobre mi'
+        , BUTTON_LANG_EN: 'ingles'
+        , BUTTON_LANG_ES: 'español'
+    })
+    $translateProvider.translations('en', {
+        MAP: 'Map'
+        , ABOUT: 'About me'
+        , BUTTON_LANG_EN: 'english'
+        , BUTTON_LANG_ES: 'spanish'
+    })
+    $translateProvider.preferredLanguage('es')
+}
+app.config(router).config(translation)
+    </code>    
+</pre>
+
+<p><strong>src/js/app.modules.js:</strong> Aquí importaremos angular, angular-ui-router y angular-translate. Este fichero nos servirá también para registrar los módulos que empleemos. <strong>app.map</strong> será el modulo del controlador para visualizar el mapa y <strong>app.header</strong> se encargara de permitirnos cambiar el idioma:</p>
+<pre>
+    <code class="language-js">
+import angular from 'angular'
+import router from 'angular-ui-router'
+import translate from 'angular-translate'
+
+/* register Modules */
+angular.module('app.map', [])
+angular.module('app.header', [])
+    </code>    
+</pre>
+
+<p><strong>src/js/controllers/header-controller.js.</strong> Este es el modulo <strong>app.header</strong> con un constructor <strong>headerController</strong> que tiene una función para cambiar el idioma:</p>
+
+<pre>
+    <code class="language-js">
+angular.module('app.header').controller('headerController', ['$scope', '$translate', function ($scope, $translate) {
+    $scope.changeLanguage = function (key) {        
+        $translate.use(key);          
+    };
+}]);
+    </code>    
+</pre>
+
+<p><strong>src/js/controllers/home-controller.js.</strong> Este es el modulo <strong>app.map</strong> con un constructor <strong>homeController</strong> que tiene un centro con sus coordenadas y un <strong>id</strong> para visualizar el parámetro <strong>id</strong> de la url <strong>map/:id</strong>:</p>
+
+<pre>
+    <code class="language-js">
+angular.module('app.map').controller('homeController', ['$scope', '$stateParams', function ($scope, $stateParams) {
+    
+    $scope.center = {
+        lat: 51.505,
+        lng: -0.09,
+        zoom: 8
+    };
+    
+    let self = this;
+    self.id = $stateParams.id;
+}]);
+    </code>    
+</pre>
+
+<p><strong>Tarea babel.</strong> Esta tarea compilara el fichero <strong>src/js/app.js</strong> gracias al plugin <strong>@taskr/browserify</strong> dejando el resultado en la carpeta dist. Solo falta añadir un <strong>@taskr/watch</strong> en la tarea <strong>default</strong> de <strong>taskfile.js</strong> para que se vuelva a construir nuestro <strong>app.js</strong> cuando detecte modificaciones en algún fichero js de <strong>src/js</strong>. Nuestro browser-sync (bs) se encargará de refrescar el <strong>app.js</strong>.</p>
+
+<p>Usaremos una variable <strong>is_js</strong> para controlar modificaciones masivas de ficheros javascript, de esta forma nos aseguramos que construye la app una sola vez ante múltiples guardados simultáneos:</p>
+<pre>
+    <code class="language-js">
+/* (1) Declaración de variables */
+var is_js = 0;
+
+export default async function (task) {
+/* (2) Arranque de tareas */
+    await task.watch('src/js/**/*.js', 'babel')
+}
+
+/* (3) Definición de tareas */
+export async function babel(task) {
+    is_js += 1;
+    if (is_js == 1) {
+        await task.source('src/js/app.js').browserify({
+            transform: [require("babelify").configure({
+                presets: ['es2015']
+            })]
+        }).target('dist')
+    }
+    is_js -= 1;
+    if (is_js == 0) bs.reload('app.js')
+}
+    </code>    
+</pre>
+
+<div class="post-title page">Html</div>
+
+<p><strong>Tarea copyHtml.</strong> Copiaremos nuestros htmls de <strong>src/html</strong> a dist. La tarea se llamará <strong>copyHtml</strong> que se encargará de borrar con <strong>clear</strong> cualquier html de dist, recolectar todas los htmls de <strong>src/html</strong> con <strong>source</strong> y finalmente duplicarlas a la carpeta dist con <strong>target</strong>:</p>
+<pre>
+    <code class="language-js">
+export default async function (task) {
+/* (2) Arranque de tareas */
+    await task.watch('src/html/**/*.html', 'copyHtml')
+}
+
+/* (3) Definición de tareas */
+export async function copyHtml(task) {
+    await task.clear(['dist/**/*.html']).source('src/html/**/*.html').target('dist')
+    /* reload */
+    bs.reload('**/*.html')
+}
+    </code>    
+</pre>
+
+<p><strong>src/html/index.html.</strong> Fichero principal que tirara del <strong>app.js</strong> y <strong>vendors.js</strong> creados por las tareas <strong>babel</strong> y <strong>copyVendors</strong>. Se usará un componente <strong>commons/menu.html</strong> para representar un menu de navegacion. Por último, incluiremos el <strong>app.css</strong> creado por <strong>copyStyles</strong> en el index:</p>
+<pre>
+    <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Angular&lt;/title&gt;
+    &lt;link rel="stylesheet" href="app.css"&gt;
+&lt;/head&gt;
+&lt;body ng-app="app"&gt;
+    &lt;div class="container"&gt;
+        &lt;ng-include src="'./commons/menu.html'"&gt;&lt;/ng-include&gt;
+        &lt;ui-view&gt;&lt;/ui-view&gt;
+    &lt;/div&gt;
+    &lt;script src="app.js"&gt;&lt;/script&gt;
+    &lt;script src="vendors.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;    
+</code>
+</pre>
+
+<p><strong>src/html/views/map.html.</strong> La vista del mapa con su correspondiente etiqueta <strong>leaflet</strong> para representar nuestro mapa:</p>
+<pre>
+    <code class="language-html">
+&lt;div ng-controller="homeController as hd"&gt;
+    &lt;h1&gt;{{ 'MAP' | translate }} - id:{{hd.id}}&lt;/h1&gt;
+        &lt;leaflet lf-center="center" height="480px"&gt;&lt;/leaflet&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+<p><strong>src/html/views/about.html.</strong> Una vista muy sencilla que no necesita mucha explicación al respecto:</p>
+<pre>
+    <code class="language-html">
+&lt;h1&gt;{{ 'ABOUT' | translate }}&lt;/h1&gt; 
+</code>
+</pre>
+
+<p><strong>src/html/commons/menu.html.</strong> El menú de navegación para cambiar el idioma y alternar vistas según queramos:</p>
+<pre>
+    <code class="language-html">
+&lt;div ng-controller="headerController"&gt;
+    &lt;ol class="breadcrumb"&gt;
+        &lt;li&gt;&lt;a ui-sref="map" ui-sref-active="active"&gt;{{ 'MAP' | translate }}&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a ui-sref="about" ui-sref-active="active"&gt;Tutorial&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a ng-click="changeLanguage('en')"&gt;{{ 'BUTTON_LANG_EN' | translate }}&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a ng-click="changeLanguage('es')"&gt;{{ 'BUTTON_LANG_ES' | translate }}&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/div&gt;  
+    </code>
+</pre>
+
+<div class="post-title page">Yarn</div>
+
+<p>Habéis podido comprobar que nos hemos centrado en incluir eventos <strong>@taskr/watch</strong> dentro de la tarea default. Eso está muy bien para recargarnos nuestro proyecto cada vez que cambiemos alguna cosa, pero se nos olvida lo más fundamental, construirlo todo nada más arrancarlo.</p>
+
+<p><strong>Tarea build.</strong> Esta tarea ejecutara en paralelo todas las tareas definidas anteriormente para construirlo todo en la carpeta dist. Usaremos <strong>task.clear</strong> para eliminar cualquier contenido previo de dist y lanzaremos un <strong>task.parallel</strong> para reconstruirlo todo. No debemos olvidarnos de incluir un evento <strong>task.start</strong> en la tarea default para arrancarla desde el inicio:</p>
+<pre>
+    <code class="language-js">
+export default async function (task) {
+/* (2) Arranque de tareas */
+    await task.start('build')
+}
+
+/* (3) Definición de tareas */
+export async function build(task) {
+    await task.clear(['dist']).parallel(['copyVendors', 'babel', 'copyHtml', 'copyImg', 'copyStyles'])
+}
+    </code>    
+</pre>
+
+<p>Ya casi hemos terminado, solo nos falta añadir algunos scripts en nuestro <strong>package.json</strong>. <strong>start:</strong> para lanzar la tarea default del archivo de configuración <strong>taskfile.js</strong>, <strong>server</strong> para lanzar la web en un navegador y <strong>download</strong> para descargar todos los paquetes necesarios. En este último script se ha reemplazado npm por yarn:</p>
+<pre>
+    <code class="language-json">
+"scripts": {
+    "start": "taskr",
+    "server": "taskr serve",
+    "download": "yarn install &amp;&amp; bower install"
+  }
+      </code>    
+</pre>
+
+<p>Yarn es un instalador de paquetes creado por Facebook en octubre de 2016 que se diferencia de <strong>npm</strong> por su alto desempeño alcanzando mejores tiempos que su competidor. Podéis instalarlo con un simple <strong>npm install -g yarn</strong>, os dejo los tiempos que obtuve descargando todos los paquetes con ambos en mi equipo:</p>
+<pre>
+    <code class="language-bash">
+/* Tiempo con npmn sin cache */
+50.235s
+
+/* Tiempo con npm con cache */
+27.184s
+
+/* Tiempo con yarn sin cache */
+17.67s
+
+/* Tiempo con yarn con cache */
+9.40s
+    </code>    
+</pre>
+
+<div class="post-title page">Rollup</div>
+
+<p>Para ir terminando podemos incluir una tarea bundle con ayuda de Rollup para disminuir el tamaño nuestra app. Usaremos el plugin <strong>fly-rollup</strong> junto a algunos plugins de Rollup: <strong>uglify</strong> para disminuir su tamaño, <strong>commonjs</strong> para convertir modulos commonjs a ES6 y <strong>node-resolve</strong> para usar modulos de terceros descargados en <strong>node_module</strong>:</p>
+<pre>
+    <code class="language-bash">
+/* Instalamos algunos plugins de rollup */
+npm install --save-dev fly-rollup rollup-plugin-babel rollup-plugin-commonjs rollup-plugin-node-resolve rollup-plugin-uglify
+    </code>    
+</pre>
+<p><strong>Tarea bundle.</strong> Ok, tan solo tendremos que aplicar todos los plugins de Rollup en <strong>src/js/app.js</strong> y dejar el resultado en una nueva carpeta de nombre <strong>bundle</strong>:</p>
+<pre>
+    <code class="language-js">
+export async function bundle(task) {
+    await task.source('src/js/app.js').rollup({
+        rollup: {
+            plugins: [require('rollup-plugin-babel')({
+                    presets: [["es2015", {"modules": false}]]
+                }),
+                require('rollup-plugin-node-resolve')
+                ({main: true, jsnext: true, browser: true}),
+                require('rollup-plugin-commonjs')(), 
+                require('rollup-plugin-uglify')()]
+        }
+        , bundle: {format: 'iife'}
+    }).target('bundle')
+}
+</code>
+</pre>
+
+<div class="elem"> 
+    
+        <div class="wall_overflow">
+        <img src="http://img.youtube.com/vi/FPQmuewYj5c/mqdefault.jpg" id="FPQmuewYj5c" />
+        </div> 
+    
+    
+     
+     
+    
+        <div class="title-photo">
+            <p>Es una gozada ver lo rapido que responde</p>
+        </div> 
+     
+</div>
+
+<p><strong>Conclusiones:</strong> La verdad es que <strong>Taskr</strong> sorprende gratamente, con un fichero muy pequeño (70 lineas) tenemos montado un entorno para trabajar la mar de sencillo. Más rápido que gulp y más sencillo de comprender que webpack, no se puede pedir más por menos. Lo único que se le puede achacar es su escasez de plugins pero supongo que con el tiempo acabaran apareciendo nuevos. Dejo el código como siempre:</p>
+
+<p><a class="btn" href="https://www.dropbox.com/s/wdemdhqiato4qbz/Taskr.tar.gz?dl=0" target="_blank">
+Código del Tutorial
+</a></p>
+
+  </div>
+  
+  <div class="disqus"><div id="disqus_thread"></div></div>
+  
+    </div>
+
+</article></div>
+    </div>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/ga-lite.js "></script> 
+</body>
+</html>
