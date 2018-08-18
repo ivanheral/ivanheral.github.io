@@ -12,7 +12,7 @@ export default async function (task) {
 export async function css(task) {
     await task.source('_dev/css/app.sass').sass().autoprefixer({
         browsers: ['last 5 versions']
-    }).postcss({plugins: [require('cssnano')]}).target('_site/css')
+    }).postcss({plugins: [require('cssnano')]}).target(['_site/css', 'css'])
 }
 
 export async function changes(task) {
@@ -20,7 +20,7 @@ export async function changes(task) {
 }
 
 export async function vendors(task) {
-    await task.source('_dev/js/vendors/*.js').browserify().uglify().target('_site/js')
+    await task.source('_dev/js/vendors/*.js').browserify().uglify().target(['_site/js', 'js'])
 }
 
 export async function js(task) {
@@ -28,5 +28,5 @@ export async function js(task) {
             transform: [require("babelify").configure({
                 presets: ['env']
             })]
-        }).uglify().target('_site/js')
+        }).uglify().target(['_site/js', 'js'])
 }
