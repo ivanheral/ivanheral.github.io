@@ -1,13 +1,11 @@
 .disqus {
-    display: inline-block;
-    width: 100%;
+    display: inline-flex;
     @include media-query($on-laptop) {
         &>* {
             margin-left: $unit;
             margin-right: $unit;
         }
     }
-    padding-bottom: $unit;
 }
 
 .twitter-tweet {
