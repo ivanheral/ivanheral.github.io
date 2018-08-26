@@ -1,5 +1,5 @@
 .disqus {
-    display: table;
+    display: inline-block;
     width: 100%;
     @include media-query($on-laptop) {
         &>* {
