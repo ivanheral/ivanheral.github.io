@@ -180,12 +180,12 @@ function animate_modal(e) {
 function close_modal(e) {
     var t1 = $(".modal").getBoundingClientRect()
     var t2 = $('#modal img').getBoundingClientRect()
-    top = t1.top - t2.top - 15 - (e.target.height-height)/2
-    left = t1.left - t2.left - 15 - (e.target.width-width)/2
-    $('#modal img').style.transform = "translateX("+left+"px) translateY(" + top + "px)"
-    $('#modal img').style.width = width + "px" 
+    top = t1.top - t2.top - 15 - (e.target.height - height) / 2
+    left = t1.left - t2.left - 15 - (e.target.width - width) / 2
+    $('#modal img').style.transform = "translateX(" + left + "px) translateY(" + top + "px)"
+    $('#modal img').style.width = width + "px"
     delclss($('.modal'), 'modal')
-    delclss($('.fade'), 'show')   
+    delclss($('.fade'), 'show')
     setTimeout(function () {
         $('#modal').innerHTML = ''
         $('.fade-modal').style.display = "none"
@@ -193,17 +193,19 @@ function close_modal(e) {
 }
 
 function modal(e) {
-    e.target.className = "modal"
-    width = e.target.width
-    height =e.target.height
-    $('.fade-modal').style.display = "table"
-    addclss($('.fade'), 'show')
-    $('#modal').insertAdjacentHTML('beforeend', '<img style="width:' + e.target.width + 'px;" src="' + e.target.src + '">')
-    var t1 = e.target.getBoundingClientRect()
-    var t2 = $('#modal img').getBoundingClientRect()
-    top = t1.top - t2.top - 15
-    left = t1.left - t2.left - 15
-    $('#modal img').style.transform = "translateY("+top+"px) translateX("+left+"px)"
+    if (e.target.width !== 330) {
+        e.target.className = "modal"
+        width = e.target.width
+        height = e.target.height
+        $('.fade-modal').style.display = "table"
+        addclss($('.fade'), 'show')
+        $('#modal').insertAdjacentHTML('beforeend', '<img style="width:' + e.target.width + 'px;" src="' + e.target.src + '">')
+        var t1 = e.target.getBoundingClientRect()
+        var t2 = $('#modal img').getBoundingClientRect()
+        top = t1.top - t2.top - 15
+        left = t1.left - t2.left - 15
+        $('#modal img').style.transform = "translateY(" + top + "px) translateX(" + left + "px)"
+    }
 }
 
 function showitem() {
