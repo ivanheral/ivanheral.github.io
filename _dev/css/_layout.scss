@@ -1,5 +1,5 @@
 .disqus {
-    display: inline-flex;
+    display: none;
     @include media-query($on-laptop) {
         &>* {
             margin-left: $unit;
