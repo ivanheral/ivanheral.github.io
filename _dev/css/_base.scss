@@ -5,41 +5,90 @@ body {
 }
 
 img[src=""] {
-	display: none;
+  display: none;
 }
 
 * {
-    font-family: -apple-system,BlinkMacSystemFont,Roboto,Segoe UI,Helvetica Neue,Helvetica,Arial,sans-serif;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-    color: $blue;
+  color: $blue;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  &:hover {
     text-decoration: none;
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
-    &:hover {
-        text-decoration: none;
-    }
+  }
 }
 
 .wrapper {
-    margin: 0 auto;
-    min-width: $width_mobile;
-    max-width: $width;
-    @include media-query($on-laptop) {
-        max-width: 660px;
-    }
-    @include media-query($on-palm) {
-        max-width: $width_mobile;
-    }
+  margin: 0 auto;
+  min-width: $width_mobile;
+  max-width: $width;
+  @include media-query($on-laptop) {
+    max-width: 660px;
+  }
+  @include media-query($on-palm) {
+    max-width: $width_mobile;
+  }
 }
 
 .container {
-    margin: $unit auto;
-    min-height: 880px;
-    @include media-query($on-palm) {
-        margin: $unit;
+  margin: $unit auto;
+  min-height: 880px;
+  @include media-query($on-palm) {
+    margin: $unit;
+  }
+}
+
+#modal {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  img {
+    padding: 15px;
+    background: $white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+    &.animate {
+      width: 50%;
+      @include media-query($on-laptop) {
+        width: 90%;
+      }
+      transition: all 1s;
     }
+  }
+}
+
+.fade-modal {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+}
+
+.fade {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s;
+  z-index: 1;
+  &.show {
+    opacity: 0.5;
+    visibility: visible;
+  }
 }

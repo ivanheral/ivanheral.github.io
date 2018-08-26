@@ -52,10 +52,12 @@
 .link {
     padding: 1px $unit;
     line-height: 40px;
-    color: $text;
+    color: #aaa;
+
+    transition: color 300ms;
     &:hover,
     &.select {
-        color: $blue !important;
+        color: $text !important;
     }
     span {
         float: right;
@@ -68,7 +70,6 @@
         padding: 0px;
         width: 25%;
         float: left;
-        font-size: 1rem;
         text-align: center;
     }
 }

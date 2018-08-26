@@ -188,8 +188,6 @@
     @include media-query($on-palm) {
         margin-bottom: 3em;
     }
-    transition: 0.5s ease-out;
-    -webkit-transition: 0.5s ease-out;
     .wall_overflow {
         position: relative;
         height: 0px;
@@ -213,6 +211,13 @@
         float: left;
         width: 100%;
         margin-bottom: 1em;
+        opacity: 1;
+        transition:opacity 0s 1s linear;
+        cursor: pointer;
+        &.modal {
+            opacity: 0;
+            transition:none;
+        }
     }
 }
 

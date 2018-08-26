@@ -4,6 +4,7 @@ let search = ''
 const stop = false
 let comments = false
 const doc = document
+let top, left, width, height
 
 /* jQuery */
 const $ = v => {
@@ -121,7 +122,7 @@ function load() {
                         if (count == 0) {
                             const post = doc.createElement('div')
                             post.className = 'square'
-                            post.innerHTML = "<div class='table'><div>¿?</div></div>"
+                            post.innerHTML = "<div class='table'></div>"
                             $('.post-list').appendChild(post)
                         }
                     }
@@ -136,7 +137,9 @@ function load() {
 
 /* ready */
 doc.addEventListener('DOMContentLoaded', () => {
-    document.getElementById("search_input").focus();
+    $('#modal').addEventListener('click', close_modal)
+    $('#modal').addEventListener('mouseover', animate_modal)
+
     if (window.location.pathname.indexOf('tutorial') >= 0)
         add_script('prism')
     if ($('.chart')) add_script('chart')
@@ -167,6 +170,42 @@ function isscroll(elem, n) {
     return ((dim.top > 0) && (w_height > dim.top))
 }
 
+function animate_modal(e) {
+    if ($('#modal img').className.indexOf('animate') < 0) {
+        $('#modal img').style = "";
+        addclss($('#modal img'), 'animate');
+    }
+}
+
+function close_modal(e) {
+    var t1 = $(".modal").getBoundingClientRect()
+    var t2 = $('#modal img').getBoundingClientRect()
+    top = t1.top - t2.top - 15 - (e.target.height-height)/2
+    left = t1.left - t2.left - 15 - (e.target.width-width)/2
+    $('#modal img').style.transform = "translateX("+left+"px) translateY(" + top + "px)"
+    $('#modal img').style.width = width + "px" 
+    delclss($('.modal'), 'modal')
+    delclss($('.fade'), 'show')   
+    setTimeout(function () {
+        $('#modal').innerHTML = ''
+        $('.fade-modal').style.display = "none"
+    }, 1000)
+}
+
+function modal(e) {
+    e.target.className = "modal"
+    width = e.target.width
+    height =e.target.height
+    $('.fade-modal').style.display = "table"
+    addclss($('.fade'), 'show')
+    $('#modal').insertAdjacentHTML('beforeend', '<img style="width:' + e.target.width + 'px;" src="' + e.target.src + '">')
+    var t1 = e.target.getBoundingClientRect()
+    var t2 = $('#modal img').getBoundingClientRect()
+    top = t1.top - t2.top - 15
+    left = t1.left - t2.left - 15
+    $('#modal img').style.transform = "translateY("+top+"px) translateX("+left+"px)"
+}
+
 function showitem() {
     let total = [].slice.call(all('.elem > div'))
     let disqus = $(".disqus")
@@ -176,12 +215,21 @@ function showitem() {
     }
     total.map((val, i) => {
         var src = val.children[0].src;
+
         if (src !== undefined) {
             if (isscroll(val, -90)) {
-                if (val.children[0].getAttribute("data-src"))
+                if (val.children[0].getAttribute("src") && val.className == "") {
+                    val.addEventListener('click', modal)
+                }
+                if (val.children[0].getAttribute("data-src")) {
                     val.children[0].src = val.children[0].getAttribute("data-src")
-                if (src.indexOf('giphy_s.gif') >= 0)
+                }
+                if (src.indexOf('giphy_s.gif') >= 0 && val.className == "wall_overflow gif") {
+                    val.addEventListener('click', modal)
+                }
+                if (src.indexOf('giphy_s.gif') >= 0) {
                     val.children[0].src = src.replace('_s.gif', '.gif')
+                }
                 if (src.indexOf('mqdefault') >= 0) {
                     val.children[0].src = ''
                     val.insertAdjacentHTML('beforeend', '<iframe src="//www.youtube.com/embed/' +

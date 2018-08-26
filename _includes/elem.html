@@ -14,7 +14,7 @@
         <img class="gif" src="//media2.giphy.com/media/{{include.gif}}/giphy_s.gif"></div> 
     {% endif %} 
     {% if include.img %} 
-        <img src="{{ include.img | prepend: site.baseurl }}">
+        <div><img src="{{ include.img | prepend: site.baseurl }}"></div>
     {% endif %} 
     {% if include.title %}
         <div class="title-photo">
