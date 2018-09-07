@@ -4,6 +4,11 @@ body {
   margin: 0px;
 }
 
+html {
+  -webkit-text-size-adjust: none;
+	touch-action: manipulation;
+}
+
 img[src=""] {
   display: none;
 }
