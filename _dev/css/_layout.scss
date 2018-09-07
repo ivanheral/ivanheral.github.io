@@ -108,6 +108,8 @@
     min-height: 50px;
     text-align: left;
     color: $blue;
+    -webkit-text-size-adjust:none;
+    float: left;
     @include media-query($on-palm) {
         font-size: 1.6rem;
     }

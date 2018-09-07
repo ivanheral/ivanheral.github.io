@@ -5,6 +5,9 @@
             float: left;
             max-width: 85px;
             border-right: 1px solid $b_white;
+            @include media-query($on-laptop) {
+                border-right: none;
+            }
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
