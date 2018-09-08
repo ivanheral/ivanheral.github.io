@@ -245,12 +245,9 @@
 }
 
 .wall_img {
-    width: 100%;
     padding-bottom: 56.25%;
-    overflow: hidden;
     position: relative;
     background-color: #e3e3e3;
-    display: none;
     @include media-query($on-palm) {
         border: 1px solid $b_white;
     }
