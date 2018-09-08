@@ -84,13 +84,10 @@
 }
 
 .info_post {
-    width: 90%;
     padding: 0 5%;
     padding-top: $unit;
-    display: inline-block;
     z-index: 10;
     @include media-query($on-palm) {
-        width: 100%;
         padding: 0px;
         padding-top: $unit;
     }
