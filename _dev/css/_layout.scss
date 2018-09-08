@@ -85,12 +85,9 @@
 
 .info_post {
     padding: 0 5%;
-    padding-top: $unit;
-    z-index: 10;
-    visibility: visible;
+    float: left;
     @include media-query($on-palm) {
         padding: 0px;
-        padding-top: $unit;
     }
     .post-meta {
         color: $text;
@@ -108,6 +105,9 @@
     min-height: 50px;
     text-align: left;
     color: $blue;
+    padding-top: $unit;
+    width: 100%;
+    float: left;
     @include media-query($on-palm) {
         font-size: 1.6rem;
     }
@@ -248,6 +248,8 @@
     padding-bottom: 56.25%;
     position: relative;
     background-color: #e3e3e3;
+    width: 100%;
+    float: left;
     @include media-query($on-palm) {
         border: 1px solid $b_white;
     }
