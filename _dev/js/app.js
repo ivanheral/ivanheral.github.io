@@ -121,8 +121,7 @@ function load() {
                         $('.post-list').style.height = 'auto'
                         if (count == 0) {
                             const post = doc.createElement('div')
-                            post.className = 'square'
-                            post.innerHTML = "<div class='table'></div>"
+                            post.innerHTML = "<div style='min-height: 100vh;'></div>"
                             $('.post-list').appendChild(post)
                         }
                     }

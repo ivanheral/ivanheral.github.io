@@ -41,8 +41,8 @@ a {
     max-width: $width_mobile;
   }
   @include media-query($on-small) {
-    max-width: 100%;
-    min-width: auto;
+    max-width: 320px;
+    min-width: 320px;
   }
 }
 
