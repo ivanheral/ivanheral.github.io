@@ -32,7 +32,6 @@ a {
 
 .wrapper {
   margin: 0 auto;
-  min-width: $width_mobile;
   max-width: $width;
   @include media-query($on-laptop) {
     max-width: 660px;
