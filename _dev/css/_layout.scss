@@ -139,6 +139,9 @@
         @include media-query($on-laptop) {
             font-size: 1.1rem;
         }
+        @include media-query($on-palm) {
+            font-size: 1rem;
+        }
     }
     .btn {
         margin-bottom: 6em;
