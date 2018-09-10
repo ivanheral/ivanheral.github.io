@@ -38,10 +38,7 @@ a {
   }
   @include media-query($on-palm) {
     max-width: $width_mobile;
-  }
-  @include media-query($on-small) {
-    max-width: 320px;
-    min-width: 320px;
+    min-width: 280px;
   }
 }
 
