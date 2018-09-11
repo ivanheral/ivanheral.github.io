@@ -1,11 +1,13 @@
 .disqus {
     width: 100%;
+
     @include media-query($on-laptop) {
         &>* {
             margin-left: $unit;
             margin-right: $unit;
         }
     }
+
     padding-bottom: $unit;
 }
 
@@ -24,51 +26,52 @@
     padding: 0px;
     display: flex;
     flex-wrap: wrap;
+
     &.home {
         min-height: 300px;
     }
+
     background: $white;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .25);
+
     @include media-query($on-laptop) {
         width: 100%;
         margin-left: 0px;
         margin-top: 0px;
     }
+
     >.post {
         transition: opacity 0.75s ease-out;
         -webkit-transition: opacity 0.75s ease-out;
         overflow: hidden;
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .2);
         overflow: hidden;
         width: $width_post;
         color: $blue;
         margin: $unit;
         float: left;
+
         .post-meta {
             font-size: .95rem;
             color: $text;
         }
+
         @include media-query($on-laptop) {
             width: 300px;
         }
+
         @include media-query($on-palm) {
             width: 100%;
             padding: $unit;
             margin: 0px;
-            box-shadow: none;
-            border-radius: 0px;
             border-top: 1px solid $b_black;
         }
     }
 }
 
 .info_post {
-    padding: 0 5%;
+    padding: 0px;
     padding-top: $unit;
-    @include media-query($on-palm) {
-        padding: 0px;
-        padding-top: $unit;
-    }
+
     .post-meta {
         color: $text;
         padding: $unit 0px;
@@ -78,29 +81,34 @@
 
 .post-title {
     font-weight: bold;
-    font-size: 1.4rem;
-    min-height: 50px;
+    font-size: 1.45rem;
     text-align: left;
     color: $blue;
+
     @include media-query($on-palm) {
         font-size: 1.6rem;
     }
+
     &.page {
         float: left;
         text-align: left;
         margin-top: 2em;
         padding: $unit 0px;
         font-size: 2.4rem;
+
         @include media-query($on-laptop) {
             font-size: 2.25rem;
             padding: $unit;
         }
+
         @include media-query($on-palm) {
             font-size: 1.6rem;
         }
     }
+
     &.post {
         font-size: 2.4rem;
+
         @include media-query($on-palm) {
             font-size: 1.6rem;
             width: 100%;
@@ -111,22 +119,28 @@
 .post-content {
     float: left;
     margin: 0px;
+
     .chart {
         padding: 15px;
         margin: 15px auto;
         max-width: 360px;
     }
+
     &>p {
         padding: $unit 0px;
+
         @include media-query($on-laptop) {
             padding: $unit;
         }
+
         margin-top: 1em;
+
         strong,
         a {
             color: $link;
             font-weight: normal;
         }
+
         margin-bottom: 2em;
         color: $text;
         display: block;
@@ -135,13 +149,16 @@
         font-weight: normal;
         font-size: 1rem;
         text-align: left;
+
         @include media-query($on-laptop) {
             font-size: 1.1rem;
         }
+
         @include media-query($on-palm) {
             font-size: 1rem;
         }
     }
+
     .btn {
         margin-bottom: 6em;
         border-radius: 2px;
@@ -154,6 +171,7 @@
         color: $white !important;
         font-weight: 600;
     }
+
     width: 100%;
 }
 
@@ -161,9 +179,11 @@
     width: 100%;
     margin-bottom: 9em;
     float: left;
+
     @include media-query($on-palm) {
         margin-bottom: 3em;
     }
+
     .wall_overflow {
         position: relative;
         height: 0px;
@@ -171,9 +191,11 @@
         margin-bottom: 1em;
         clear: both;
     }
+
     .gif {
         padding-bottom: 0%;
     }
+
     iframe {
         width: 100%;
         position: absolute;
@@ -183,22 +205,25 @@
         left: 0px;
         right: 0px;
     }
+
     img {
         float: left;
         width: 100%;
         margin-bottom: 1em;
         opacity: 1;
-        transition:opacity 0s 1s linear;
+        transition: opacity 0s 1s linear;
         cursor: pointer;
+
         &.modal {
             opacity: 0;
-            transition:none;
+            transition: none;
         }
     }
 }
 
 .title-photo {
     position: relative;
+
     p {
         color: $blue;
         padding: 0px 5%;
@@ -213,9 +238,10 @@
 }
 
 .important {
-    width: auto;   
-    float: none; 
+    width: auto;
+    float: none;
     margin-bottom: 0em;
+
     .wall_img {
         border: 1px solid $b_white;
     }
@@ -227,9 +253,11 @@
     overflow: hidden;
     position: relative;
     background-color: #e3e3e3;
+
     @include media-query($on-palm) {
         border: 1px solid $b_white;
     }
+
     img {
         position: absolute;
         top: 0px;
@@ -246,23 +274,28 @@ article {
     max-width: $width_article;
     background: $white;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .25);
+
     .info_post {
         width: 100%;
         padding: 0px;
         padding-top: 15px;
     }
+
     padding: $unit;
     padding-bottom: 0px;
+
     &:after {
         content: "";
         display: table;
         clear: both;
-      }
+    }
+
     @include media-query($on-laptop) {
         width: 100%;
         max-width: none;
         padding: 0px;
         padding-top: 1px;
+
         .article>header,
         .social-media-list {
             margin: $unit;
