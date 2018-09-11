@@ -39,7 +39,6 @@
         -webkit-transition: opacity 0.75s ease-out;
         overflow: hidden;
         box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .2);
-        border-radius: 2px;
         overflow: hidden;
         width: $width_post;
         color: $blue;
@@ -96,6 +95,9 @@
             font-size: 2.25rem;
             padding: $unit;
         }
+        @include media-query($on-palm) {
+            font-size: 1.6rem;
+        }
     }
     &.post {
         font-size: 2.4rem;
@@ -124,9 +126,6 @@
         a {
             color: $link;
             font-weight: normal;
-            @include media-query($on-laptop) {
-                font-size: 1.1rem;
-            }
         }
         margin-bottom: 2em;
         color: $text;

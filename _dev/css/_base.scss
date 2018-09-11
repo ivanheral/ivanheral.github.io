@@ -59,7 +59,7 @@ a {
     background: $white;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
     &.animate {
-      width: 50%;
+      width: 70%;
       @include media-query($on-laptop) {
         width: 90%;
       }
