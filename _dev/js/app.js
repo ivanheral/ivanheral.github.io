@@ -37,7 +37,7 @@ const act_disqus = () => {
 const add_script = (script) => {
     const vendor = doc.createElement('script')
     vendor.type = 'text/javascript'
-    vendor.src = '/js/' + script + '.js'
+    script.indexOf('https') > -1 ? vendor.src = script : vendor.src = '/js/' + script + '.js'
     doc.getElementsByTagName('head')[0].appendChild(vendor)
 }
 
@@ -85,7 +85,6 @@ function load_posts() {
     }
     $('.post-list').innerHTML = ''
     load()
-
 }
 
 function posts(v, i) {
@@ -141,7 +140,9 @@ doc.addEventListener('DOMContentLoaded', () => {
 
     if (window.location.pathname.indexOf('tutorial') >= 0)
         add_script('prism')
-    if ($('.chart')) add_script('chart')
+    if ($('.chart')) {
+        add_script('https://www.gstatic.com/charts/loader.js')
+    }
     if ($('.important') === null) {
         load()
     }
@@ -169,6 +170,45 @@ function isscroll(elem, n) {
     return ((dim.top > 0) && (w_height > dim.top))
 }
 
+function showitem() {
+    let total = [].slice.call(all('.elem > div'))
+    let disqus = $(".disqus")
+    if (disqus != undefined && !comments && isscroll(disqus, 720)) {
+        comments = true;
+        act_disqus()
+    }
+    total.map((val, i) => {
+        var src = val.children[0].src;
+
+        if (val.className.indexOf('chart') > -1)  {
+            add_script('chart')
+        }
+
+        if (src !== undefined) {
+            if (isscroll(val, -90)) {
+                if (val.children[0].getAttribute("src") && val.className == "") {
+                    val.addEventListener('click', modal)
+                }
+                if (val.children[0].getAttribute("data-src")) {
+                    val.children[0].src = val.children[0].getAttribute("data-src")
+                }
+                if (src.indexOf('giphy_s.gif') >= 0 && val.className == "wall_overflow gif") {
+                    val.addEventListener('click', modal)
+                }
+                if (src.indexOf('giphy_s.gif') >= 0) {
+                    val.children[0].src = src.replace('_s.gif', '.gif')
+                }
+                if (src.indexOf('mqdefault') >= 0) {
+                    val.children[0].src = ''
+                    val.insertAdjacentHTML('beforeend', '<iframe src="//www.youtube.com/embed/' +
+                        val.children[0].id + '" frameborder="0" allowfullscreen></iframe>')
+                }
+            }
+        }
+    })
+}
+
+/* Modal */
 function animate_modal(e) {
     if ($('#modal img').className.indexOf('animate') < 0) {
         $('#modal img').style = "";
@@ -205,38 +245,4 @@ function modal(e) {
         left = t1.left - t2.left - 15
         $('#modal img').style.transform = "translateY(" + top + "px) translateX(" + left + "px)"
     }
-}
-
-function showitem() {
-    let total = [].slice.call(all('.elem > div'))
-    let disqus = $(".disqus")
-    if (disqus != undefined && !comments && isscroll(disqus, 720)) {
-        comments = true;
-        act_disqus()
-    }
-    total.map((val, i) => {
-        var src = val.children[0].src;
-
-        if (src !== undefined) {
-            if (isscroll(val, -90)) {
-                if (val.children[0].getAttribute("src") && val.className == "") {
-                    val.addEventListener('click', modal)
-                }
-                if (val.children[0].getAttribute("data-src")) {
-                    val.children[0].src = val.children[0].getAttribute("data-src")
-                }
-                if (src.indexOf('giphy_s.gif') >= 0 && val.className == "wall_overflow gif") {
-                    val.addEventListener('click', modal)
-                }
-                if (src.indexOf('giphy_s.gif') >= 0) {
-                    val.children[0].src = src.replace('_s.gif', '.gif')
-                }
-                if (src.indexOf('mqdefault') >= 0) {
-                    val.children[0].src = ''
-                    val.insertAdjacentHTML('beforeend', '<iframe src="//www.youtube.com/embed/' +
-                        val.children[0].id + '" frameborder="0" allowfullscreen></iframe>')
-                }
-            }
-        }
-    })
 }

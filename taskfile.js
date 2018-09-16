@@ -5,7 +5,8 @@ bs({server: '_site', middleware: [historyApiFallback()]})
 export default async function (task) {
     await task.clear(['css','js']).parallel(['js', 'vendors', 'css'])
     await task.watch('_dev/css/**/*.*', 'css')
-    await task.watch('_dev/js/**/*.js', 'js')
+    await task.watch('_dev/js/*.js', 'js')
+    await task.watch('_dev/js/vendors/*.js', 'vendors')
     await task.watch('_site/**/*.*', 'changes')
 }
 

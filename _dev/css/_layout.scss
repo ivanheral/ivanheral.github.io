@@ -47,7 +47,8 @@
         overflow: hidden;
         width: $width_post;
         color: $blue;
-        margin: $unit;
+        padding: $unit;
+        margin-bottom: 0px;
         float: left;
 
         .post-meta {
@@ -119,13 +120,6 @@
 .post-content {
     float: left;
     margin: 0px;
-
-    .chart {
-        padding: 15px;
-        margin: 15px auto;
-        max-width: 360px;
-    }
-
     &>p {
         padding: $unit 0px;
 
@@ -243,7 +237,7 @@
     margin-bottom: 0em;
 
     .wall_img {
-        border: 1px solid $b_white;
+        outline: 1px solid $b_white;
     }
 }
 
@@ -253,10 +247,7 @@
     overflow: hidden;
     position: relative;
     background-color: #e3e3e3;
-
-    @include media-query($on-palm) {
-        border: 1px solid $b_white;
-    }
+    outline: 1px solid $b_white;
 
     img {
         position: absolute;

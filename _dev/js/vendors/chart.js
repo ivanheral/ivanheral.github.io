@@ -1,105 +1,92 @@
-
-var mytest = document.getElementById("test");
-var mykb = document.getElementById("kb");
-
-var Posts = new BarGraph({
-    canvas: mytest
+google.charts.load('current', {
+  'packages': ['corechart', 'controls', 'table']
 });
 
-var Testing = new BarGraph({
-    canvas: mykb
-});
+google.charts.setOnLoadCallback(drawDashboard);
 
-Posts.draw([{
-    title: "cine",
-    val: 3
-}, {
-    title: "random",
-    val: 2
-}, {
-    title: "opinión",
-    val: 4
-}, {
-    title: "tutorial",
-    val: 9
-}]);
+function drawDashboard() {
 
-Testing.draw([{
-    title: "cine",
-    val: 13
-}, {
-    title: "random",
-    val: 2
-}, {
-    title: "opinión",
-    val: 4
-}, {
-    title: "tutorial",
-    val: 9
-}]);
+  var data1 = google.visualization.arrayToDataTable([
+    ['Tematica', 'posts'],
+    ['Cine', 3],
+    ['Random', 2],
+    ['Opinión', 4],
+    ['Tutorial', 9]
+  ]);
+
+  var data2 = google.visualization.arrayToDataTable([
+    ['Tematica', 'posts'],
+    ['Cine', 3],
+    ['Random', 2],
+    ['Opinión', 4],
+    ['Tutorial', 9]
+  ]);
+
+  var dashboard = new google.visualization.Dashboard(
+    document.getElementById('dashboard_div'));
+
+  var donutRangeSlider = new google.visualization.ControlWrapper({
+    'controlType': 'NumberRangeFilter',
+    'containerId': 'filter_div',
+    'options': {
+      'filterColumnLabel': 'posts'
+    }
+  });
+
+  var columnChart = new google.visualization.ChartWrapper({
+    'chartType': 'ColumnChart',
+    'containerId': 'chart_div',
+    'options': {
+      'height': '360',
+      hAxis: {
+        title: ''
+      },
+      vAxis: {
+        title: ''
+      },
+      colors: ['#1da1f2'],
+      chartArea: {
+        left: 30,
+        top: 80,
+        width: "100%",
+        height: "70%"
+      },
+      'animation': {
+        duration: 1000,
+        easing: 'out'
+      },
+      bar: {
+        groupWidth: '85%'
+      }
+    }
+  });
+
+  var table = new google.visualization.ChartWrapper({
+    'chartType': 'Table',
+    'containerId': 'table_div',
+    'options': {}
+  })
+
+  google.visualization.events.addListener(table, 'select', function () {
+
+    var selectedItem = table.getChart().getSelection()[0];
+    if (selectedItem) {
+      var name = data1.getValue(selectedItem.row, 0);
+
+      table.setView({
+        'columns': [0, 1, 2]
+      });
+      columnChart.setOption('hAxis.viewWindow.max', 4);
+      dashboard.bind(donutRangeSlider, [columnChart], table);
+      dashboard.draw(data2);
+    }
+  });
 
 
-function BarGraph(options) {
+  dashboard.bind(donutRangeSlider, [columnChart, table]);
+  dashboard.draw(data1);
+}
 
-    this.width = 720;
-    this.ctx = options.canvas.getContext("2d");
-    this.canvas = options.canvas;
-    this.height = 405;
-    this.maxValue;
-    this.margin = 3;
-
-    this.draw = function (arr) {
-
-        var numOfBars = arr.length;
-        var ratio;
-        var maxBarHeight;
-        var gradient;
-        var largestValue;
-        var colors = ['#4285f4','#34a853','#fbbc05','#ea4335'];
-
-
-        var s = getComputedStyle(this.canvas)
-        var w = s.width
-        var h = s.height
-        this.canvas.width = 720
-        this.canvas.height = 405
-
-        barWidth = this.width / numOfBars - this.margin * 2;
-        maxBarHeight = this.height;
-
-        var largestValue = 0;
-        for (i = 0; i < arr.length; i += 1) {
-            if (arr[i].val > largestValue)
-                largestValue = arr[i].val;
-        }
-
-        for (i = 0; i < arr.length; i += 1) {
-
-            ratio = arr[i].val / largestValue;
-            if (this.maxValue)
-                ratio = arr[i].val / this.maxValue;
-
-            barHeight = ratio * maxBarHeight;
-
-            this.ctx.fillStyle = colors[i];
- 
-            this.ctx.fillRect(this.margin + i * this.width / numOfBars,
-                this.height - barHeight,
-                barWidth,
-                barHeight-45);
-            this.ctx.shadowBlur = 0;
-            this.ctx.fillStyle = "#263238";
-            this.ctx.font = "28px sans-serif";
-            this.ctx.textAlign = "center";
-
-            try {
-                this.ctx.fillText(parseInt(arr[i].val, 10),
-                    i * this.width / numOfBars + (this.width / numOfBars) / 2,
-                    this.height - barHeight + 30);
-                this.ctx.fillText(arr[i].title,
-                    i * this.width / numOfBars + (this.width / numOfBars) / 2,
-                    this.canvas.height-10);
-            } catch (ex) {}
-        }
-    };
+window.onresize = function () {
+  drawDashboard()
 }
