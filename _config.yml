@@ -15,4 +15,4 @@ github_username:  ivanheral
 youtube_username:  ivanheral
 # Build settings
 markdown: kramdown
-exclude: ['README.md', 'taskfile.js', 'imagemin.js', 'package.json', 'node_modules']
+exclude: ['README.md', 'taskfile.js', 'imagemin.js', 'yarn.lock', 'package.json', 'node_modules']
