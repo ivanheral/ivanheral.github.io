@@ -1,3 +1,4 @@
+/* jshint -W033 */
 /* Vars */
 let section = 'all'
 let search = ''
@@ -120,7 +121,7 @@ function load() {
                         $('.post-list').style.height = 'auto'
                         if (count == 0) {
                             const post = doc.createElement('div')
-                            post.innerHTML = "<div style='min-height: 100vh;'></div>"
+                            post.innerHTML = "<div style='min-height: 85vh;'></div>"
                             $('.post-list').appendChild(post)
                         }
                     }
@@ -157,7 +158,7 @@ function scroll() {
     if (!stop) {
         $('.tags').style.marginTop = '0px'
         if (scroll > 45) {
-            $('.tags').style.marginTop = (scroll - 10).toString() + 'px'
+            $('.tags').style.marginTop = (scroll).toString() + 'px'
             addclss($('.tags'), 'fixed')
         }
     }

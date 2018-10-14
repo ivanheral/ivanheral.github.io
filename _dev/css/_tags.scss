@@ -1,7 +1,12 @@
 .tags {
+    .categories {
+        float: left;
+        width: 100%;
+        min-height: 40px;
+    }
     .title {
         a {
-            padding: 10px;
+            padding: 10.5px;
             float: left;
             max-width: 85px;
             border-right: 1px solid $b_white;
@@ -47,7 +52,7 @@
         font-size: 1rem;
         @include media-query($on-laptop) {
             float: right;
-            padding: 5px 10px;
+            padding: 5.5px 10px;
             margin: 5px;
             border-radius: 25px;
             background: $bg;
