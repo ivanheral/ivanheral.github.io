@@ -233,7 +233,7 @@ function close_modal(e) {
 }
 
 function modal(e) {
-    if (e.target.width !== 330) {
+    if (!(typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)) {
         e.target.className = "modal"
         width = e.target.width
         height = e.target.height
@@ -245,5 +245,6 @@ function modal(e) {
         top = t1.top - t2.top - 15
         left = t1.left - t2.left - 15
         $('#modal img').style.transform = "translateY(" + top + "px) translateX(" + left + "px)"
-    }
+    } else
+        window.open(e.target.src,'_blank')
 }
