@@ -1,23 +1,18 @@
 .disqus {
-    width: 100%;
-
-    @include media-query($on-laptop) {
-        &>* {
-            margin-left: $unit;
-            margin-right: $unit;
-        }
-    }
-
-    padding-bottom: $unit;
+    margin-left: $unit;
+    margin-right: $unit;
 }
 
 .twitter-tweet {
-    @include media-query($on-palm) {
-        margin-left: $unit !important;
-        margin-right: $unit !important;
-        width: auto !important;
-    }
+    margin-left: $unit !important;
+    margin-right: $unit !important;
+    width: auto !important;
+    margin: $unit !important;
+    float: left;
+
+    @include media-query($on-laptop) {}
 }
+
 
 .post-list {
     width: $width_posts;
@@ -52,7 +47,6 @@
         float: left;
 
         .post-meta {
-            font-size: .95rem;
             color: $text;
         }
 
@@ -120,6 +114,7 @@
 .post-content {
     float: left;
     margin: 0px;
+
     &>p {
         padding: $unit 0px;
 
@@ -188,6 +183,10 @@
 
     .gif {
         padding-bottom: 0%;
+    }
+
+    &>.disqus iframe {
+        position: relative;
     }
 
     iframe {

@@ -10,9 +10,6 @@
             float: left;
             max-width: 85px;
             border-right: 1px solid $b_white;
-            @include media-query($on-laptop) {
-                border-right: none;
-            }
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -45,18 +42,11 @@
 #search {
     -webkit-appearance: none;
     input {
-        width: 60px;
+        width: 55px;
         border: none;
         background: none;
         padding: 10px;
         font-size: 1rem;
-        @include media-query($on-laptop) {
-            float: right;
-            padding: 5.5px 10px;
-            margin: 5px;
-            border-radius: 25px;
-            background: $bg;
-        }
         &:focus {
             outline: none;
         }
@@ -68,7 +58,6 @@
     padding: 1px $unit;
     line-height: 40px;
     color: #aaa;
-
     transition: color 300ms;
     &:hover,
     &.select {
