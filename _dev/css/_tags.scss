@@ -4,35 +4,46 @@
         width: 100%;
         min-height: 40px;
     }
+
     .title {
         a {
             padding: 10.5px;
             float: left;
             max-width: 85px;
             border-right: 1px solid $b_white;
+
+            @include media-query($on-laptop) {
+                border-right: 0px;
+            }
+
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
         }
+
         border-bottom: 1px solid $b_white;
         float: left;
         width: 100%;
     }
+
     width: $width_tags;
     margin: $unit;
     margin-top: 0px;
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .25);
     -webkit-transition: position 0.5s ease-out;
     cursor: pointer;
     float: right;
     background: $white;
+
     @include media-query($on-laptop) {
         width: 100%;
         margin: 0px;
         margin-top: 0px !important;
     }
+
     &.fixed {
         transition: 1s margin-top ease-out;
+
         @include media-query($on-laptop) {
             transition: none;
         }
@@ -41,15 +52,22 @@
 
 #search {
     -webkit-appearance: none;
+
     input {
         width: 55px;
         border: none;
         background: none;
         padding: 10px;
         font-size: 1rem;
+
         &:focus {
             outline: none;
         }
+
+        @include media-query($on-laptop) {
+            float: right;
+        }
+
         color: $text;
     }
 }
@@ -59,16 +77,20 @@
     line-height: 40px;
     color: #aaa;
     transition: color 300ms;
+
     &:hover,
     &.select {
         color: $text !important;
     }
+
     span {
         float: right;
+
         @include media-query($on-laptop) {
             display: none;
         }
     }
+
     @include media-query($on-laptop) {
         margin-left: 0px;
         padding: 0px;
@@ -81,6 +103,7 @@
 .return {
     display: none;
     width: 100%;
+
     @include media-query($on-laptop) {
         text-align: center;
     }
