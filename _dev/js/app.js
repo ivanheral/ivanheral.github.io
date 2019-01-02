@@ -75,7 +75,6 @@ function posts(v, i) {
 }
 
 function load() {
-	var count = 0;
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
@@ -84,7 +83,7 @@ function load() {
 				var result = JSON.parse(this.responseText).filter(function(elem) {
 					return elem.title.toUpperCase().indexOf(search.toUpperCase()) > -1
 				})	 	
-				console.log(result);		
+	
 				result.forEach(function (elem, i) {
 					posts(elem, i)
 				}) 

@@ -9,55 +9,40 @@
     width: auto !important;
     margin: $unit !important;
     float: left;
-
-    @include media-query($on-laptop) {}
 }
-
 
 .post-list {
     width: $width_posts;
-    display: inline-block;
-    height: auto;
-    padding: 0px;
-    display: flex;
-    flex-wrap: wrap;
+    background: $white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .25);
+    display: grid;
+    grid-template-columns: auto auto;
+    @include media-query($on-palm) {
+        grid-template-columns: auto;
+    }
 
     &.home {
         min-height: 300px;
     }
 
-    background: $white;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .25);
 
     @include media-query($on-laptop) {
         width: 100%;
-        margin-left: 0px;
-        margin-top: 0px;
     }
 
     >.post {
-        transition: opacity 0.75s ease-out;
-        -webkit-transition: opacity 0.75s ease-out;
+
         overflow: hidden;
-        overflow: hidden;
-        width: $width_post;
-        color: $blue;
+        width: auto;
         padding: $unit;
         margin-bottom: 0px;
-        float: left;
-
+     
         .post-meta {
             color: $text;
         }
-
-        @include media-query($on-laptop) {
-            width: 300px;
-        }
-
         @include media-query($on-palm) {
             width: 100%;
-            padding: $unit;
-            margin: 0px;
+            box-sizing: border-box;
             border-top: 1px solid $b_black;
         }
     }
@@ -69,20 +54,21 @@
 
     .post-meta {
         color: $text;
-        padding: $unit 0px;
+        padding-top: $unit;
         font-size: 1rem;
     }
 }
 
 .post-title {
-    font-weight: bold;
-    font-size: 1.45rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    @include media-query($on-palm) {
+        font-size: 1.5rem;
+    }
+    letter-spacing: .05rem;
     text-align: left;
     color: $blue;
-
-    @include media-query($on-palm) {
-        font-size: 1.6rem;
-    }
 
     &.page {
         float: left;
@@ -97,15 +83,15 @@
         }
 
         @include media-query($on-palm) {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
         }
     }
 
     &.post {
-        font-size: 2.4rem;
-
+        font-size: 2.25rem;
+        letter-spacing: .05rem;
         @include media-query($on-palm) {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             width: 100%;
         }
     }
@@ -135,7 +121,7 @@
         clear: both;
         line-height: 27px;
         font-weight: normal;
-        font-size: 16px;
+        font-size: 17px;
         text-align: left;
 
         @include media-query($on-laptop) {
@@ -215,15 +201,17 @@
 
 .title-photo {
     position: relative;
+    float: left;
+    width: 100%;
 
     p {
-        color: $blue;
+        color: #007ee5;
         padding: 0px 5%;
         padding-bottom: $unit*2;
         margin-bottom: 0;
         text-align: center;
-        float: left;
-        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
         width: 90%;
     }
 }
@@ -231,7 +219,7 @@
 .important {
     width: auto;
     float: none;
-    margin-bottom: 0em;
+    margin-bottom: $unit;
 
     .wall_img {
         outline: 1px solid $b_white;

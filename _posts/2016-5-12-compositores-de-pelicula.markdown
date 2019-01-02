@@ -17,7 +17,7 @@ Compositor italiano desconocido por el gran público que realizaba pequeñas col
 
 Un “Veni, vidi, vici” en toda regla. Le llamo Marc Foster para crear una de las composiciones más enriquecedoras que se recuerdan por estos lares en “Buscando la felicidad” y al poco tiempo estaba recogiendo su Oscar con ese acento polaco tan característico dejando su impronta personal. A mí que no me cuenten milongas, he escuchado bandas sonoras pero lo que hizo este hombre no era ni medio normal, es ponerte a escucharlas una por una y no saber con cual quedarte. Lo lógico es que con este bagaje y una estatuilla sobre el brazo acabaran rifandosele pero sorprendentemente no fue así, se centró en su tierra con producciones internacionales y se enclaustro en su música hasta perderle de vista. A eso que un buen día estaba viendo Hachiko y ahí estaba el, sin que yo me percatara y de forma imperceptible comenzaban a sonar los primeros acordes de “Goodbye”, todo empezó a cobrar sentido y ese sonido tan familiar me dibujo una sonrisa en la cara, la espera había merecido la pena.
 
-{% include elem.html video="cDZ90V7072I" title="Jan A. P. Kaczmarek - Goodbye" %}
+{% include elem.html video="GydHCYJWeww" title="Jan A. P. Kaczmarek - Goodbye" %}
 
 {% include title.html title="John Williams" %}
 
