@@ -113,7 +113,7 @@ doc.addEventListener('DOMContentLoaded', () => {
 	$('#modal').addEventListener('click', close_modal)
 	$('#modal').addEventListener('mouseover', animate_modal)
 	window.location.pathname.indexOf('tutorial') >= 0 && add_script('prism')
-	$('.chart') && add_script('https://www.gstatic.com/charts/loader.js')		
+	$('.chart') && add_script('chart')		
 	$('.important') === null && load()
 }, false)
 
@@ -176,12 +176,10 @@ var animate_modal = (e) => {
 var top, left, width, height = 0;
 
 var close_modal = (e) => {
-	var t1 = $(".modal").getBoundingClientRect()
-	var t2 = $('#modal img').getBoundingClientRect()
-	top = t1.top - t2.top - 15 - (e.target.height - height) / 2
-	left = t1.left - t2.left - 15 - (e.target.width - width) / 2
-	$('#modal img').style.transform = `translateX(${left}px) translateY(${top}px)`
+	// animate modal
+	$('#modal img').style.transform = `translateY(${top}px) translateX(${left}px)`
 	$('#modal img').style.width = `${width}px`
+	// hide modal
 	delclss($('.modal'), 'modal')
 	delclss($('.fade'), 'show')
 	setTimeout(function () {
@@ -195,13 +193,16 @@ var modal = (e) => {
 		e.target.className = "modal"
 		width = e.target.width
 		height = e.target.height
+		// show modal
 		$('.fade-modal').style.display = "table"
 		addclss($('.fade'), 'show')
 		$('#modal').insertAdjacentHTML('beforeend', `<img style="width:${e.target.width}px;" src="${e.target.src}">`)
+		// calculate position
 		var t1 = e.target.getBoundingClientRect()
 		var t2 = $('#modal img').getBoundingClientRect()
-		top = t1.top - t2.top - 15
-		left = t1.left - t2.left - 15
+		top = t1.top - t2.top
+		left = t1.left - t2.left
+		// animate modal
 		$('#modal img').style.transform = `translateY(${top}px) translateX(${left}px)`
 	} else
 		window.open(e.target.src, '_blank')

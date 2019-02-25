@@ -14,7 +14,7 @@ urlimage: /files/images/desarrollo/yarn.png
 
 Antes que nada, necesitaremos una versión actualizada de node (mínimo 6.9), es importante recalcar esto para evitarnos sorpresas inesperadas cuando arranquemos con esto. En este tutorial os explicaremos como usarlo de manera rápida y clara para un proyecto de <strong>AngularJs</strong> como ejemplo. Sin más preámbulos, comenzamos.
 
-{% include elem.html gif="5iAHCEdbyEZCo" title="Es un pájaro, es un avión, no... Es Taskr!" %}
+{% include elem.html giphy="5iAHCEdbyEZCo" title="Es un pájaro, es un avión, no... Es Taskr!" %}
 
 Lo primero que tendremos que hacer es crearnos una carpeta llamada Taskr, en ella generaremos un <strong>package.json</strong> y un <strong>bower.json</strong> con los comandos <strong>npm init</strong> y <strong>bower init</strong> respectivamente. En estos ficheros instalaremos todo aquello que sea necesario para montar nuestra web, es importante recalcar que tendreis que instalar npm y bower previamente. 
 

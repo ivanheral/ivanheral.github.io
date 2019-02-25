@@ -10,7 +10,7 @@ urlimage: /files/images/desarrollo/vuejs.jpg
 
 Bueno chicos, hoy realizaremos un buscador de gifs usando exclusivamente Vue.js, un framework que a diferencia de jQuery nos permite poner javascript en el propio DOM evitándonos selecciones innecesarias. Para hacerlo más interesante he contado con la colaboración de la Api Giphy, bastante popular tras su integración en twitter.
 
-{% include elem.html gif="xTiTnJ0uuZEwVlYQog" title="API Giphy nos permite obtener gifs de manera muy cómoda. Mas info: api.giphy.com" %}
+{% include elem.html giphy="xTiTnJ0uuZEwVlYQog" title="API Giphy nos permite obtener gifs de manera muy cómoda. Mas info: api.giphy.com" %}
 
 Lo primero será crear una carpeta con tan solo 3 archivos. El primero sera <strong>bower.json</strong> que contendrá las dependencias <strong>vue</strong> (sin esto no vamos a ningún sitio), <strong>vue-resource</strong> para hacer las peticiones a la API Giphy y <strong>Font-awesome</strong> para usar su iconografía:
 
@@ -238,7 +238,7 @@ Finalmente llegamos al grid, que consta de un bucle de <strong>gifs</strong>( va
 </code>  
 </pre>
 
-{% include elem.html gif="UFGj6EYw5JhMQ" title="Bueno, dejémonos de rodeos y pongámonos a programar de verdad." %}
+{% include elem.html giphy="UFGj6EYw5JhMQ" title="Bueno, dejémonos de rodeos y pongámonos a programar de verdad." %}
 
 
 Ahora pasamos al javascript: html tenía un identificador <strong>giphy</strong> que necesitara <strong>el</strong> para posicionarse, las variables se colocan en <strong>data</strong> y la funciones en <strong>methods</strong>:

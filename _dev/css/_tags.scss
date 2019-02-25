@@ -30,7 +30,7 @@
     margin: $unit;
     margin-top: 0px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .25);
-    -webkit-transition: position 0.5s ease-out;
+    transition: position 0.5s ease-out;
     cursor: pointer;
     float: right;
     background: $white;
@@ -51,7 +51,7 @@
 }
 
 #search {
-    -webkit-appearance: none;
+    appearance: none;
 
     input {
         width: 55px;

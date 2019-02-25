@@ -12,7 +12,7 @@ Sin que sirva de precedente, crearemos un generador de grafos interactivo de la 
 
 Tendremos un formulario para añadir usuarios de twitter dibujando un bonito grafo de nodos y links. Los nodos representaran a los usuarios y los links representaran la conexiones que tienen entre ellos (follow - follower). Podremos ir agregando uno a uno y ver como nuestro grafo va creciendo de tamaño de forma interactiva. 
 
-{% include elem.html gif="uvqSTLjUe9u2Q" title="Este tutorial nos permitirá comprender las relaciones que se producen en el mundo sin movernos de casa" %}
+{% include elem.html giphy="uvqSTLjUe9u2Q" title="Este tutorial nos permitirá comprender las relaciones que se producen en el mundo sin movernos de casa" %}
 
 <strong>1º objetivo:</strong> Obtener la informacion que nos hace falta mediante la API de twitter. Usaremos node.js (express & cors) y <a href="https://www.npmjs.com/package/twitter" target="_blank">twitter</a>. Lo importante ahora mismo es mostrar la estructura de carpetas y ficheros que usaremos para llegar la idea a buen puerto:
 

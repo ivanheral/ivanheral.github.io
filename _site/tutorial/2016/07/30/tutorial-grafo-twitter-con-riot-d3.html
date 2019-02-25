@@ -122,19 +122,20 @@ Julio
 
 <p>Tendremos un formulario para añadir usuarios de twitter dibujando un bonito grafo de nodos y links. Los nodos representaran a los usuarios y los links representaran la conexiones que tienen entre ellos (follow - follower). Podremos ir agregando uno a uno y ver como nuestro grafo va creciendo de tamaño de forma interactiva.</p>
 
-<div class="elem"> 
+<div class="elem">
     
     
     
-        <div class="wall_overflow gif">
-        <img class="gif" src="//media2.giphy.com/media/uvqSTLjUe9u2Q/giphy_s.gif" /></div> 
-     
-     
+    <div class="wall_overflow gif">
+        <img class="gif" src="//media2.giphy.com/media/uvqSTLjUe9u2Q/giphy_s.gif" /></div>
     
-        <div class="title-photo">
-            <p>Este tutorial nos permitirá comprender las relaciones que se producen en el mundo sin movernos de casa</p>
-        </div> 
-     
+    
+    
+    
+    <div class="title-photo">
+        <p>Este tutorial nos permitirá comprender las relaciones que se producen en el mundo sin movernos de casa</p>
+    </div>
+    
 </div>
 
 <p><strong>1º objetivo:</strong> Obtener la informacion que nos hace falta mediante la API de twitter. Usaremos node.js (express &amp; cors) y <a href="https://www.npmjs.com/package/twitter" target="_blank">twitter</a>. Lo importante ahora mismo es mostrar la estructura de carpetas y ficheros que usaremos para llegar la idea a buen puerto:</p>
@@ -591,20 +592,21 @@ self.user.value = ''
 </pre>
 <p>Y aqui termina el tutorial por mi parte, solo teneis que lanzar desde la carpeta Riotjs un <strong>node server</strong> y abrir <strong>Public/index.html</strong> para cacharrear un poco (se me olvido que teneis que lanzar un <strong>npm run bundle</strong> para que funcione correctamente). Quedaría explicar el 2º componente de nombre <strong>more_options</strong>, componente hijo de <strong>social-twitter</strong> y responsable del guardado, carga y reseteo de nuestras creaciones. Es mejor descargarse el codigo que dejo al final del post como siempre digo.</p>
 
-<div class="elem"> 
+<div class="elem">
     
-        <div class="wall_overflow">
+    <div class="wall_overflow">
         <img src="http://img.youtube.com/vi/Ita5o7g3RkQ/mqdefault.jpg" id="Ita5o7g3RkQ" />
-        </div> 
+    </div>
     
     
-     
-     
     
-        <div class="title-photo">
-            <p>Ejemplo de la versión final con opción para guardar, cargar y resetear grafos</p>
-        </div> 
-     
+    
+    
+    
+    <div class="title-photo">
+        <p>Ejemplo de la versión final con opción para guardar, cargar y resetear grafos</p>
+    </div>
+    
 </div>
 
 <p><strong>Advertencias:</strong> Es importante recalcar que las peticiones a la API Twitter son limitadas. Recomiendo salvar vuestras creaciones cada 15-20 usuarios para no perder el progreso. Otra recomendacion es que os hagais usuario de twitter para solicitar unas keys y access tokens en <a href="https://apps.twitter.com/">https://apps.twitter.com/</a>. Ahora mismo os presto mis permisos pero probablemente acabe petando si mucha gente le da por usarlo.</p>

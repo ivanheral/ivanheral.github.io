@@ -15,9 +15,8 @@ pre[class*="language-"] {
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
-    @include media-query($on-palm) {
-        font-size: .9rem;
-    }
+    font-size: 1rem;
+    line-height: 25px;
 }
 
 pre[class*="language-"] {

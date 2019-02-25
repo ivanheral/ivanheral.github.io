@@ -589,20 +589,21 @@ export default Ember.Controller.extend({
 </code>    
 </pre>
 
-<div class="elem"> 
+<div class="elem">
     
-        <div class="wall_overflow">
+    <div class="wall_overflow">
         <img src="http://img.youtube.com/vi/4p8_aYyKtx8/mqdefault.jpg" id="4p8_aYyKtx8" />
-        </div> 
+    </div>
     
     
-     
-     
     
-        <div class="title-photo">
-            <p>Video del resultado final</p>
-        </div> 
-     
+    
+    
+    
+    <div class="title-photo">
+        <p>Video del resultado final</p>
+    </div>
+    
 </div>
 
 <p><strong>Conclusiones del paso de Ember 1.x a 2.x:</strong> En Ember 2.x usan PATCH y no PUT para modificaciones, muy raro. Muchas librerias han sido reemplazadas sin repercutir en el funcionamiento exceptuando serializer. Incluir los headers en el adaptador es mas sencillo que modificar el environment. Ha sido un poco desesperante pero finalmente ha funcionado mejor de lo que esperaba. Dejo el codigo por si le interesa a alguien:</p>

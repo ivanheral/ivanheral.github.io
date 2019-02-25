@@ -2,6 +2,7 @@ html,
 body {
   background: $bg;
   margin: 0px;
+  font-size: 1rem;
 }
 
 html {
@@ -54,39 +55,26 @@ a {
   text-align: center;
   vertical-align: middle;
   img {
-    padding: 15px;
+    margin: 15px;
     background: $white;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+    transform: scale(1);
     &.animate {
-      width: 70%;
-      @include media-query($on-laptop) {
-        width: 90%;
-      }
       transition: all 1s;
+      transform: scale(1.5);
     }
   }
 }
 
+
 .fade-modal {
   display: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  height: 100%;
-  width: 100%;
+  @include flex;
   z-index: 5;
 }
 
 .fade {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  height: 100%;
-  width: 100%;
+  @include flex;
   background: #000;
   opacity: 0;
   visibility: hidden;

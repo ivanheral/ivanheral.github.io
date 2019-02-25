@@ -16,7 +16,7 @@ Con el tiempo fueron reclutando a nuevos integrantes de diversas formas. El mund
 
 El siguiente paso fue trasladarse de la universidad a la calle y para ello contaron con ayuda de comisiones obreras de su municipio prestándoles su sede para realizar reuniones semanales. Todo esto supuso un salto cualitativo importante ya que trasladarían su trabajo a pie de calle permitiéndoles tener un contacto cercano con los vecinos y continuar con una  rutina de trabajo con la que no contaban anteriormente.
 
-{% include elem.html gif="10D7bj7LBDXAC4" title="Eran 4 gatos, pero pronto empezó a salir gente hasta debajo de las piedras" %}
+{% include elem.html giphy="10D7bj7LBDXAC4" title="Eran 4 gatos, pero pronto empezó a salir gente hasta debajo de las piedras" %}
 
 Lo primordial era llegar a la gente joven así que comenzaron a realizar fanzines & octavillas para repartir en los colegios y llevar el movimiento estudiantil a las aulas. Comenzaron a realizarse conferencias sobre temas como el problema de la vivienda o los recortes en la sanidad pública entre otros. La verdad es que todo pintaba a las mil maravillas, incluso se crearon fuertes lazos con organizaciones de otros municipios creando un movimiento reivindicativo que ni ellos mismos se creían.
 Lógicamente en esta vida nada es gratis y nuestros amigos empezaron a aplicar cuotas mensuales entre sus camaradas para poder materializar todos sus actos. No contaban con subvención alguna ni con ninguna institución fuerte que les apoyara pero se apañaban con lo que tenían, para algo eran comunistas.
@@ -25,7 +25,7 @@ Del mismo modo, otro de los problemas con el que tuvieron que batallar fue su al
 
 En eso que aparece (C) en sus vidas, una organización consolidada a nivel nacional para proponerles anexionarse con ellos. ¿Cuáles eran las condiciones? Pues muy sencillas, apoyarles a nivel nacional y autonómico a cambio de obtener apoyo a nivel municipal que era en ese momento lo que más nos interesaba. Así comenzó una nueva dinámica de trabajo más agresiva y estresante con nuevos frentes por descubrir que culminó con la presentación de (C) en las elecciones nacionales de 2008 con pobres resultados. La crisis todavía no había hecho acto de presencia pero se podría decir que eran unos adelantados a su tiempo.
 
-{% include elem.html gif="YExmd2QKNW85G" title="Un buen resumen de lo que querían llevar a la practica en Madrid" %}
+{% include elem.html giphy="YExmd2QKNW85G" title="Un buen resumen de lo que querían llevar a la practica en Madrid" %}
 
 
 Durante ese periodo nuestros protagonistas procedieron a realizar actos reivindicativos de mayor calado social de madrugada bordeando la ilegalidad. Por otro lado, se abrieron nuevas vías de financiación gracias a la venta de artículos marxistas-leninistas en el rastro de Madrid o vendiendo comida en las distintas fiestas populares del centro de Madrid.
@@ -36,7 +36,7 @@ Pronto comenzaron a granjearse cierta mala fama en el ayuntamiento (gobernado po
 
 A partir de ese momento culmine se empezó a desquebrajar todo y comenzó un proceso de declive que siempre quedara en la mente de los implicados. (C) les expulso tras algunas discrepancias ideológicas y algunos de sus integrantes perdieron la ilusión por seguir luchando. A esto había que unir las causas pendientes con la justicia que acarreaban algunos de sus miembros y que se llevaban parte de sus ingresos en abogados.
 
-{% include elem.html gif="JjLylCKqqQs5q" title="Y llego el dia de abandonarlo todo. Se acabo el correr sin rumbo" %}
+{% include elem.html giphy="JjLylCKqqQs5q" title="Y llego el dia de abandonarlo todo. Se acabo el correr sin rumbo" %}
 
 Se instauro la desconfianza y el malestar en el grupo se acrecentó. En los meses posteriores  no tardaron de producirse las primeras escisiones y el dialogo consensuado se tornó en amenazas telefónicas. Uno ya no sabía de donde sacar fuerzas para seguir apostando por el proyecto cuando  prácticamente todo su esfuerzo se había ido por el sumidero. Muchos acabaron en el ostracismo de esta sociedad adormecida mientras que otros apostaron por otros movimientos sociales más estimulantes. 
 

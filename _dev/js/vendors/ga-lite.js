@@ -1,3 +1,3 @@
-const GAnalytics = require('ganalytics');
-const ga = new GAnalytics('UA-71743490-1');
-ga.send('pageview');
+const galite = require('ga-lite');
+galite('create', 'UA-71743490-1', 'auto');
+galite('send', 'pageview');
