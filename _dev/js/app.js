@@ -173,10 +173,11 @@ var animate_modal = (e) => {
 	}
 }
 
-var top, left, width, height = 0;
+var top, left, width, height, scroll = 0;
 
 var close_modal = (e) => {
 	// animate modal
+	top -= Math.abs(scroll - window.scrollY)
 	$('#modal img').style.transform = `translateY(${top}px) translateX(${left}px)`
 	$('#modal img').style.width = `${width}px`
 	// hide modal
@@ -193,6 +194,7 @@ var modal = (e) => {
 		e.target.className = "modal"
 		width = e.target.width
 		height = e.target.height
+		scroll = window.scrollY;
 		// show modal
 		$('.fade-modal').style.display = "table"
 		addclss($('.fade'), 'show')

@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Reflexiones y vuelta al trabajo",
+      "category" : "opinion",
+      "img"      : "//media1.giphy.com/media/Nx0rz3jtxtEre/giphy.gif",
+      "url"      : "/opinion/2019/01/11/regreso-al-trabajo.html",
+      "svg"      : "",
+      "date"     : "11 Enero 2019"
+    } ,
+  
+    {
       "title"    : "Tutorial. Entorno con Taskr, Rollup y Yarn",
       "category" : "tutorial",
       "img"      : "/files/images/desarrollo/yarn.png",

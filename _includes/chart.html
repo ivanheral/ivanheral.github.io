@@ -1,3 +1,8 @@
 <div class="elem">
     <div id="{{include.id}}" class="chart"></div>
+    {% if include.title %}
+    <div class="title-photo">
+        <p>{{include.title}}</p>
+    </div>
+    {% endif %}
 </div>
