@@ -211,5 +211,5 @@ var modal = (e) => {
 }
 
 if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('/sw.js');
+	//navigator.serviceWorker.register('/sw.js');
 }
