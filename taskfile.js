@@ -9,7 +9,8 @@ export default async function (task) {
     await task.clear(['css', 'js']).parallel(['js', 'css', 'vendors', 'sw'])
     await task.watch('_dev/css/**/*.*', 'css')
     await task.watch('_dev/js/**/*.js', 'js')
-    await task.watch('_site/**/*.*', 'changes')
+    await task.watch('_site/**/*.js', 'changes')
+    await task.watch('_site/**/*.css', 'changes')
 }
 
 export async function css(task) {

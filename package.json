@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/ivanheral/ivanheral.github.io#readme",
   "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
     "@taskr/browserify": "^1.1.0",
     "@taskr/clear": "^1.1.0",
     "@taskr/esnext": "^1.1.0",
@@ -27,8 +29,6 @@
     "@taskr/uglify": "^1.1.0",
     "@taskr/watch": "^1.1.0",
     "apexcharts": "^3.4.1",
-    "@babel/core": "^7.3.3",
-    "@babel/preset-env": "^7.3.1",
     "babelify": "^10.0.0",
     "browser-sync": "^2.26.3",
     "compress-images": "^1.4.6",
