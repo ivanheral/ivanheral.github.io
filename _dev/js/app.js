@@ -209,3 +209,7 @@ var modal = (e) => {
 	} else
 		window.open(e.target.src, '_blank')
 }
+
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('/js/sw.js');
+}
