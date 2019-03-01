@@ -6,7 +6,7 @@ bs({
 })
 
 export default async function (task) {
-    await task.clear(['css', 'js']).parallel(['js', 'css', 'vendors'])
+    await task.clear(['css', 'js']).parallel(['js', 'css', 'vendors', 'sw'])
     await task.watch('_dev/css/**/*.*', 'css')
     await task.watch('_dev/js/**/*.js', 'js')
     await task.watch('_site/**/*.*', 'changes')
@@ -30,6 +30,10 @@ export async function js(task) {
             presets: ['@babel/preset-env']
         })]
     }).uglify().target(['_site/js', 'js'])
+}
+
+export async function sw(task) {
+    await task.source('_dev/js/sw.js').target('_site')
 }
 
 export async function vendors(task) {
