@@ -46,7 +46,7 @@ a {
 .container {
   margin: $unit auto;
   @include media-query($on-palm) {
-    margin: $unit;
+    margin: $unit/3;
   }
 }
 
