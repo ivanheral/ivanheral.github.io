@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <link rel="stylesheet" href="{{ " /css/app.css " | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="/css/app.css">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="apple-touch-icon" sizes="57x57" href="/files/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/files/images/favicon/apple-icon-60x60.png">
@@ -25,6 +25,10 @@
     <script type="text/javascript">
         var disqus_shortname = 'ivanheral';
         var disqus_identifier = "{{ site.disqusid }}{{ page.url | replace:'index.html','' }}";
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register('sw.js');
+        }
     </script>
+
     {% include twittercards.html %}
 </head>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Tutorial. Cambiar grid de Bootstrap</title>
     <meta name="description" content="Tutorial. Cambiar grid de Bootstrap">
-    <link rel="stylesheet" href=" /css/app.css ">
+    <link rel="stylesheet" href="/css/app.css">
     <link rel="canonical" href="ivanheral.github.io/tutorial/2016/02/06/tutorial-grid-bootstrap-4.html">
     <link rel="apple-touch-icon" sizes="57x57" href="/files/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/files/images/favicon/apple-icon-60x60.png">
@@ -27,7 +27,11 @@
     <script type="text/javascript">
         var disqus_shortname = 'ivanheral';
         var disqus_identifier = "/tutorial/2016/02/06/tutorial-grid-bootstrap-4.html";
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register('sw.js');
+        }
     </script>
+
     <!-- Enables twitter cards on posts -->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@ivanheral" />
