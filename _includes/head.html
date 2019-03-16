@@ -25,10 +25,6 @@
     <script type="text/javascript">
         var disqus_shortname = 'ivanheral';
         var disqus_identifier = "{{ site.disqusid }}{{ page.url | replace:'index.html','' }}";
-        if (navigator.serviceWorker) {
-            navigator.serviceWorker.register('sw.js');
-        }
     </script>
-
     {% include twittercards.html %}
 </head>
