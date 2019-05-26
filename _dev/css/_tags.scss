@@ -17,7 +17,7 @@
             }
 
             @include media-query($on-palm) {
-                font-size: 1.25rem;
+                font-size: 1.125rem;
             }
 
             overflow: hidden;
@@ -81,7 +81,7 @@
     color: $text;
 
     @include media-query($on-palm) {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
     }
 
     transition: color 300ms;
