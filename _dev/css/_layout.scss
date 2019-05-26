@@ -72,7 +72,7 @@
     letter-spacing: .10rem;
 
     @include media-query($on-palm) {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     &.page {
@@ -87,7 +87,7 @@
     }
 
     &.post {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
 
         @include media-query($on-palm) {
             width: 100%;
