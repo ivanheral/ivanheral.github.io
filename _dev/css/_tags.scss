@@ -7,13 +7,17 @@
 
     .title {
         a {
-            padding: 10.5px;
+            padding: 10.5px 9px;
             float: left;
             max-width: 85px;
             border-right: 1px solid $b_white;
 
             @include media-query($on-laptop) {
                 border-right: 0px;
+            }
+
+            @include media-query($on-palm) {
+                font-size: 1.25rem;
             }
 
             overflow: hidden;
@@ -58,7 +62,6 @@
         border: none;
         background: none;
         padding: 10px;
-        font-size: 1rem;
 
         &:focus {
             outline: none;
@@ -75,13 +78,13 @@
 .link {
     padding: 1px $unit;
     line-height: 40px;
-    color: #aaa;
-    transition: color 300ms;
+    color: $text;
 
-    &:hover,
-    &.select {
-        color: $text !important;
+    @include media-query($on-palm) {
+        font-size: 1.25rem;
     }
+
+    transition: color 300ms;
 
     span {
         float: right;

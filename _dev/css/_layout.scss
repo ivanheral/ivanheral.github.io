@@ -35,7 +35,7 @@
     }
 
 
-    > .post {
+    >.post {
         overflow: hidden;
         width: auto;
         padding: $unit;
@@ -60,7 +60,6 @@
     .post-meta {
         color: $text;
         padding-top: $unit;
-        font-size: 1rem;
     }
 }
 
@@ -69,12 +68,18 @@
     text-transform: uppercase;
     text-align: left;
     color: $blue;
-    min-height: 42px;
+    min-height: 0px;
     letter-spacing: .10rem;
+
+    @include media-query($on-palm) {
+        font-size: 1.5rem;
+    }
+
     &.page {
         font-size: 1.5rem;
         padding: 0px;
         padding-top: 3em;
+
         @include media-query($on-palm) {
             font-size: 1.2rem;
             padding: $unit;
@@ -82,9 +87,9 @@
     }
 
     &.post {
-        font-size: 2rem;
+        font-size: 1.5rem;
+
         @include media-query($on-palm) {
-            font-size: 1rem;
             width: 100%;
         }
     }
@@ -94,7 +99,7 @@
     float: left;
     margin: 0px;
 
-    & > p {
+    &>p {
         padding: $unit 0px;
 
         @include media-query($on-laptop) {
@@ -114,6 +119,12 @@
         display: block;
         clear: both;
         line-height: 24px;
+
+        @include media-query($on-laptop) {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }
+
         font-weight: normal;
         text-align: left;
     }
@@ -156,7 +167,7 @@
         padding-bottom: 0%;
     }
 
-    & > .disqus iframe {
+    &>.disqus iframe {
         position: relative;
     }
 
@@ -258,7 +269,7 @@ article {
         padding: 0px;
         padding-top: 1px;
 
-        .article > header,
+        .article>header,
         .social-media-list {
             margin: $unit;
         }

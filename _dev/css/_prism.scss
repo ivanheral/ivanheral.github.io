@@ -15,8 +15,6 @@ pre[class*="language-"] {
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
-    font-size: 1rem;
-    line-height: 25px;
 }
 
 pre[class*="language-"] {
@@ -26,6 +24,7 @@ pre[class*="language-"] {
     padding: 15px;
     margin-left: -15px;
     margin-right: -15px;
+
     @include media-query($on-laptop) {
         margin-left: 0px;
         margin-right: 0px;

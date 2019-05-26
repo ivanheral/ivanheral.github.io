@@ -119,9 +119,11 @@ doc.addEventListener('DOMContentLoaded', () => {
 
 
 /* lazy-load */
-doc.addEventListener('scroll', scroll)
+var top, left, width, height, scroll = 0;
 
-function scroll() {
+doc.addEventListener('scroll', scroll_tag)
+
+function scroll_tag() {
 	let scroll = $('html').scrollTop
 	$('.tags').style.marginTop = '0px'
 	$('.tags').style.marginTop = scroll > 45 && scroll.toString() + 'px';
@@ -172,8 +174,6 @@ var animate_modal = (e) => {
 		addclss($('#modal img'), 'animate');
 	}
 }
-
-var top, left, width, height, scroll = 0;
 
 var close_modal = (e) => {
 	// animate modal

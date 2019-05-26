@@ -1,87 +1,97 @@
 html,
 body {
-  background: $bg;
-  margin: 0px;
-  font-size: 1rem;
+    background: $bg;
+    margin: 0px;
+    font-size: 0.9375rem;
+    background-image: url("/files/images/bg/firewatch.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 html {
-  -webkit-text-size-adjust: none;
-	touch-action: manipulation;
+    -webkit-text-size-adjust: none;
+    touch-action: manipulation;
 }
 
 img[src=""] {
-  display: none;
+    display: none;
 }
 
 * {
-  font-family: -apple-system, BlinkMacSystemFont, 'Oxygen', Roboto, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust:100%
+    font-family: -apple-system, BlinkMacSystemFont, 'Oxygen', Roboto, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%
 }
 
 a {
-  color: $blue;
-  text-decoration: none;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-  &:hover {
+    color: $blue;
     text-decoration: none;
-  }
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 .wrapper {
-  margin: 0 auto;
-  max-width: $width;
-  @include media-query($on-laptop) {
-    max-width: 660px;
-  }
-  @include media-query($on-palm) {
-    max-width: $width_mobile;
-    min-width: 280px;
-  }
+    margin: 0 auto;
+    max-width: $width;
+
+    @include media-query($on-laptop) {
+        max-width: 660px;
+    }
+
+    @include media-query($on-palm) {
+        max-width: $width_mobile;
+        min-width: 280px;
+    }
 }
 
 .container {
-  margin: $unit auto;
-  @include media-query($on-palm) {
-    margin: $unit/3;
-  }
+    margin: $unit auto;
+
+    @include media-query($on-palm) {
+        margin: $unit;
+    }
 }
 
 #modal {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  img {
-    margin: 15px;
-    background: $white;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
-    transform: scale(1);
-    &.animate {
-      transition: all 1s;
-      transform: scale(1.5);
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+    img {
+        margin: 15px;
+        background: $white;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+        transform: scale(1);
+
+        &.animate {
+            transition: all 1s;
+            transform: scale(1.5);
+        }
     }
-  }
 }
 
 
 .fade-modal {
-  display: none;
-  @include flex;
-  z-index: 5;
+    display: none;
+    @include flex;
+    z-index: 5;
 }
 
 .fade {
-  @include flex;
-  background: #000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1s;
-  z-index: 1;
-  &.show {
-    opacity: 0.5;
-    visibility: visible;
-  }
+    @include flex;
+    background: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+    z-index: 1;
+
+    &.show {
+        opacity: 0.5;
+        visibility: visible;
+    }
 }
