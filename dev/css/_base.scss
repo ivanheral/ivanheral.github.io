@@ -10,15 +10,16 @@ html {
     touch-action: manipulation;
 }
 
-img[src=""] {
+img[src=''] {
     display: none;
 }
 
 * {
-    font-family: -apple-system, BlinkMacSystemFont, 'Oxygen', Roboto, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Oxygen', Roboto, Segoe UI, Helvetica Neue, Helvetica, Arial,
+        sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -71,7 +72,6 @@ a {
         }
     }
 }
-
 
 .fade-modal {
     display: none;

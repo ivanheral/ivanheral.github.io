@@ -25,7 +25,6 @@
         grid-template-columns: auto;
     }
 
-
     &.home {
         min-height: 300px;
     }
@@ -34,8 +33,7 @@
         width: 100%;
     }
 
-
-    >.post {
+    > .post {
         overflow: hidden;
         width: auto;
         padding: $unit;
@@ -69,7 +67,8 @@
     text-align: left;
     color: $blue;
     min-height: 0px;
-    letter-spacing: .10rem;
+    letter-spacing: 0.1rem;
+    font-size: 1.1rem;
 
     @include media-query($on-palm) {
         font-size: 1.25rem;
@@ -81,15 +80,16 @@
         padding-top: 3em;
 
         @include media-query($on-palm) {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             padding: $unit;
         }
     }
 
     &.post {
-        font-size: 1.25rem;
+        font-size: 2.25rem;
 
         @include media-query($on-palm) {
+            font-size: 1.25rem;
             width: 100%;
         }
     }
@@ -99,7 +99,7 @@
     float: left;
     margin: 0px;
 
-    &>p {
+    & > p {
         padding: $unit 0px;
 
         @include media-query($on-laptop) {
@@ -154,7 +154,6 @@
         margin-bottom: 3em;
     }
 
-
     .wall_overflow {
         position: relative;
         height: 0px;
@@ -167,7 +166,7 @@
         padding-bottom: 0%;
     }
 
-    &>.disqus iframe {
+    & > .disqus iframe {
         position: relative;
     }
 
@@ -258,7 +257,7 @@ article {
     padding-bottom: 0px;
 
     &:after {
-        content: "";
+        content: '';
         display: table;
         clear: both;
     }
@@ -269,7 +268,7 @@ article {
         padding: 0px;
         padding-top: 1px;
 
-        .article>header,
+        .article > header,
         .social-media-list {
             margin: $unit;
         }
