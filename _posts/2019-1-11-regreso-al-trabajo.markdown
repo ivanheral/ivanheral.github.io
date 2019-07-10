@@ -5,7 +5,7 @@ date:   2019-1-11 15:00:00 +0100
 comments: true
 author: ivanheral
 categories: opinion
-urlimage: //thumbs.gfycat.com/UntimelyTotalDassie-small.gif
+urlimage: //thumbs.gfycat.com/UntimelyTotalDassie-mobile.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus feugiat, gravida erat eu, convallis dui. Aliquam eget mauris tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam facilisis sem sodales, porttitor velit non, facilisis diam. Pellentesque aliquam at lectus et consectetur. Maecenas id quam nec enim hendrerit maximus nec eu lacus. Suspendisse nec consectetur erat, et sollicitudin dolor. Nullam interdum sodales est eu aliquet.

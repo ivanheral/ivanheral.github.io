@@ -69,6 +69,8 @@
 
         @include media-query($on-laptop) {
             float: right;
+            padding: 10.5px 9px;
+            font-size: 1.125rem;
         }
 
         color: $text;

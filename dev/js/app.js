@@ -6,13 +6,8 @@ const doc = document;
 /* jQuery */
 var $ = v => doc.querySelector(v);
 var all = v => doc.querySelectorAll(v);
-
-var addclss = (el, nam) => (el.classList ? el.classList.add(nam) : (el.className += ' ' + nam));
-
-var delclss = (el, nam) =>
-	el.classList ?
-	el.classList.remove(nam) :
-	(el.className = el.className.replace(new RegExp(`(^|\\b)${nam.split(' ').join('|')}(\\b|$)`, 'gi'), ' '));
+var addclss = (el, nam) => el.classList.add(nam);
+var delclss = (el, nam) => el.classList.remove(nam);
 
 /* vendors */
 var add_script = script => {
@@ -72,7 +67,7 @@ function posts(v, i) {
 		id: i.toString(),
 	});
 	$('.post-list').appendChild(post);
-	var text = v.img.indexOf('giphy') > 0 ? 'src' : 'data-src';
+	var text = v.img.match(/(giphy|gfycat)/i) ? 'src' : 'data-src';
 	doc.getElementById(i.toString()).insertAdjacentHTML(
 		'beforeend',
 		`<div class="wall_img"><img ${text}="${v.img}"></div><div class="info_post"><div class="post-title">${v.title}</div><div class="post-meta">${v.date}</div></div>`,
@@ -84,8 +79,8 @@ function load() {
 	xhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
 			if (search !== '') {
-				var result = JSON.parse(this.responseText).filter(function (elem) {
-					return elem.title.toUpperCase().indexOf(search.toUpperCase()) > -1;
+				var result = JSON.parse(this.responseText).filter(e => {
+					return e.title.toUpperCase().indexOf(search.toUpperCase()) > -1;
 				});
 
 				result.forEach(function (elem, i) {
@@ -118,7 +113,7 @@ doc.addEventListener(
 	() => {
 		$('#modal').addEventListener('click', close_modal);
 		$('#modal').addEventListener('mouseover', animate_modal);
-		window.location.pathname.indexOf('tutorial') >= 0 && add_script('prism');
+		window.location.pathname.match(/(tutorial)/i) && add_script('prism');
 		$('.chart') && add_script('chart');
 		$('.important') === null && load();
 	},
@@ -147,7 +142,7 @@ var isscroll = (elem, n) => window.innerHeight + n > elem.getBoundingClientRect(
 function showitem() {
 	let total = [].slice.call(all('.elem > div:first-child:not(.tested)'));
 
-	total.map((val, i) => {
+	total.map(val => {
 		try {
 			var src = val.children[0].src;
 		} catch (error) {
@@ -163,17 +158,14 @@ function showitem() {
 				if (val.children[0].getAttribute('data-src')) {
 					val.children[0].src = val.children[0].getAttribute('data-src');
 				}
-				if (src.indexOf('giphy_s.gif') >= 0) {
-					val.children[0].src = src.replace('_s.gif', '.gif');
+				if (src.match(/(giphy|gfycat)/i)) {
+					val.children[0].src = src.replace('_s.gif', '.gif').replace('-mobile.jpg', '-small.gif');
 					if (val.className == 'wall_overflow gif') val.addEventListener('click', modal);
 				}
-				if (src.indexOf('mqdefault') >= 0) {
+				if (src.match(/(mqdefault)/i)) {
 					val.children[0].src = '';
 					val.insertAdjacentHTML(
-						'beforeend',
-						'<iframe src="//www.youtube.com/embed/' +
-						val.children[0].id +
-						'" frameborder="0" allowfullscreen></iframe>',
+						`beforeend<iframe src="//www.youtube.com/embed/${val.children[0].id}" frameborder="0"></iframe>`,
 					);
 				}
 			}
@@ -183,14 +175,15 @@ function showitem() {
 }
 
 /* Modal */
-var animate_modal = e => {
-	if ($('#modal img').className.indexOf('animate') < 0) {
+var animate_modal = _e => {
+	if (!$('#modal img').className.match(/(animate)/i)) {
 		$('#modal img').style = '';
 		addclss($('#modal img'), 'animate');
 	}
 };
 
-var close_modal = e => {
+
+var close_modal = _e => {
 	// animate modal
 	top -= Math.abs(scroll - window.scrollY);
 	$('#modal img').style.transform = `translateY(${top}px) translateX(${left}px)`;

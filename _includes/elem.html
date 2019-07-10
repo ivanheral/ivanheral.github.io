@@ -15,7 +15,8 @@
         <img class="gif" src="//media2.giphy.com/media/{{include.giphy}}/giphy_s.gif"></div>
     {% endif %}
     {% if include.gfycat %}
-    <img class="gif" src="//thumbs.gfycat.com/{{include.gfycat}}.gif">
+    <div class="wall_overflow gif">
+    <img class="gif" src="//thumbs.gfycat.com/{{include.gfycat}}.gif"></div>
     {% endif %}
     {% if include.img %}
     <div><img src="{{ include.img | prepend: site.baseurl }}"></div>
