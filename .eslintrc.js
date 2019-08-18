@@ -1,12 +1,11 @@
 module.exports = {
   "parser": "babel-eslint",
-  extends:  [
-    'plugin:prettier/recommended'
+  extends: [
+    "plugin:prettier/recommended"
   ],
-  plugins: ['babel'],
+  plugins: ["babel"],
   "parserOptions": {
     "sourceType": "module",
-    "allowImportExportEverywhere": false,
-    "codeFrame": true
+    "ecmaVersion": 2018
   }
 }

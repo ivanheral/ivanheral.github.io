@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-/*_base.css */
+/* _base.css */
 $bg: #f8f8f8;
 $width_mobile: 420px;
 $width: 850px;
@@ -31,10 +31,10 @@ $link: #007ee5;
 
 @mixin flex {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 100%;
     width: 100%;
 }

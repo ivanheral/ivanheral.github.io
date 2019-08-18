@@ -1,7 +1,7 @@
 html,
 body {
     background: $bg;
-    margin: 0px;
+    margin: 0;
     font-size: 0.9375rem;
 }
 
@@ -76,11 +76,13 @@ a {
 .fade-modal {
     display: none;
     @include flex;
+
     z-index: 5;
 }
 
 .fade {
     @include flex;
+
     background: #000;
     opacity: 0;
     visibility: hidden;

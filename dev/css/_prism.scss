@@ -18,7 +18,6 @@ pre[class*='language-'] {
 }
 
 pre[class*='language-'] {
-    padding: 1em;
     margin: 0.5em 0;
     overflow: auto;
     padding: 15px;
@@ -26,8 +25,8 @@ pre[class*='language-'] {
     margin-right: -15px;
 
     @include media-query($on-laptop) {
-        margin-left: 0px;
-        margin-right: 0px;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -71,7 +70,7 @@ pre[class*='language-'] {
 
 .token.boolean,
 .token.constant {
-    color: #99cc99;
+    color: #9c9;
 }
 
 .token.symbol,
@@ -102,6 +101,8 @@ pre[class*='language-'] {
 
 .token.entity {
     color: #ffffb6;
+    cursor: help;
+
     /* text-decoration: underline; */
 }
 
@@ -138,8 +139,4 @@ pre[class*='language-'] {
 
 .token.italic {
     font-style: italic;
-}
-
-.token.entity {
-    cursor: help;
 }
