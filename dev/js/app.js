@@ -148,7 +148,7 @@ function showitem() {
         } catch (error) {
             val.className == 'disqus' && add_script(`https://${disqus_shortname}.disqus.com/embed.js`);
         }
-        if (isscroll(val, -90)) {
+        if (isscroll(val, -180)) {
             val.className == 'chart' && add_script('chart');
 
             if (src !== undefined) {
@@ -159,7 +159,10 @@ function showitem() {
                     val.children[0].src = val.children[0].getAttribute('data-src');
                 }
                 if (src.match(/(giphy|gfycat)/i)) {
-                    val.children[0].src = src.replace('_s.gif', '.gif').replace('-mobile.jpg', '-small.gif');
+                    val.children[0].src = src
+                        .replace('_s.gif', '.gif')
+                        .replace('-mobile.jpg', '.gif')
+                        .replace('thumbs', 'zippy');
                     if (val.className == 'wall_overflow gif') val.addEventListener('click', modal);
                 }
                 if (src.match(/(mqdefault)/i)) {
