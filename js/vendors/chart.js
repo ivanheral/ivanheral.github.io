@@ -16,16 +16,15 @@ var __options_1 = {
     },
     series: [
         {
-            name: 'sales',
-            data: [30, 40, 35],
+            name: 'size (KB)',
+            data: [4.38, 7.72, 24.9],
         },
     ],
     xaxis: {
-        categories: [1991, 1992, 1993],
+        categories: ['Javascript', 'Css', 'Vendors'],
     },
 };
 
 var chart = new _$apexchartsCommon_2(document.querySelector('#dashboard_div'), __options_1);
 chart.render();
-
 }());

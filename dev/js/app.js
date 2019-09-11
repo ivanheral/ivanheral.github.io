@@ -2,7 +2,6 @@
 var section = 'all';
 var search = '';
 const doc = document;
-
 /* jQuery */
 var $ = v => doc.querySelector(v);
 var all = v => doc.querySelectorAll(v);
@@ -114,7 +113,6 @@ doc.addEventListener(
         $('#modal').addEventListener('click', close_modal);
         $('#modal').addEventListener('mouseover', animate_modal);
         window.location.pathname.match(/(tutorial)/i) && add_script('prism');
-        $('.chart') && add_script('chart');
         $('.important') === null && load();
     },
     false,
