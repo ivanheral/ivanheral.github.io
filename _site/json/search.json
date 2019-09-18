@@ -1,10 +1,19 @@
 [
   
     {
+      "title"    : "Mi relación con mi smartphone",
+      "category" : "opinion",
+      "img"      : "//thumbs.gfycat.com/DependableShowyBernesemountaindog-mobile.jpg",
+      "url"      : "/opinion/2019/09/18/relacion-con-mi-smartphone.html",
+      "svg"      : "",
+      "date"     : "18 Septiembre 2019"
+    } ,
+  
+    {
       "title"    : "Retrospectiva y situación del blog",
       "category" : "opinion",
       "img"      : "//media1.giphy.com/media/KyGiMJokZEQvu/giphy_s.gif",
-      "url"      : "/opinion/2019/09/11/retrospectiva-situacion-blog.html",
+      "url"      : "/opinion/2019/09/11/retrospectiva-situacion-blog-copy.html",
       "svg"      : "",
       "date"     : "11 Septiembre 2019"
     } ,
