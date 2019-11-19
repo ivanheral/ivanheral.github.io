@@ -4,7 +4,7 @@
   "description": "Blog de Ivan Heral",
   "main": "index.js",
   "scripts": {
-    "dev": "taskr",
+    "build": "taskr && mv _site public",
     "imagemin": "node  dev/imagemin.js",
     "lint": "eslint ./dev --ext .js --fix",
     "lint-styles": "stylelint 'dev/**/*.scss' --fix"
