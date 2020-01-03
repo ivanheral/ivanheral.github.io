@@ -1,7 +1,7 @@
-import bs from 'servor';
+import bs from 'taskr-build/fw/servor';
 bs.start({
     root: '_site',
-    port: 9000
+    port: 3000
 });
 
 export default async function (task) {
