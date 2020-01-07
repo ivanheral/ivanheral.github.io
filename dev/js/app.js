@@ -1,3 +1,9 @@
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('js/sw.js').then(_ => {
+        console.log('Service Worker Registered');
+    });
+} else console.log('Your browser does not support the Service-Worker!');
+
 /* Vars */
 var section = 'all';
 var search = '';
@@ -75,14 +81,14 @@ function posts(v, i) {
 
 function load() {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (search !== '') {
                 var result = JSON.parse(this.responseText).filter(e => {
                     return e.title.toUpperCase().indexOf(search.toUpperCase()) > -1;
                 });
 
-                result.forEach(function(elem, i) {
+                result.forEach(function (elem, i) {
                     posts(elem, i);
                 });
 
@@ -95,7 +101,7 @@ function load() {
                     $('.post-list').appendChild(post);
                 }
             } else {
-                JSON.parse(this.responseText).forEach(function(elem, i) {
+                JSON.parse(this.responseText).forEach(function (elem, i) {
                     if (section === 'all' || elem.category === section) posts(elem, i);
                 });
             }
@@ -191,7 +197,7 @@ var close_modal = _e => {
     // hide modal
     delclss($('.modal'), 'modal');
     delclss($('.fade'), 'show');
-    setTimeout(function() {
+    setTimeout(function () {
         $('#modal').innerHTML = '';
         $('.fade-modal').style.display = 'none';
     }, 1000);
