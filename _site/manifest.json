@@ -6,9 +6,14 @@
             "src": "files/images/favicon/favicon.ico",
             "sizes": "96x96 32x32 16x16",
             "type": "image/x-icon"
+        },
+        {
+            "src": "files/images/favicon/android-icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
         }
     ],
-    "start_url": ".",
+    "start_url": "index.html?utm_source=homescreen",
     "display": "standalone",
     "theme_color": "#000000",
     "background_color": "#ffffff"
