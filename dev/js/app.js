@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('js/sw.js').then(_ => {
+    navigator.serviceWorker.register('sw.js').then(_ => {
         console.log('Service Worker Registered');
     });
 } else console.log('Your browser does not support the Service-Worker!');
