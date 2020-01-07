@@ -15,12 +15,12 @@ export async function css(task) {
         browsers: ['last 5 versions']
     }).postcss({
         plugins: [require('cssnano')]
-    }).target(['_site/css'])
+    }).target(['_site/css', './'])
 }
 
 export async function js(task) {
     await task.source('dev/js/**/*.js').build({
         fw: "blog",
         env: "production"
-    }).target(['_site/js'])
+    }).target(['_site/js', './'])
 }
