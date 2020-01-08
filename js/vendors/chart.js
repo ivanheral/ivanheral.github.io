@@ -37,4 +37,5 @@ var __options_1 = {
 
 var chart = new _$apexchartsCommon_2(document.querySelector('#dashboard_div'), __options_1);
 chart.render();
+
 }());
