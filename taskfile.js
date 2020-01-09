@@ -8,6 +8,7 @@ export default async function(task) {
     await task.clear(['css', 'js']).parallel(['js', 'css', 'pwa']);
     await task.watch('dev/css/**/*.*', 'css');
     await task.watch('dev/js/**/*.js', 'js');
+    await task.watch('dev/pwa/**/*', 'pwa');
 }
 
 export async function css(task) {

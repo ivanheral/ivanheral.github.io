@@ -51,7 +51,7 @@ a {
     margin: $unit auto;
 
     @include media-query($on-palm) {
-        margin: 0px;
+        margin: 15px;
     }
 }
 
