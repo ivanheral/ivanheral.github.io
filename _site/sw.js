@@ -2,7 +2,7 @@
 var ver = 'v1';
 var name = 'ivanheral';
 var CACHENAME = `${name}-${ver}`;
-var expectedCaches = ['pwabuilder-offline'];
+var expectedCaches = [`${name}-${ver}`];
 
 var FILES = ['/offline.html', '/files/images/blog/404.png'];
 
