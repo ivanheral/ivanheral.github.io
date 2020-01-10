@@ -1,13 +1,11 @@
 // This is the "Offline page" service worker
-var ver = "v1";
-var name = "ivanheral";
+var ver = 'v1';
+var name = 'ivanheral';
 
 var CACHENAME = `${name}-${ver}`;
-var FILES = [
-    "/offline.html",
-    "/files/images/blog/404.png"
-  ];
-  
+const expectedCaches = [CACHENAME];
+
+var FILES = ['/offline.html', '/files/images/blog/404.png'];
 
 // Install stage sets up the offline page in the cache and opens a new cache
 self.addEventListener('install', event => {
@@ -26,17 +24,22 @@ self.addEventListener('install', event => {
     );
 });
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', event => {
     event.waitUntil(
-        caches.keys().then(cacheNames =>
-            Promise.all(
-                cacheNames
-                    .map(c => c.split('-'))
-                    .filter(c => c[0] === name)
-                    .filter(c => c[1] !== ver)
-                    .map(c => caches.delete(c.join('-')))
-            );
-        );
+        caches
+            .keys()
+            .then(keys =>
+                Promise.all(
+                    keys.map(key => {
+                        if (!expectedCaches.includes(key)) {
+                            return caches.delete(key);
+                        }
+                    }),
+                ),
+            )
+            .then(() => {
+                console.log(`${ver} now ready to handle fetches!`);
+            }),
     );
 });
 
