@@ -13,6 +13,23 @@ var FILES = [
     '/json/search.json',
 ];
 
+// Install stage sets up the offline page in the cache and opens a new cache
+self.addEventListener('install', event => {
+    const offlinePage = new Request('offline.html', {
+        headers: {
+            'Content-Type': 'text/html',
+        },
+    });
+    event.waitUntil(
+        fetch(offlinePage).then(response => {
+            return caches.open(CACHENAME).then(cache => {
+                console.log('[PWA Builder] Cached offline page during install: ' + response.url);
+                return cache.addAll(FILES);
+            });
+        }),
+    );
+});
+
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches
