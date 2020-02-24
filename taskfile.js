@@ -1,4 +1,4 @@
-import bs from 'taskr-build/fw/servor';
+import bs from './server/servor';
 bs.start({
     root: '_site',
     port: 3000
@@ -31,9 +31,6 @@ export async function pwa(task) {
 export async function js(task) {
     await task
         .source('dev/js/**/*.js')
-        .build({
-            fw: 'blog',
-            env: 'production',
-        })
+        .terser()
         .target(['_site/js', 'js']);
 }

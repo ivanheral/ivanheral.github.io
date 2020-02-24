@@ -1,5 +1,5 @@
 // This is the "Offline page" service worker
-var ver = 'v2';
+var ver = 'v5';
 var name = 'cache';
 var CACHENAME = `${name}-${ver}`;
 var expectedCaches = [`${name}-${ver}`];
@@ -9,6 +9,15 @@ var FILES = [
     '/files/images/blog/404.png',
     '/css/app.css',
     '/js/app.js',
+    '/js/modules/jquery.js',
+    '/js/modules/load.js',
+    '/js/modules/modal.js',
+    '/js/modules/prism.js',
+    '/js/modules/script.js',
+    '/js/modules/scroll.js',
+    '/js/modules/section.js',
+    '/js/modules/chart.js',
+    '/js/modules/conf_chart.js',
     '/index.html',
     '/json/search.json',
 ];

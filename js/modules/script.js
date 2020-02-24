@@ -1,0 +1,1 @@
+const add_script=e=>{document.getElementsByTagName("head")[0].appendChild(Object.assign(document.createElement("script"),{type:"text/javascript",src:e.indexOf("https")>-1?e:`/js/modules/${e}.js`}))};export{add_script};

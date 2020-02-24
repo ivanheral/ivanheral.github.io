@@ -4,7 +4,7 @@
   "description": "Blog de Ivan Heral",
   "main": "index.js",
   "scripts": {
-    "build": "taskr",
+    "dev": "taskr",
     "imagemin": "node  dev/imagemin.js",
     "lint": "eslint ./dev --ext .js --fix",
     "lint-styles": "stylelint 'dev/**/*.scss' --fix"
@@ -25,6 +25,7 @@
     "@taskr/postcss": "^1.1.2",
     "@taskr/sass": "^1.1.0",
     "@taskr/watch": "^1.1.0",
+    "@taskr/terser": "file:./terser",
     "apexcharts": "^3.4.1",
     "babel-eslint": "^10.0.1",
     "compress-images": "^1.4.6",
@@ -33,14 +34,12 @@
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-prettier": "^1.1.1",
-    "prettier": "^1.18.2",
-    "prismjs": "^1.16.0",
     "taskr": "^1.1.0",
-    "taskr-autoprefixer": "^1.0.0",
-    "taskr-build": "https://github.com/ivanheral/taskr-build.git"
+    "taskr-autoprefixer": "^1.0.0"
   }
 }

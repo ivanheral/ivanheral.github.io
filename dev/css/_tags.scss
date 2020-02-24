@@ -87,7 +87,9 @@
     }
 
     transition: color 300ms;
-
+    &.select {
+        color: $blue;
+    }
     span {
         float: right;
 

@@ -1,0 +1,1 @@
+const doc=document,$=l=>doc.querySelector(l),all=l=>doc.querySelectorAll(l),addclss=(l,s)=>l.classList.add(s),delclss=(l,s)=>l.classList.remove(s);export{$,all,addclss,delclss};
