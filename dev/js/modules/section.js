@@ -1,11 +1,9 @@
 const find = m => import(`${m}.js`);
 const change_section = async e => {
-    const { $, addclss, all, delclss } = await find('./jquery');
+    const { $, addclss, delallclss } = await find('./jquery');
     const { load_posts } = await find('./load');
     window.scrollTo(0, 0);
-    [].forEach.call(all('.categories .link'), elem => {
-        delclss(elem, 'select');
-    });
+    delallclss('.categories .link', 'select');
     if (e.target.id === 'blog') {
         $('.post-list').innerHTML = '';
         $('article').style.display = 'block';

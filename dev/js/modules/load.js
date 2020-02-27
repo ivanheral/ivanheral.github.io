@@ -34,27 +34,25 @@ const load = async _ => {
     let response = await fetch('/json/search.json');
     let data = await response.json();
 
-    if (search !== '') {
-        var result = data.filter(e => {
-            return e.title.toUpperCase().indexOf(search.toUpperCase()) > -1;
-        });
-
-        result.map((elem, i) => {
+    var result = data
+        .filter(e => {
+            return (
+                (search !== '' && e.title.toUpperCase().indexOf(search.toUpperCase()) > -1) ||
+                (search === '' && section === 'all') ||
+                (section !== 'all' && e.category === section)
+            );
+        })
+        .map((elem, i) => {
+            $('.post-list').style.height = 'auto';
             posts(elem, i);
         });
 
-        if (result.length > 0) {
-            $('.site-title').innerHTML = result.length + ' posts';
-            $('.post-list').style.height = 'auto';
-        } else {
-            const post = doc.createElement('div');
-            post.innerHTML = "<div style='min-height: 80vh;'></div>";
-            $('.post-list').appendChild(post);
-        }
-    } else {
-        data.map((elem, i) => {
-            if (section === 'all' || elem.category === section) posts(elem, i);
-        });
+    if (result.length === 0) {
+        $('.post-list').appendChild(
+            Object.assign(doc.createElement('div'), {
+                innerHTML: '<div style="min-height: 80vh;"></div>',
+            }),
+        );
     }
 };
 

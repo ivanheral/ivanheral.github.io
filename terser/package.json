@@ -2,35 +2,17 @@
   "name": "@taskr/terser",
   "version": "1.1.0",
   "description": "Terser plugin for Taskr",
-  "repository": "lukeed/taskr",
   "license": "MIT",
   "main": "index.js",
-  "scripts": {
-    "test": "tape test/*.js | tap-spec"
-  },
-  "author": {
-    "name": "Luke Edwards",
-    "email": "luke@lukeed.com",
-    "url": "https://lukeed.com"
-  },
   "dependencies": {
     "terser": "^4.6.3"
   },
   "devDependencies": {
-    "@taskr/clear": "^1.1.0",
     "taskr": "^1.1.0"
-  },
-  "engines": {
-    "node": ">= 4.6"
   },
   "keywords": [
     "taskr",
     "taskr-plugin",
-    "coffee-script",
-    "coffeescript",
-    "coffee"
-  ],
-  "publishConfig": {
-    "access": "public"
-  }
+    "terser"
+  ]
 }

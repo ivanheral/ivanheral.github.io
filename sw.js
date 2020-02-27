@@ -1,5 +1,5 @@
 // This is the "Offline page" service worker
-var ver = 'v5';
+var ver = 'v2';
 var name = 'cache';
 var CACHENAME = `${name}-${ver}`;
 var expectedCaches = [`${name}-${ver}`];
