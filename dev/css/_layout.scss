@@ -63,17 +63,11 @@
 
 .post-title {
     font-weight: 900;
-    text-transform: uppercase;
     text-align: left;
     color: $blue;
     min-height: 0;
     letter-spacing: 0.1rem;
-    font-size: 1.1rem;
-
-    @include media-query($on-palm) {
-        font-size: 1.5rem;
-    }
-
+    font-size: 1.5rem;
     &.page {
         font-size: 1.5rem;
         padding: 0;
@@ -212,8 +206,6 @@
     padding-bottom: 56.25%;
     overflow: hidden;
     position: relative;
-    background-color: #e3e3e3;
-    outline: 1px solid $b_white;
 
     img {
         position: absolute;

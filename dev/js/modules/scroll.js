@@ -4,7 +4,7 @@ const scroll_tag = async _ => {
     const { $, addclss } = await find('./jquery');
     let scroll = $('html').scrollTop;
     $('.tags').style.marginTop = '0px';
-    $('.tags').style.marginTop = scroll > 45 && scroll.toString() + 'px';
+    $('.tags').style.marginTop = scroll > 45 && `${scroll.toString()}px`;
     scroll > 45 && addclss($('.tags'), 'fixed');
     await showitem();
 };
@@ -15,12 +15,11 @@ const showitem = async _ => {
     const { all, addclss, $ } = await find('./jquery');
     const { add_script } = await find('./script');
     let total = [].slice.call(all('.elem > div:first-child:not(.tested)'));
-
     total.map(async val => {
         try {
             var src = val.children[0].src;
         } catch (_) {}
-        if (isscroll(val, 0)) {
+        if (isscroll(val, -120)) {
             if (val.className == 'chart') {
                 //load chart
                 if ($('#dashboard_div') !== null) {

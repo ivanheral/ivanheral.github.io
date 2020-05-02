@@ -1,6 +1,7 @@
 /node_modules/
 /cache/
 /public/
+/.jekyll-cache/
 # Logs
 logs
 *.log

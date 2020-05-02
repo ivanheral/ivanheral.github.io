@@ -7,12 +7,24 @@
 # Site settings
 title: Escribo cosas
 email: ivanheral@domain.com
-description: "Blog sobre cine, linux, desarrollo y opiniones."
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "ivanheral.github.io" # the base hostname & protocol for your site
+description: 'Blog sobre cine, linux, desarrollo y opiniones.'
+baseurl: '' # the subpath of your site, e.g. /blog
+url: 'ivanheral.github.io' # the base hostname & protocol for your site
 twitter_username: ivanheral
-github_username:  ivanheral
-youtube_username:  ivanheral
+github_username: ivanheral
+youtube_username: ivanheral
 # Build settings
 markdown: kramdown
-exclude: ['README.md', 'taskfile.js', 'yarn.lock', 'package.json', 'node_modules', 'cache', 'dev']
+exclude:
+    [
+        'README.md',
+        'taskfile.js',
+        'yarn.lock',
+        'package.json',
+        'package-lock.json',
+        'server',
+        'node_modules',
+        'cache',
+        'dev',
+        'Gemfile'
+    ]
