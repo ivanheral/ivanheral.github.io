@@ -46,11 +46,11 @@ const showitem = async _ => {
                 if (val.children[0].getAttribute('data-src')) {
                     val.children[0].src = val.children[0].getAttribute('data-src');
                 }
-                if (src.match(/(giphy|gfycat)/i)) {
+                if (src.match(/(giphy|gfycat|coub)/i)) {
                     val.children[0].src = src
                         .replace('_s.gif', '.gif')
-                        .replace('-mobile.jpg', '.gif')
-                        .replace('thumbs', 'zippy');
+                        .replace('-mobile.jpg', '-size_restricted.gif')
+                        .replace('[block]', '');
                     if (val.className == 'wall_overflow gif')
                         val.addEventListener('click', async e => {
                             const { modal } = await find('./modal');

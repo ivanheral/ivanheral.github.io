@@ -1,4 +1,4 @@
-const add_script = s => {
+export const add_script = s => {
     document.getElementsByTagName('head')[0].appendChild(
         Object.assign(document.createElement('script'), {
             type: 'text/javascript',
@@ -6,4 +6,3 @@ const add_script = s => {
         }),
     );
 };
-export { add_script };

@@ -1,4 +1,4 @@
-const data = {
+export const data = {
     labels: ['Javascript', 'Css', 'Vendors'],
     datasets: [
         {
@@ -6,5 +6,3 @@ const data = {
         },
     ],
 };
-
-export { data };

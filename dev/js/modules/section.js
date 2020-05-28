@@ -1,5 +1,5 @@
 const find = m => import(`${m}.js`);
-const change_section = async e => {
+export const change_section = async e => {
     const { $, addclss, delallclss } = await find('./jquery');
     const { load_posts } = await find('./load');
     window.scrollTo(0, 0);
@@ -15,5 +15,3 @@ const change_section = async e => {
     $('.site-title').innerHTML = e.target.id.toUpperCase();
     return e.target.id;
 };
-
-export { change_section };
