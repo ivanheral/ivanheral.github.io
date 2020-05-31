@@ -25,7 +25,8 @@ export async function css(task) {
 }
 
 export async function pwa(task) {
-    await task.source('dev/pwa/**/*.*').target(['./_site', './']);
+    await task.source('dev/pwa/manifest.json').target(['./_site', './']);
+    await task.source('dev/pwa/sw.js').terser().target(['./_site', './']);
 }
 
 export async function js(task) {

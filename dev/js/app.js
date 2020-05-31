@@ -1,6 +1,4 @@
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-}
+'serviceWorker' in navigator && navigator.serviceWorker.register('sw.js', {scope: '/'});
 /* Vars */
 const doc = document;
 var section = 'all';
