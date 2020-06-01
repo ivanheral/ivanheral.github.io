@@ -19,7 +19,7 @@ const showitem = async _ => {
         try {
             var src = val.children[0].src;
         } catch (_) {}
-        if (isscroll(val, -120)) {
+        if (isscroll(val, 120)) {
             if (val.className == 'chart') {
                 //load chart
                 if ($('#dashboard_div') !== null) {

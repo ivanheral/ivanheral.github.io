@@ -1,8 +1,10 @@
 // This is the "Offline page" service worker
 var ver = 'v2020';
 var name = 'cache';
-var CACHENAME = `${name}-${ver}`;
-var expectedCaches = [`${name}-${ver}`];
+var time = 'xxxx';
+
+var CACHENAME = `${name}-${ver}-${time}`;
+var expectedCaches = [`${name}-${ver}-${time}`];
 
 var FILES = [
     '/manifest.json',
@@ -27,11 +29,9 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHENAME).then(cache => {
             fetch('./json/search.json').then(response => {
-                console.log(response);
                 return response.json();
             }).then(json => {
                 FILES = FILES.concat(json.map(item => {return item.url;}));
-                console.log(FILES);
                 return cache.addAll(FILES);
             });
         }))
@@ -50,7 +50,7 @@ self.addEventListener('activate', event => {
             ),
         )
         .then(_ => {
-            console.log(`${ver} now ready to handle fetches!`);
+            console.log(`${CACHENAME} now ready to handle fetches!`);
         }),
     );
 });
