@@ -1,0 +1,192 @@
+[
+  
+    {
+      "title"    : "Mi relación con mi smartphone",
+      "category" : "opinion",
+      "img"      : "//thumbs.gfycat.com/DependableShowyBernesemountaindog-mobile.jpg",
+      "url"      : "/opinion/2019/09/18/relacion-con-mi-smartphone.html",
+      "svg"      : "",
+      "date"     : "18 Septiembre 2019"
+    } ,
+  
+    {
+      "title"    : "Retrospectiva y situación del blog",
+      "category" : "opinion",
+      "img"      : "//media1.giphy.com/media/KyGiMJokZEQvu/giphy_s.gif",
+      "url"      : "/opinion/2019/09/11/retrospectiva-situacion-blog-copy.html",
+      "svg"      : "",
+      "date"     : "11 Septiembre 2019"
+    } ,
+  
+    {
+      "title"    : "Reflexiones y vuelta al trabajo",
+      "category" : "opinion",
+      "img"      : "//thumbs.gfycat.com/AssuredUnequaledAmericancrow-mobile.jpg",
+      "url"      : "/opinion/2019/09/08/reflexiones-trabajo.html",
+      "svg"      : "",
+      "date"     : "8 Septiembre 2019"
+    } ,
+  
+    {
+      "title"    : "Tutorial. Entorno con Taskr, Rollup y Yarn",
+      "category" : "tutorial",
+      "img"      : "/files/images/desarrollo/yarn.png",
+      "url"      : "/tutorial/2017/02/11/entorno-desarrollo-taskr-rollup-yarn.html",
+      "svg"      : "",
+      "date"     : "11 Febrero 2017"
+    } ,
+  
+    {
+      "title"    : "Tutorial. Buscador de gifs con Giphy y Vue.js",
+      "category" : "tutorial",
+      "img"      : "/files/images/desarrollo/vuejs.jpg",
+      "url"      : "/tutorial/2016/08/12/tutorial-buscador-gifs-giphy-vuejs.html",
+      "svg"      : "",
+      "date"     : "12 Agosto 2016"
+    } ,
+  
+    {
+      "title"    : "Tutorial. Grafo social Twitter con Riot y D3",
+      "category" : "tutorial",
+      "img"      : "/files/images/desarrollo/riot.jpg",
+      "url"      : "/tutorial/2016/07/30/tutorial-grafo-twitter-con-riot-d3.html",
+      "svg"      : "",
+      "date"     : "30 Julio 2016"
+    } ,
+  
+    {
+      "title"    : "Tutorial. Todo App con Ember y Mongo",
+      "category" : "tutorial",
+      "img"      : "/files/images/desarrollo/ember.jpg",
+      "url"      : "/tutorial/2016/06/10/app-ember-mongo.html",
+      "svg"      : "",
+      "date"     : "10 Junio 2016"
+    } ,
+  
+    {
+      "title"    : "Analisis personal del anime Golden Boy",
+      "category" : "random",
+      "img"      : "/files/images/blog/goldenboy.jpg",
+      "url"      : "/random/2016/05/30/review-golden-boy.html",
+      "svg"      : "",
+      "date"     : "30 Mayo 2016"
+    } ,
+  
+    {
+      "title"    : "Mi experiencia como colchonero",
+      "category" : "opinion",
+      "img"      : "/files/images/blog/atleti.jpg",
+      "url"      : "/opinion/2016/05/21/mi-experiencia-atleti.html",
+      "svg"      : "",
+      "date"     : "21 Mayo 2016"
+    } ,
+  
+    {
+      "title"    : "10 compositores del mundo del cine",
+      "category" : "cine",
+      "img"      : "//media1.giphy.com/media/rixMZJiNCl6OQ/giphy_s.gif",
+      "url"      : "/cine/2016/05/12/compositores-de-pelicula.html",
+      "svg"      : "",
+      "date"     : "12 Mayo 2016"
+    } ,
+  
+    {
+      "title"    : "Tutorial. App (Citymapper) con Ionic 2 Beta",
+      "category" : "tutorial",
+      "img"      : "/files/images/desarrollo/ionic.jpg",
+      "url"      : "/tutorial/2016/04/30/tutorial-ionic-beta-2.html",
+      "svg"      : "",
+      "date"     : "30 Abril 2016"
+    } ,
+  
+    {
+      "title"    : "Mi experiencia como activista politico",
+      "category" : "opinion",
+      "img"      : "//media.giphy.com/media/3o7btXGnVi5f8WjWQU/giphy_s.gif",
+      "url"      : "/opinion/2016/04/20/experiencia-activista-politico.html",
+      "svg"      : "",
+      "date"     : "20 Abril 2016"
+    } ,
+  
+    {
+      "title"    : "Mis aplicaciones preferidas de Linux",
+      "category" : "random",
+      "img"      : "/files/images/linux/linux.jpg",
+      "url"      : "/random/2016/03/30/aplicaciones-linux.html",
+      "svg"      : "",
+      "date"     : "30 Marzo 2016"
+    } ,
+  
+    {
+      "title"    : "Tutorial. Corazón animado con SVG",
+      "category" : "tutorial",
+      "img"      : "//media1.giphy.com/media/OJVQOfitCNNkI/giphy_s.gif",
+      "url"      : "/tutorial/2016/03/21/tutorial-animaciones-svg.html",
+      "svg"      : "",
+      "date"     : "21 Marzo 2016"
+    } ,
+  
+    {
+      "title"    : "Mi experiencia como critico de cine",
+      "category" : "opinion",
+      "img"      : "//media1.giphy.com/media/8ksjhVAQw0KGs/giphy_s.gif",
+      "url"      : "/opinion/2016/03/12/experiencia-critico-de-cine.html",
+      "svg"      : "",
+      "date"     : "12 Marzo 2016"
+    } ,
+  
+    {
+      "title"    : "Tutorial. Primeros pasos con Jekyll",
+      "category" : "tutorial",
+      "img"      : "/files/images/desarrollo/jekyll.jpg",
+      "url"      : "/tutorial/2016/02/29/tutorial-primeros-pasos-jekyll.html",
+      "svg"      : "",
+      "date"     : "29 Febrero 2016"
+    } ,
+  
+    {
+      "title"    : "Mi experiencia con el cubo de rubik",
+      "category" : "opinion",
+      "img"      : "//media1.giphy.com/media/CMXt6nwp1B172/giphy_s.gif",
+      "url"      : "/opinion/2016/02/19/experiencia-cubo-rubik.html",
+      "svg"      : "",
+      "date"     : "19 Febrero 2016"
+    } ,
+  
+    {
+      "title"    : "Tutorial. Cambiar grid de Bootstrap",
+      "category" : "tutorial",
+      "img"      : "/files/images/desarrollo/bootstrap.jpg",
+      "url"      : "/tutorial/2016/02/06/tutorial-grid-bootstrap-4.html",
+      "svg"      : "",
+      "date"     : "6 Febrero 2016"
+    } ,
+  
+    {
+      "title"    : "Tutorial. Primeros pasos con Grunt",
+      "category" : "tutorial",
+      "img"      : "/files/images/desarrollo/grunt.jpg",
+      "url"      : "/tutorial/2016/01/31/tutorial-primeros-pasos-grunt.html",
+      "svg"      : "",
+      "date"     : "31 Enero 2016"
+    } ,
+  
+    {
+      "title"    : "Critica de Cine. Y de repente tu",
+      "category" : "cine",
+      "img"      : "/files/images/critica/trainwreck.jpg",
+      "url"      : "/cine/2016/01/10/critica-y-de-repente-tu.html",
+      "svg"      : "",
+      "date"     : "10 Enero 2016"
+    } ,
+  
+    {
+      "title"    : "Critica de Cine. Mientras seamos jovenes",
+      "category" : "cine",
+      "img"      : "/files/images/critica/whilewereyoung.jpg",
+      "url"      : "/cine/2016/01/04/critica-mientras-seamos-jovenes.html",
+      "svg"      : "",
+      "date"     : "4 Enero 2016"
+    } 
+  
+]

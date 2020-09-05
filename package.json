@@ -1,0 +1,52 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Blog de Ivan Heral",
+  "main": "index.js",
+  "scripts": {
+    "dev": "taskr dev",
+    "prod": "taskr prod",
+    "build": "node dev/imagemin.js && jekyll build && taskr prod",
+    "imagemin": "node dev/imagemin.js",
+    "lint": "eslint ./dev --ext .js --fix",
+    "jekyll_update": "bundle update jekyll",
+    "jekyll_install": "bundle install",
+    "lint-styles": "stylelint ./dev/**/*.scss --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanheral/ivanheral.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanheral/ivanheral.github.io/issues"
+  },
+  "homepage": "https://github.com/ivanheral/ivanheral.github.io#readme",
+  "devDependencies": {
+    "@taskr/clear": "^1.1.0",
+    "@taskr/esnext": "^1.1.0",
+    "@taskr/postcss": "^1.1.2",
+    "@taskr/sass": "^1.1.0",
+    "@taskr/watch": "^1.1.0",
+    "babel-eslint": "^10.0.1",
+    "compress-images": "^1.4.6",
+    "cssnano": "^4.1.10",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "gifsicle": "^5.1.0",
+    "pngquant-bin": "^6.0.0",
+    "prettier": "^1.18.2",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "taskr": "^1.1.0",
+    "taskr-servor": "*",
+    "taskr-terser": "^1.0.0"
+  },
+  "dependencies": {
+    "stylelint": "^13.6.1"
+  }
+}

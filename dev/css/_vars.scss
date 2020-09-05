@@ -1,0 +1,38 @@
+/* _base.css */
+$bg: #f8f8f8;
+$width_mobile: 420px;
+$width: 850px;
+
+/* width article/tags */
+$width_article: 625px;
+$width_posts: 655px;
+$width_tags: 165px;
+
+$white: #fff;
+$blue: #03a87c;
+$b_black: rgba(0, 0, 0, 0.12);
+$b_white: #e6ecf0;
+$text: #444;
+$unit: 15px;
+$on-small: '(max-width: 360px)';
+$on-palm: '(max-width: 690px)';
+$on-laptop: '(max-width: 992px)';
+$on-desktop: '(max-width: 1400px)';
+$link: #007ee5;
+
+/* mixins */
+@mixin media-query($device) {
+    @media #{$device} {
+        @content;
+    }
+}
+
+@mixin flex {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}

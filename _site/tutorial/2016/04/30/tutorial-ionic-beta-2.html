@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial. App (Citymapper) con Ionic 2 Beta</title>
+    <meta name="description" content="Tutorial. App (Citymapper) con Ionic 2 Beta">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="canonical" href="ivanheral.github.io/tutorial/2016/04/30/tutorial-ionic-beta-2.html">
+    <link rel="apple-touch-icon" sizes="57x57" href="/files/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/files/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/files/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/files/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/files/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/files/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/files/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/files/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/files/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/files/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/files/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/files/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/files/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script type="text/javascript">
+        var disqus_shortname = 'ivanheral';
+        var disqus_identifier = "/tutorial/2016/04/30/tutorial-ionic-beta-2.html";
+    </script>
+    <!-- Enables twitter cards on posts -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@ivanheral" />
+<meta name="twitter:title" content="Tutorial. App (Citymapper) con Ionic 2 Beta" />
+<meta name="twitter:description" content="Tutorial. App (Citymapper) con Ionic 2 Beta" />
+<meta name="twitter:url" content="ivanheral.github.io/tutorial/2016/04/30/tutorial-ionic-beta-2.html" />
+<meta name="twitter:image" content="ivanheral.github.io/files/images/desarrollo/ionic.jpg" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container"><div class="tags">
+    <div class="title">
+        <a class="site-title" href="/">BLOG</a>
+        <div id="search">
+            <input id="search_input" type="text" placeholder="..." maxlength="5">
+        </div>
+    </div>
+    <div class="categories" id="links">
+        <div class="link" id="cine">Cine
+            <span>3</span>
+        </div>
+        <div class="link" id="random">Random
+            <span>2</span>
+        </div>
+        <div class="link" id="opinion">Opinión
+            <span>7</span>
+        </div>
+        <div class="link" id="tutorial">Tutorial
+            <span>9</span>
+        </div>
+        <a class="link return" id="blog">Volver al post</a>
+    </div>
+</div>
+<div class="post-list"></div>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="article">
+    <header class="elem important">
+      <div class="wall_img">
+      
+      <img data-src="/files/images/desarrollo/ionic.jpg"/>
+      
+      </div>
+   <div class="info_post">
+    <div class="post-title post" itemprop="name headline">Tutorial. App (Citymapper) con Ionic 2 Beta</div>
+    <div class="post-meta">
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person"></span><span itemprop="name">ivanheral,</span>
+    <time datetime="2016-04-30T11:00:00+02:00" itemprop="datePublished"> 
+30 
+Abril
+  
+        2016</time>
+
+       </div>
+</div>
+  </header>
+    <div class="share-page">
+    <div class="social-media-list">
+        <a href="https://twitter.com/intent/tweet?text=Tutorial. App (Citymapper) con Ionic 2 Beta&url=http://ivanheral.github.io/tutorial/2016/04/30/tutorial-ionic-beta-2.html">
+            <svg viewBox="0 0 32 32" fill="#1da1f2" width="36">
+                <path d="M 16,2 C 8.2680079,2 2,8.2680053 2,16 2,23.731995 8.2680079,30 16,30 23.731992,30 30,23.731995 30,16 30,8.2680053 23.731992,2 16,2 Z" fill="#fff"></path>
+                <path d="M 16,1 C 7.7157227,1 1,7.71572 1,16 1,24.28428 7.7157227,31 16,31 24.284277,31 31,24.28428 31,16 31,7.71572 24.284277,1 16,1 Z m 7.45541,11.17617 c 0.0074,0.165 0.01113,0.33094 0.01113,0.4977 0,5.0833 -3.869238,10.94496 -10.944844,10.94496 -2.172363,0 -4.1943748,-0.63686 -5.8967576,-1.7284 0.3009375,0.0357 0.6071484,0.0539 0.9176367,0.0539 1.8022852,0 3.4609569,-0.615 4.7774999,-1.64678 -1.68334,-0.0309 -3.1039452,-1.14316 -3.593496,-2.67141 0.2349024,0.0449 0.4758985,0.0691 0.72375,0.0691 0.3508594,0 0.690762,-0.0472 1.013438,-0.13506 -1.759688,-0.35349 -3.0857231,-1.90816 -3.0857231,-3.77197 0,-0.0162 0,-0.0323 3.5e-4,-0.0484 0.5185547,0.28811 1.1117579,0.46119 1.7422852,0.48118 -1.0321875,-0.68983 -1.7113477,-1.86727 -1.7113477,-3.20192 0,-0.705 0.1897266,-1.36582 0.5208985,-1.93389 1.8972656,2.32735 4.7317391,3.85875 7.9287311,4.01924 -0.06557,-0.2816 -0.09961,-0.57515 -0.09961,-0.87668 0,-2.12437 1.722421,-3.84662 3.846797,-3.84662 1.106425,0 2.10621,0.46711 2.807871,1.21471 0.876211,-0.17244 1.699454,-0.4926 2.442774,-0.93346 -0.287227,0.8983 -0.897188,1.65217 -1.691367,2.12824 0.778125,-0.093 1.519511,-0.29976 2.209336,-0.60568 -0.515451,0.77133 -1.167599,1.44885 -1.919356,1.99119 z"></path>
+            </svg>
+        </a>
+        <a href="https://facebook.com/sharer.php?u=ivanheral.github.io/tutorial/2016/04/30/tutorial-ionic-beta-2.html" rel="nofollow" target="_blank" title="Compartir en Facebook">
+            <svg viewBox="0 0 32 32" fill="#3b5998" width="36">
+                <path d="M 16,2 C 8.2680079,2 2,8.2680053 2,16 2,23.731995 8.2680079,30 16,30 23.731992,30 30,23.731995 30,16 30,8.2680053 23.731992,2 16,2 Z" fill="#fff"></path>
+                <path d="M 16 1 C 7.7157227 1 1 7.71572 1 16 C 1 24.28428 7.7157227 31 16 31 C 24.284277 31 31 24.28428 31 16 C 31 7.71572 24.284277 1 16 1 z M 18.220703 8.9140625 L 19.433594 8.9140625 L 19.433594 10.189453 L 19.433594 11.462891 L 18.636719 11.472656 C 17.779565 11.483924 17.67147 11.497903 17.478516 11.595703 C 17.353545 11.659021 17.271471 11.750554 17.212891 11.896484 C 17.168061 12.009479 17.168333 12.03027 17.158203 12.873047 C 17.150928 13.346665 17.150391 13.7418 17.150391 13.75 C 17.153718 13.75825 17.674335 13.765625 18.306641 13.765625 L 19.457031 13.765625 L 19.445312 13.849609 C 19.439383 13.89588 19.379257 14.469009 19.310547 15.125 L 19.183594 16.320312 L 18.158203 16.320312 L 17.134766 16.320312 L 17.134766 19.703125 C 17.134766 21.563327 17.148438 23.085938 17.148438 23.085938 L 14.068359 23.085938 L 14.068359 20.007812 L 14.068359 16.320312 L 13.306641 16.320312 L 12.542969 16.320312 L 12.542969 15.042969 L 12.542969 13.765625 L 13.304688 13.765625 L 14.064453 13.765625 L 14.074219 12.730469 C 14.084268 11.66864 14.094057 11.525352 14.179688 11.103516 C 14.263218 10.691927 14.451439 10.255344 14.673828 9.9589844 C 15.112819 9.3740849 15.82538 9.031279 16.789062 8.9375 C 16.915264 8.925205 17.512171 8.9140625 18.220703 8.9140625 z"></path>
+            </svg>
+        </a>
+        <a href="https://plus.google.com/share?url=ivanheral.github.io/tutorial/2016/04/30/tutorial-ionic-beta-2.html" rel="nofollow" target="_blank" title="Compartir en Google+">
+            <svg viewBox="0 0 32 32" fill="#dd4b39" width="36">
+                <path d="M 16,2 C 8.2680079,2 2,8.2680053 2,16 2,23.731995 8.2680079,30 16,30 23.731992,30 30,23.731995 30,16 30,8.2680053 23.731992,2 16,2 Z" fill="#fff"></path>
+                <path d="M 16,1 C 7.7148437,1 1,7.71484 1,16 1,24.28516 7.7148437,31 16,31 24.285156,31 31,24.28516 31,16 31,7.71484 24.285156,1 16,1 Z m -3.75,22.5 c -4.1484375,0 -7.5,-3.35156 -7.5,-7.5 0,-4.14844 3.3515625,-7.5 7.5,-7.5 2.027344,0 3.720703,0.73828 5.027344,1.96289 l -2.039063,1.95703 c -0.55664,-0.5332 -1.529297,-1.1543 -2.988281,-1.1543 -2.5605469,0 -4.6523438,2.1211 -4.6523438,4.73438 0,2.61328 2.0917969,4.73437 4.6523438,4.73437 2.970703,0 4.083984,-2.13281 4.253906,-3.23437 l -4.253906,0 0,-2.57227 7.083984,0 c 0.06445,0.375 0.117188,0.75 0.117188,1.24219 0,4.28906 -2.871094,7.33008 -7.201172,7.33008 z m 13.125,-7.5 0,1.875 -1.875,0 0,-1.875 -1.875,0 0,-1.875 1.875,0 0,-1.875 1.875,0 0,1.875 1.875,0 0,1.875 -1.875,0 z"></path>
+            </svg>
+        </a>
+        <a href="whatsapp://send?text=ivanheral.github.io/tutorial/2016/04/30/tutorial-ionic-beta-2.html" data-action="share/whatsapp/share" title="Compartir en Whatsapp">
+            <svg viewBox="0 0 32 32" fill="#25d366" width="36">
+               <path d="M 16,2 C 8.2680079,2 2,8.2680053 2,16 2,23.731995 8.2680079,30 16,30 23.731992,30 30,23.731995 30,16 30,8.2680053 23.731992,2 16,2 Z" fill="#fff"></path>
+                <path d="M 16 1 C 7.714844 1 1 7.71484 1 16 C 1 24.28516 7.714844 31 16 31 C 24.285156 31 31 24.28516 31 16 C 31 7.71484 24.285156 1 16 1 z M 15.826172 7.96875 C 17.719967 7.9190994 19.609469 8.5444916 21.119141 9.8046875 C 24.251463 12.419388 24.922373 16.966902 22.673828 20.349609 C 21.35021 22.340858 19.208051 23.635369 16.826172 23.884766 C 16.289167 23.940993 15.212259 23.90964 14.738281 23.824219 C 13.934021 23.679273 13.258955 23.465333 12.552734 23.130859 L 12.193359 22.960938 L 10.144531 23.498047 C 9.0180753 23.79335 8.0754821 24.035156 8.0488281 24.035156 C 8.0221746 24.035156 7.9998695 24.021696 8 24.005859 C 8.000096 23.990023 8.2492788 23.069482 8.5527344 21.960938 L 9.1035156 19.945312 L 8.9023438 19.542969 C 7.372748 16.484356 7.9255017 12.863186 10.300781 10.392578 C 10.924939 9.7433704 11.6449 9.2195778 12.494141 8.796875 C 13.552189 8.2702394 14.689895 7.9985404 15.826172 7.96875 z M 15.896484 9.3183594 C 14.280513 9.3509895 12.677611 9.9703301 11.441406 11.169922 C 10.819174 11.773725 10.410007 12.336431 10.054688 13.074219 C 9.0784067 15.10138 9.1903409 17.458003 10.357422 19.388672 C 10.453152 19.547035 10.532851 19.712452 10.533203 19.755859 C 10.533539 19.799266 10.394964 20.341707 10.224609 20.960938 C 10.054254 21.580168 9.9280422 22.100094 9.9453125 22.117188 C 9.9625823 22.134281 10.495452 22.012921 11.128906 21.845703 C 11.76236 21.678486 12.316185 21.541487 12.359375 21.541016 C 12.402565 21.540536 12.61012 21.635573 12.820312 21.751953 C 13.515098 22.136644 14.317945 22.40404 15.125 22.519531 C 15.672283 22.597849 16.72143 22.568401 17.265625 22.460938 C 19.313646 22.056509 21.027607 20.754669 21.958984 18.892578 C 23.292575 16.226351 22.666178 12.98848 20.427734 10.988281 C 19.142242 9.8396084 17.512456 9.2857292 15.896484 9.3183594 z M 13.398438 12.248047 C 13.690698 12.247778 13.85018 12.302382 13.933594 12.429688 C 14.051098 12.609023 14.679687 14.177516 14.679688 14.291016 C 14.679688 14.449536 14.568539 14.64278 14.279297 14.988281 C 14.140282 15.154336 14.027341 15.32567 14.027344 15.371094 C 14.027355 15.552239 14.682081 16.444515 15.091797 16.820312 C 15.582564 17.270452 16.269579 17.700422 16.837891 17.912109 C 17.007093 17.975135 17.027281 17.974924 17.117188 17.916016 C 17.170255 17.881244 17.343528 17.69297 17.503906 17.498047 C 18.023563 16.866461 17.961155 16.919637 18.154297 16.941406 C 18.342782 16.962651 19.918558 17.714868 20.011719 17.828125 C 20.051765 17.87681 20.060192 17.971843 20.044922 18.208984 C 20.022075 18.563771 19.922439 18.865285 19.765625 19.052734 C 19.596505 19.254893 19.250926 19.494809 18.941406 19.625 C 18.683166 19.733621 18.606544 19.747361 18.193359 19.759766 C 17.82738 19.770753 17.676379 19.759365 17.462891 19.701172 C 16.760643 19.509755 15.828554 19.105949 15.296875 18.761719 C 13.991747 17.91673 12.491111 16.13101 12.113281 14.974609 C 11.81718 14.068352 11.993186 13.222995 12.607422 12.589844 C 12.885638 12.30306 13.008745 12.248403 13.398438 12.248047 z"></path>
+            </svg>
+        </a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=ivanheral.github.io/tutorial/2016/04/30/tutorial-ionic-beta-2.html&title=Tutorial. App (Citymapper) con Ionic 2 Beta&source=/files/images/desarrollo/ionic.jpg" title="Compartir en LinkedIn">
+            <svg viewBox="0 0 32 32" fill="#0077b5" width="36">
+                <path d="M 16,2 C 8.2680079,2 2,8.2680053 2,16 2,23.731995 8.2680079,30 16,30 23.731992,30 30,23.731995 30,16 30,8.2680053 23.731992,2 16,2 Z" fill="#fff"></path>
+                <path d="M 14.750337,30.980631 C 11.17024,30.656347 7.8226318,29.093744 5.3272841,26.582118 3.1212435,24.361686 1.7152719,21.645388 1.1520474,18.515682 1.0164827,17.762381 0.99864679,17.462107 0.99997912,15.955503 1.0016539,14.142483 1.051403,13.682363 1.3950298,12.307035 1.8987338,10.291011 2.9195695,8.237465 4.2442783,6.575391 6.2514462,4.057055 9.1924166,2.166258 12.316314,1.385751 c 1.375328,-0.343626 1.835447,-0.39344797 3.648467,-0.39504997 1.506605,-0.0013 1.806879,0.01651 2.56018,0.15206897 3.129706,0.563223 5.846004,1.969195 8.066436,4.175236 2.294872,2.279998 3.737464,5.132894 4.28353,8.471189 0.165625,1.012553 0.166777,3.312326 0.0022,4.363097 -1.03618,6.614843 -6.081773,11.68267 -12.647554,12.703277 -0.663339,0.10311 -2.852718,0.181807 -3.47922,0.125061 z M 12.1085,17.941284 l 0.01683,-5.10395 h -1.667343 c -1.4598428,0 -1.6723022,0.01293 -1.7071891,0.103836 -0.073098,0.190488 -0.045297,9.872703 0.028701,10.01105 0.065564,0.122505 0.1396105,0.127346 1.6903771,0.110564 l 1.62181,-0.01754 z m 5.333309,1.920136 c 0.03246,-3.148941 0.0345,-3.187143 0.18248,-3.487575 0.186714,-0.37897 0.529009,-0.736132 0.887956,-0.926511 0.217563,-0.115392 0.385427,-0.146254 0.800464,-0.147153 0.453135,-9.3e-4 0.566391,0.02308 0.825723,0.175557 0.347514,0.204302 0.59225,0.542414 0.756127,1.044636 0.101156,0.310008 0.120242,0.738848 0.153075,3.439511 l 0.03751,3.085346 h 1.641137 1.641143 v -3.544863 c 0,-3.505479 -0.0017,-3.550667 -0.151193,-4.067071 -0.43951,-1.518032 -1.401927,-2.465659 -2.802862,-2.75979 -1.357005,-0.284908 -2.577712,0.05401 -3.45786,0.960048 -0.240985,0.248071 -0.45405,0.451045 -0.473468,0.451045 -0.01944,0 -0.0438,-0.273246 -0.05421,-0.607222 l -0.0189,-0.607221 h -1.673914 -1.673964 l -0.01696,5.021893 c -0.0093,2.76204 -0.0027,5.059328 0.01475,5.10508 0.02476,0.06477 0.399095,0.0793 1.690934,0.06564 l 1.659179,-0.01754 z m -6.039402,-8.654896 c 0.402282,-0.209419 0.573796,-0.379057 0.773722,-0.765257 C 12.418167,9.973719 12.416447,9.330638 12.171929,8.856 11.839233,8.210295 11.286981,7.913907 10.416554,7.913907 c -1.1085148,0 -1.8525148,0.704625 -1.8530653,1.754996 -3.725e-4,0.742231 0.4383106,1.366358 1.1529114,1.640214 0.1214466,0.04654 0.4565609,0.07404 0.7998319,0.06564 0.472865,-0.01156 0.649783,-0.04518 0.886216,-0.168237 z"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+  <div class="post-content" itemprop="articleBody">
+    <p>Hoy vamos hacer una app cutre inspirada en Citymapper (por si os hace ilusión y tal) usando la versión beta 25 de Ionic 2. El primer paso será instalar <strong>Ionic 2 Beta</strong> y <strong>Cordova 4.2.0</strong>, algo bastante obvio y que haremos con estos sencillos comandos:</p>
+<pre>
+<code class="language-bash">
+sudo npm install -g ionic@beta 
+sudo npm install -g cordova@4.2.0
+</code>
+</pre>
+
+<p>Ahora creamos un proyecto predefinido para comprender mejor como funciona este sistema para generar apps multiplataforma <strong>(Android/IOS)</strong>:</p>
+<pre>
+<code class="language-bash">
+/* Creamos un proyecto predeterminado Ionic con la etiqueta --v2 */
+ionic start cutePuppyPics --v2
+
+/* Ejecutamos este comando dentro de la carpeta cutePuppyPics para subsanar algun bug */
+npm install node-sass@3.4.2
+
+/* Lanzamos la app y esperamos a que se muestre en el navegador */
+ionic serve
+</code>
+</pre>
+
+<p>Enhorabuena, acabas de configurar tu entorno de trabajo, pero lo mejor será que nos remanguemos las mangas para hacer nuestra App. Para no tener que perder el tiempo en engorrosas explicaciones pasare a entregaros el código en cuestión que es como mejor se aprende y así comprendamos un poco como funciona Ionic:</p>
+
+<p><a class="btn" href="https://www.dropbox.com/s/4zeal5sznfruevc/Citymapper.tar.gz?dl=0" target="_blank">
+App Ionic 2 Beta
+</a></p>
+
+<p>Nuestro objetivo es hacer una app que tire del servicio de Google Maps API para que nos busque rutas a un destino que no interese, por eso tenemos que incluir el script de Google Maps en <strong>www/index.html</strong>. Es importante tener conocimientos de ES6 y JQuery respectivamente para entenderlo mejor. En la ruta app/pages se encuentran las páginas del proyecto: home, la página encargada de las búsquedas y Map, donde tendremos la posibilidad de ver el mapa correctamente. Pero ahora lo que nos importa es configurar el fichero <strong>app/app.js</strong>, he dejado algunas anotaciones:</p>
+
+<pre>
+<code class="language-js">
+/* Fichero  app/app.js */
+
+import 'es6-shim';
+import {App, Platform} from 'ionic-angular';
+import {StatusBar} from 'ionic-native';
+/* Importaremos nuestras dos paginas */
+import {HomePage} from './pages/home/home';
+import {Map} from './pages/map/map';
+
+@App({
+  template: '&lt;ion-nav [root]="rootPage"&gt;&lt;/ion-nav&gt;',
+  config: {} 
+})
+export class MyApp {
+  static get parameters() {
+    return [[Platform]];
+  }
+
+  constructor(platform) {
+   /* Nuestra vista principal sera Home */
+    this.rootPage = HomePage;
+    platform.ready().then(() =&gt; {
+      StatusBar.styleDefault();
+    });
+  }
+}
+</code>
+</pre>
+
+<p><strong>app/pages/home/home.html:</strong> este fichero contiene un <strong>ion-navbar</strong> con su objeto *navbar y su variable , en <strong>ion-content</strong> hemos creado un row con 4 columnas (25% de ancho) formado 
+por 4 items que actuaran como link para la página <strong>Map</strong> gracias a la función <strong>itemTapped</strong> que explicaremos más adelante. Un div para el mapa y un ion-list que actúa como formulario con su input (modelo search para recoger lo que tecleemos) y su botón. Para finalizar, tendremos un div con su identificador panel. Veamos el contenido de <strong>app/pages/home/home.js</strong>:</p>
+
+<pre>
+<code class="language-js">
+/* Importamos los elementos que nos interesa:
+Geolocation: plugin de cordova
+Alert: para las alertas
+NavController y NavParams: paso de parametros a otra pagina
+*/
+import {
+    Page, Geolocation, Alert, NavController, NavParams
+}
+from 'ionic-angular';
+
+
+/* Importamos la pagina Map para invocarla con itemTapped */
+import {
+    Map
+}
+from '../map/map';
+
+@
+Page({
+    templateUrl: 'build/pages/home/home.html'
+})
+
+export class HomePage {
+    static get parameters() {
+        return [[NavController], [NavParams]];
+    }
+
+/* Variables globales en el constructor */
+    constructor(nav) {
+        /* Obligatorio */
+        this.nav = nav;
+        /* var para el mapa de Google Maps API */
+        this.map = null;
+        /* var para el destino */
+        this.destination = "";
+        /* var para el origen */
+        this.origin = null;
+        /* var para la busqueda en el input */
+        this.search = null;
+        /* enumerable con los tipos de transporte */
+        this.icons = ['car', 'walk', 'bus', 'bicycle'];
+        /* enumerable con los tipos de modo de transporte */
+        this.modes = ['DRIVING', 'WALKING', 'TRANSIT', 'BICYCLING'];
+        /* lista vacia para guardar los items */ 
+        this.items = [];
+        /* Muy obligatorio */
+        this.render = new google.maps.DirectionsRenderer();
+        
+        /* Lanzamos una funcion nada mas cargar la pagina Home */
+        this.initMap();
+    }
+    
+    /*FUNCIONES */
+
+}
+</code>
+</pre>
+
+<p><strong>initMap:</strong> función encargada de geolocalizar nuestra posición y dibujar el mapa en home:</p>
+
+<pre>
+<code class="language-js">
+initMap() {
+    let options = {
+        timeout: 10000,
+        enableHighAccuracy: true
+    };
+    navigator.geolocation.getCurrentPosition(
+        (position) =&gt; {
+            /* Guardamos nuestro origen en la variable origin */
+           
+            this.origin = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            let mapOptions = {
+                center: this.origin,
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                disableDefaultUI: true,
+                draggable: false
+            }
+            /* Dibujamos el mapa en id="map" de home.html */
+            this.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            
+            /* Lanzamos la funcion */
+            this.searchCity();
+        }, (error) =&gt; {
+           /* Si fallamos con la geolocalizacion pasamos a mostrar un mensaje de error */
+            let not_geo = Alert.create({
+                title: 'Wrong!',
+                subTitle: 'You have internet?',
+                buttons: ['OK']
+            });
+            /* Agregamos el error a nav */
+            this.nav.present(not_geo);
+        }, options
+    );
+}    
+</code>
+</pre>
+
+<p><strong>searchCity:</strong> función encargada de solicitar un json a Google Maps API y extraer nuestra ciudad en función de la variable origin:</p>
+
+<pre>
+<code class="language-js">
+searchCity() {
+    /* ok, peticion del servicio */
+    let url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + this.origin.lat() + ", " + this.origin.lng();
+    
+    /* Usamos jquery  */      
+    $.getJSON(url, function (json) {
+        $("ion-navbar ion-buttons").append(json.results[0].address_components[3].long_name);
+    })
+    
+    /* Esto no debia estar aqui... simplemente creo 4 items.
+       Podeis comprobar el FOR home.html y sacar una conclusion
+       de todo esto.     
+    */
+    for (let i = 0; i &lt; 4; i++) {
+        this.items.push({
+            mode: this.modes[i],
+            icon: this.icons[i]
+            });
+        }
+}
+</code>
+</pre>
+
+<p><strong>Destination:</strong> función que salva la búsqueda realizada en el input. La variable destination guardara nuestro destino en formato completo.</p>
+
+<pre>
+<code class="language-js">
+Destination() {
+    /* La variable para guardar */    
+    let dat_aux = null;
+       
+       /* 
+       Ajax no asincrono (lo se...). Hago una solicitud en funcion de la busqueda (this.search) y 
+       la ciudad guardada en $("ion-navbar ion-buttons").html() 
+       */
+        $.ajax({
+        url: "http://maps.googleapis.com/maps/api/geocode/json?address=" + this.search + ", " + $("ion-navbar ion-buttons").html(),
+        async: false,
+        dataType: 'json'
+    }).done(function (res) {
+        dat_aux = res;
+    });
+       
+        /* Guardamos el resultado en destination */
+        this.destination = "";
+        if (dat_aux.results[0].geometry.location_type != "APPROXIMATE")
+        this.destination = dat_aux.results[0].formatted_address;
+        
+        /* Calculamos la ruta idonea */
+        this.calculateRoute();
+}
+</code>
+</pre>
+
+<p><strong>calculateRoute:</strong> función encargada de hacer una petición a Google Maps Api con rutas alternativas exclusivamente de autobuses. Dibuja las rutas pertinentes y muestra las indicaciones en función de cada una de ellas:</p>
+
+<pre>
+<code class="language-js">
+calculateRoute() {
+    if (this.destination != "" || this.destination != "APPROXIMATE") {
+        $(".show_alternative").css("display", "block");
+        let directionsDisplay = null;
+        
+        /* Esto me ayuda a refrescar */
+        directionsDisplay = this.render;
+        let directionsService = new google.maps.DirectionsService();
+
+        document.getElementById("panel").innerHTML = "";
+        directionsDisplay.setMap(this.map);
+        directionsDisplay.setPanel(panel);
+            directionsService.route({
+            /* Introduzco mi origen */
+            origin: this.origin,
+            /* Introduzco mi destino */
+            destination: this.destination,
+            travelMode: google.maps.TravelMode.TRANSIT,
+            /* Ver rutas alternativas */
+            provideRouteAlternatives: true,
+            /* Solo recorridos por BUS */
+            transitOptions: {
+                modes: [google.maps.TransitMode.BUS]
+            }
+            }, function (response, status) {
+            if (status === google.maps.DirectionsStatus.OK) {
+                /* Pintamos el mapa y el panel */
+                directionsDisplay.setDirections(response);
+                directionsDisplay.setMap(map);
+            } else {
+                /* Borramos todo si el resultado es infructuoso */
+                directionsDisplay.setMap(null);
+                directionsDisplay.setPanel(null);
+            }
+        });
+    }
+}
+</code>
+</pre>
+
+<p><strong>itemTapped:</strong> función predefinida que nos permite trasladar datos de una página a otra en pocos pasos:</p>
+
+<pre>
+<code class="language-js">
+itemTapped(event, item) {
+   /* Si no hay destino mostramos alerta */
+    if (this.destination == "") {
+        let alert = Alert.create({
+            title: 'Wrong!',
+            subTitle: 'Are you going somewhere?!',
+            buttons: ['OK']
+        });
+        this.nav.present(alert);
+    } else {
+        /* 
+        Agregamos 4 variables (item - pulsado -, origin, destination y search - busqueda -) 
+        Con un simple push se mostrara la pagina Map a nivel visual
+        */
+        this.nav.push(Map, {
+            item: item,
+            origin: this.origin,
+            destination: this.destination,
+            search: this.search
+        })
+    }
+}
+</code>
+</pre>
+
+<p><strong>app/pages/map/map.js:</strong> Esas 4 variables antes mencionadas son transferidas gracias a navParams, tan solo tengo que aplicar <strong>get</strong> junto al nombre que 
+le di en home para recuperar sus valores y con ello bastaría para poder emplearlas en <strong>Map</strong>:</p>
+
+<pre>
+<code class="language-js">
+constructor(nav, navParams) {
+    this.nav = nav;
+    this.selectedItem = navParams.get('item');
+    this.origin = navParams.get('origin');
+    this.destination = navParams.get('destination');
+    this.search = navParams.get('search');
+    /* Lanzamos otra vez initMap definida en map.js */
+    this.initMap();
+}
+</code>
+</pre>
+
+<p><strong>calculateRoute:</strong> función del mismo nombre que la pudisteis ver en <strong>home.js</strong> pero con algunos matices. Aquí suprimo los marcadores y ruta original que emplea Google Maps Api por un polyline de color verde y mostramos información adicional gracias a jquery.</p>
+
+<pre>
+<code class="language-js">  
+ calculateRoute() {
+    let renderer = new google.maps.DirectionsRenderer({
+        suppressMarkers: true
+        , suppressPolylines: true
+    });
+    let directions = new google.maps.DirectionsService();
+    renderer.setMap(this.map);
+    let request = {
+        origin: this.origin
+        , destination: this.destination
+        , travelMode: google.maps.TravelMode[this.selectedItem.mode]
+    };
+
+    let polyline = new google.maps.Polyline({
+        path: []
+        , strokeColor: '#37ab2e'
+        , strokeWeight: 5
+    });
+    
+    /* Mostramos la busqueda realizada con jquery */
+    $("ion-row.info ion-col.search").html(this.search);
+
+    let distance = null;
+    directions.route(request, function (response, status) {
+
+    if (status == google.maps.DirectionsStatus.OK) {
+        renderer.setDirections(response);
+        let legs = response.routes[0].legs;
+        distance = legs[0].distance.text;
+        /* Mostramos la distancia que se recorrera con jquery */
+        $("ion-row.info ion-col.distance").html(distance);
+
+        for (let i = 0; i &lt; legs.length; i++) {
+            let steps = legs[i].steps;
+                for (let j = 0; j &lt; steps.length; j++) {
+                        let step = steps[j].path;
+
+                        $("ion-list.steps").append("<span>" + steps[j].instructions.toString() + "</span>");
+
+                        for (let k = 0; k &lt; step.length; k++) {
+                            polyline.getPath().push(step[k]);
+                        }
+                    }
+                }
+            }
+        });
+        polyline.setMap(this.map);
+    }
+ </code>
+</pre>
+
+<div class="elem">
+    
+    <div class="wall_overflow">
+        <img data-src="http://img.youtube.com/vi/C2g6wECxfTM/mqdefault.jpg" id="C2g6wECxfTM" />
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="title-photo">
+        <p>Ejemplo practico de como nos queda a nivel visual</p>
+    </div>
+    
+</div>
+
+<p>Supongo que tendré que darle un repaso a todo esto. Entre las faltas de ortografía y los fallos del código acabare por sacarle tiempo y dejar bonito el post. De todas formas como ejemplo puede valer perfectamente para comprender como función Ionic Framework aunque no he comentado nada al respecto de <strong>SASS</strong> aunque podéis echarle un vistazo a <strong>app.score.scss</strong>, <strong>app.variables.scss</strong> y los *.scss de las paginas creadas. Tampoco he mencionado nada al respecto de cómo compilar todo esto para Android/IOS así que lo único que puedo hacer es remitiros a la página web del proyecto para dejaros un poco con la curiosidad:</p>
+
+<p><a class="btn" href="http://ionicframework.com/" target="_blank">
+Ionic Framework
+</a></p>
+
+<p><strong>Actualizacion:</strong> Este tutorial se realizo con el único objetivo de trastear un poco con Ionic usando Google Maps pero sin API Key para evitar líos. Lo lógico es crear servicios al margen de los controladores e injectarlos pero dio la casualidad que no había mucha información al respecto. Os dejo este tutorial <a href="http://gonehybrid.com/build-your-first-mobile-app-with-ionic-2-angular-2-part-5">link</a> de Ashteya Biharisingh que explica un poco mejor el tema. Dejo copia de código por si las moscas:</p>
+
+<p><a class="btn" href="https://www.dropbox.com/s/1e03ztj05skxxn1/ionic2-tutorial-github.zip?dl=0" target="_blank">
+Ejemplo servicio GitHub
+</a></p>
+
+  </div>
+  
+  <div class="elem"><div id="disqus_thread" class="disqus"></div></div>
+  
+    </div>
+
+</article></div>
+    </div>
+    <script>
+        var isIE = /Trident/.test(navigator.userAgent);
+        isIE ? (document.getElementsByTagName('html')[0].innerHTML = '') : null;
+    </script>
+    <script type="module" src="/js/app.js"></script>
+</body>
+<div class="fade-modal">
+    <div id="modal">       
+    </div>
+ </div>
+ <div class="fade"></div>
+</html>

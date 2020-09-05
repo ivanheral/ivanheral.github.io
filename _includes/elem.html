@@ -1,0 +1,29 @@
+<div class="elem">
+    {% if include.video %}
+    <div class="wall_overflow">
+        <img data-src="http://img.youtube.com/vi/{{include.video}}/mqdefault.jpg" id="{{include.video}}">
+    </div>
+    {% endif %}
+    {% if include.coub %}
+    <div style="padding-top: 56.25%; position: relative;">
+        <iframe data-src="//coub.com/embed/{{include.coub}}?" allowfullscreen="" frameborder="0" height="100%" width="100%"
+            allow="autoplay"></iframe>
+    </div>
+    {% endif %}
+    {% if include.giphy %}
+    <div class="wall_overflow gif">
+        <img class="gif" data-src="//media2.giphy.com/media/{{include.giphy}}/giphy_s.gif"></div>
+    {% endif %}
+    {% if include.gfycat %}
+    <div class="wall_overflow gif">
+    <img class="gif" data-src="//thumbs.gfycat.com/{{include.gfycat}}-mobile.jpg"></div>
+    {% endif %}
+    {% if include.img %}
+    <div class="wall_overflow gif" ><img data-src="{{ include.img | prepend: site.baseurl }}"></div>
+    {% endif %}
+    {% if include.title %}
+    <div class="title-photo">
+        <p>{{include.title}}</p>
+    </div>
+    {% endif %}
+</div>

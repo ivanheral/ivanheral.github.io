@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "Critica de Cine. Mientras seamos jovenes"
+date:   2016-1-4 15:00:00 +0100
+comments: true
+author: ivanheral
+categories: cine
+urlimage: /files/images/critica/whilewereyoung.jpg
+---
+Si hay una regla inquebrantable esa es, sin lugar a dudas, el lento pero inalterable paso del tiempo. Lo sé, es muy triste, pero es ley de vida, los años van pasando convirtiéndonos en personas más maduras e impasibles a los cambios volviéndonos melancólicos sobre lo que nos habría gustado hacer de jóvenes, algo que bien saben nuestros protagonistas, Josh y Cornelia Srebnick. Un matrimonio de Nueva York cuyos proyectos fallidos de formar una familia o finalizar un documental les llevara a encontrarse con una pareja de jóvenes que, de algún modo, les ayudara a salir del atolladero emocional en el que se encuentran.
+
+La verdad es que no podemos decir que Noah Baumbach sea muy conocido por su filmografía indie pero como escritor ha realizado trabajos de mayor calado, un ejemplo de ello son sus colaboraciones en guiones como “La vida Acuativa de Steve Zissou” (2004) y “Fantastic Mr. Fox” (2007) de Wes Anderson. Supongo que la amistad entre Anderson y Baumbach florecería un acercamiento entre este último y el actor Ben Stiller para tenerlo de protagonista en “Greenberg” (2010) y en esta película que ahora nos ocupa haciendo de John, es grato saber que el cine indie entiende más de amistades que de dinero, pero sobretodo reconforta ver que las buenas historias con pocos recursos todavía tienen cabida en un cine cada vez más industrializado.
+
+{% include elem.html img="/files/images/critica/while_1.jpg" title="¿Ha visto a Han Solo?"%}
+
+Josh tras conocer a los jóvenes tortolitos Jamie y Darby – interpretados por Adam Driver y Amanda Seyfried – comienza a experimentar esas sensaciones que creía ya perdidas y convence a su mujer – Naomi Watts - para iniciarse en este rito satánico en busca de la fuente de la eterna juventud bastante edulcorante dejando atrás a sus amistades fuertemente cimentadas de toda la vida. Por ejemplo, Josh y Jamie empiezan a congeniar en gustos cinematográficos y deciden hacer trabajar juntos en un documental mientras que Darby y Cornelia se convierten en amigas inseparables para apuntarse a clases de hip-hop. Estamos ante un momento embriagador donde gente adulta enclaustrada en su monotonía diaria decide teletransportarse a una generación que no les corresponde.
+ 
+La vida desinhibida de Jamie y Darby fuera de todo tipo de prejuicios y sin ningún tipo de malicia nos sirve de ejemplo del buen hacer de Baumbach, parece como si el espíritu de Woody Allen se apoderase de su cuerpo para deleitarnos sobre lo importante que es bebernos la vida a sorbos y no a tragos ante un mundo cuanto menos que estresante. Durante el primer ecuador de la película nos podemos percatar que estamos ante una historia de grandes contrastes bien definidos entre ambas parejas por lo que no hay que esperar mucho algunos de estos. Por ejemplo, uno sobre la tecnología y la moda retro, los smartphones han destruido por completo las relaciones intrapersonales de nuestros antepasados dibujándonos en nuestra retina con bastante probabilidad el momento más inspirador de todo el largometraje.
+
+{% include elem.html img="/files/images/critica/while_2.jpg" title="A ella le gusta la gasolina..."%}
+
+Noah Baumbach firma una película bastante bohemia para mostrarnos, lo que a su parecer, es el sentido de la vida. La temática hípster de los jóvenes está muy presente en todo momento, apuestan por cultivar sus propios alimentos y son firmes defensores de conservar del medio ambiente, así como por la cultura DIY para hacer frente al tan exagerado consumismo de la sociedad, todo esto es un mensaje que, quieras que no, acaba inoculando su semillita en nuestras cabezas para concienciarnos y obtener una visión más pragmática de lo que sucede a nuestro alrededor. Podríamos decir que estamos ante una muestra de que no todo es cuestión de la edad que uno atesore sino más bien de la ilusión que uno tiene por vivir y aprender cada día nuevas cosas. 
+
+Ese mensaje de vitalidad que busca inculcar el director es captado al instante por Adam Driver y Amanda Seyfried transmitiéndonos una positividad y una envidia sana en sus interpretaciones que me dejo bastante embelesado. Y es que esa vitalidad, queramos o no, acaba por contagiarse y Josh lo sufre en sus carnes vistiéndose con ropa más juvenil o recuperando su afición por los patinetes para aparentar menos edad como gesto de autocomplacencia frente a los demás. Son estos pequeños detalles cuando aparece el lado más cómico de Ben Stiller y Naomi Watts, sobre todo cuando les da por flirtear con ciertas sustancias psicotrópicas en una ceremonia de dudosa legalidad dándonos un berenjenal intergeneracional bastante gracioso.
+
+{% include elem.html video="NRUcm9Qw9io" title="Tráiler de la película" %}
+
+Últimamente veo a Ben Stiller y Naomi Watts en películas de corte independiente o con papeles muy distintos a los que no tienen acostumbrados, “St. Vicent” (2014) y “La vida de Walter Mitty” (2012) son ejemplos que dan fuerza a mi teoría. No sé, igual han superado la crisis de los 40 y al igual que sus protagonistas han decidido darle algo de emoción a sus vidas apostando por proyectos más arriesgados, de todas formas, todo esto no son más que suposiciones mías, no me lo tengáis en cuenta.  Si hay un pero que sacarle a la película es su falta de delicadeza en el tramo final haciendose algo burda por culpa de una escena relacionada con ciertas divergencias artísticas entre Jamie y Josh con respecto al documental que han realizado juntos.
+
+Es cierto que los acontecimientos no se producen como uno espera y esta película no es una excepción en ese aspecto. Las discusiones comienzan a producirse y la tenue línea que separa dos mundos tan opuestos no tarda en resquebrajarse, los jóvenes empiezan a adquirir las taras tan impropias de sus mayores mientras que los comportamientos infantiles de los adultos no serán vistos con buenos ojos por sus amigos de toda la vida. La crisis de los 40 que tanto les atormentaba acaba derivando en una edad del pavo nada recomendable para Josh y Cornelia desubicándolos por completo y mostrándonos que la solución a nuestros problemas no está en los demás sino en nosotros mismos, muy recomendable.
+
+{% include url.html id="http://www.imdb.com/title/tt1791682/" text="INFO While We're Young" %}
