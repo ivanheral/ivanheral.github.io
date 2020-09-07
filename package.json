@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "taskr dev",
     "prod": "taskr prod",
-    "build": "node dev/imagemin.js && jekyll build && taskr prod",
-    "imagemin": "node dev/imagemin.js",
-    "lint": "eslint ./dev --ext .js --fix",
+    "build": "node _dev/imagemin.js && jekyll build && taskr prod",
+    "imagemin": "node _dev/imagemin.js",
+    "lint": "eslint ./_dev --ext .js --fix",
     "jekyll_update": "bundle update jekyll",
     "jekyll_install": "bundle install",
-    "lint-styles": "stylelint ./dev/**/*.scss --fix"
+    "lint-styles": "stylelint ./_dev/**/*.scss --fix"
   },
   "repository": {
     "type": "git",
