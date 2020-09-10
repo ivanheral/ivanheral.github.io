@@ -1,0 +1,1 @@
+export const add_tag=(t,e)=>{document.getElementsByTagName("head")[0].appendChild(Object.assign(document.createElement(t),{type:"text/javascript",src:e.indexOf("https")>-1?e:`/js/modules/${e}.js`}))};
