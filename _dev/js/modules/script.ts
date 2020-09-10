@@ -1,4 +1,4 @@
-export const add_tag = (type, s) => {
+export const add_tag = (type: any, s: string | string[]) => {
     document.getElementsByTagName('head')[0].appendChild(
         Object.assign(document.createElement(type), {
             type: 'text/javascript',

@@ -1,5 +1,5 @@
-const find = m => import(`${m}.js`);
-export const change_section = async e => {
+const find = (m: string) => import(`${m}.js`);
+export const change_section = async (e: { target: { id: string } }) => {
     const { $, addclss, delallclss } = await find('./jquery');
     const { load_posts } = await find('./load');
     window.scrollTo(0, 0);

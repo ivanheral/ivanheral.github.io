@@ -1,7 +1,7 @@
 const doc = document;
-const find = m => import(`${m}.js`);
+const find = (m: string) => import(`${m}.js`);
 
-const load_posts = async _ => {
+const load_posts = async (_: any) => {
     const { $ } = await find('./jquery');
     if ($('article.post') !== null) {
         $('.return').style.display = 'block';
@@ -13,7 +13,7 @@ const load_posts = async _ => {
     load();
 };
 
-const posts = async (v, i) => {
+const posts = async (v: { url: any; img: any; title: any; date: any; }, i: { toString: () => string; }) => {
     const { $ } = await find('./jquery');
     const post = Object.assign(doc.createElement('a'), {
         className: 'post elem',
@@ -27,21 +27,21 @@ const posts = async (v, i) => {
     );
 };
 
-const load = async _ => {
+const load = async () => {
     const { search, section } = await find('../app');
     const { $ } = await find('./jquery');
     let response = await fetch('/json/search.json');
     let data = await response.json();
 
     var result = data
-        .filter(e => {
+        .filter((e: { title: string; category: any; }) => {
             return (
                 (search !== '' && e.title.toUpperCase().indexOf(search.toUpperCase()) > -1) ||
                 (search === '' && section === 'all') ||
                 (section !== 'all' && e.category === section)
             );
         })
-        .map((elem, i) => {
+        .map((elem: { url: any; img: any; title: any; date: any; }, i: { toString: () => string; }) => {
             posts(elem, i);
         });
 

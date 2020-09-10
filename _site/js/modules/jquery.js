@@ -1,1 +1,1 @@
-const c="classList",q="querySelector",$=l=>document[q](l),all=l=>document[q+"All"](l),addclss=(l,s)=>l[c].add(s),delclss=(l,s)=>l[c].remove(s),delallclss=(l,s)=>[].map.call(all(l),l=>{delclss(l,s)});export{$,all,addclss,delclss,delallclss};
+const l="classList",o="querySelector",d=c=>document[o](c),t=c=>document[`${o}All`](c),a=(c,s)=>c[l].add(s),e=(c,s)=>c[l].remove(s),m=(c,s)=>[].map.call(t(c),n=>{e(n,s)});export{d as $,t as all,a as addclss,e as delclss,m as delallclss};

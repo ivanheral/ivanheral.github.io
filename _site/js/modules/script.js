@@ -1,1 +1,1 @@
-export const add_tag=(e,t)=>{document.getElementsByTagName("head")[0].appendChild(Object.assign(document.createElement(e),{type:"text/javascript",src:t.indexOf("https")>-1?t:`/js/modules/${t}.js`}))};
+export const add_tag=(t,e)=>{document.getElementsByTagName("head")[0].appendChild(Object.assign(document.createElement(t),{type:"text/javascript",src:e.indexOf("https")>-1?e:`/js/modules/${e}.js`}))};

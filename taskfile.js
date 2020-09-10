@@ -45,6 +45,6 @@ export async function pwa_out(task) {
 export async function js(task) {
     await task
         .source('_dev/js/**/*.js')
-        .terser()
+        .esbuild({ minify: true })
         .target(['_site/js', './js']);
 }

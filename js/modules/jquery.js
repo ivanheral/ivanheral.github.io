@@ -1,1 +1,0 @@
-const c="classList",q="querySelector",$=l=>document[q](l),all=l=>document[q+"All"](l),addclss=(l,s)=>l[c].add(s),delclss=(l,s)=>l[c].remove(s),delallclss=(l,s)=>[].map.call(all(l),l=>{delclss(l,s)});export{$,all,addclss,delclss,delallclss};
