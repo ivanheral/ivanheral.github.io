@@ -36,10 +36,6 @@
         grid-template-columns: auto;
     }
 
-    &.home {
-        min-height: 300px;
-    }
-
     @include media-query($on-laptop) {
         width: 100%;
     }
@@ -70,6 +66,9 @@
     min-height: 0;
     letter-spacing: 0.1rem;
     font-size: 1.5rem;
+    span {
+        color: purple;
+    }
     @include media-query($on-palm) {
         font-size: 2rem;
     }

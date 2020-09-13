@@ -1,7 +1,8 @@
-var width, top, left;
-const find = m => import(`${m}.js`);
+var width: any, top: number, left: number;
+var scroll: number = 0;
+const find = (m: string) => import(`${m}.js`);
 
-const animate_modal = async _e => {
+const animate_modal = async (_e: any) => {
     const { $, addclss } = await find('./jquery');
     if (!$('#modal img').className.match(/(animate)/i)) {
         $('#modal img').style = '';
@@ -9,7 +10,7 @@ const animate_modal = async _e => {
     }
 };
 
-const close_modal = async _e => {
+const close_modal = async (_e: any) => {
     const { $, delclss } = await find('./jquery');
     top -= Math.abs(scroll - window.scrollY);
     $('#modal img').style.transform = `translateY(${top}px) translateX(${left}px)`;
@@ -23,7 +24,7 @@ const close_modal = async _e => {
     }, 1000);
 };
 
-const modal = async e => {
+const modal = async (e: { target: { className: string; width: any; src: string; getBoundingClientRect: () => any; }; }) => {
     const { $, addclss } = await find('./jquery');
     if (!(typeof window.orientation !== 'undefined') || navigator.userAgent.indexOf('IEMobile') !== -1) {
         e.target.className = 'modal';
