@@ -21,7 +21,6 @@ const posts = async (v: { url: any; img: any; title: any; date: any }, i: { toSt
         id: i.toString(),
     });
     v.title = v.title.replace(search, `<span>${search}</span>`);
-    console.log(search);
     $('.post-list').appendChild(post);
     doc.getElementById(i.toString()).insertAdjacentHTML(
         'beforeend',

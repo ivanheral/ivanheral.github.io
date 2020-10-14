@@ -35,6 +35,7 @@ document[add](
             animate_modal(e);
         });
         window.location.pathname.match(/(tutorial)/i) && (await find('prism'));
+        // warning
         $('.important') === null && load();
     },
     false,
