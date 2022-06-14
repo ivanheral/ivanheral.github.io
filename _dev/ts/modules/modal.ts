@@ -1,5 +1,5 @@
-var width: any, top: number, left: number;
-var scroll: number = 0;
+let width: any, top: number, left: number;
+let scroll = 0;
 const find = (m: string) => import(`${m}.js`);
 
 const animate_modal = async (_e: any) => {
@@ -18,13 +18,15 @@ const close_modal = async (_e: any) => {
     // hide modal
     delclss($('.modal'), 'modal');
     delclss($('.fade'), 'show');
-    setTimeout(function() {
+    setTimeout(function () {
         $('#modal').innerHTML = '';
         $('.fade-modal').style.display = 'none';
     }, 1000);
 };
 
-const modal = async (e: { target: { className: string; width: any; src: string; getBoundingClientRect: () => any; }; }) => {
+const modal = async (e: {
+    target: { className: string; width: any; src: string; getBoundingClientRect: () => any };
+}) => {
     const { $, addclss } = await find('./jquery');
     if (!(typeof window.orientation !== 'undefined') || navigator.userAgent.indexOf('IEMobile') !== -1) {
         e.target.className = 'modal';
@@ -35,8 +37,8 @@ const modal = async (e: { target: { className: string; width: any; src: string; 
         addclss($('.fade'), 'show');
         $('#modal').insertAdjacentHTML('beforeend', `<img style="width:${e.target.width}px;" src="${e.target.src}">`);
         // calculate position
-        var t1 = e.target.getBoundingClientRect();
-        var t2 = $('#modal img').getBoundingClientRect();
+        const t1 = e.target.getBoundingClientRect();
+        const t2 = $('#modal img').getBoundingClientRect();
         top = t1.top - t2.top;
         left = t1.left - t2.left;
         // animate modal

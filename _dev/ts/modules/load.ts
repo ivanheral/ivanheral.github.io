@@ -32,8 +32,8 @@ const posts = async (v: { url: any; img: any; title: any; date: any }, i: { toSt
 
 const load = async () => {
     const { search, section } = await find('../app');
-    let response = await fetch('/json/search.json');
-    let data = await response.json();
+    const response = await fetch('/json/search.json');
+    const data = await response.json();
     data.filter((e: { title: string; category: any }) => {
         return (
             (search !== '' && e.title.toUpperCase().indexOf(search.toUpperCase()) > -1) ||

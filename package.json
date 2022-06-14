@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "taskr dev",
     "prod": "taskr prod",
-    "build": "node _dev/imagemin.js && jekyll build && taskr prod",
+    "build": "jekyll build && taskr prod",
     "imagemin": "node _dev/imagemin.js",
-    "lint": "eslint ./_dev --ext .js --fix",
+    "lint": "eslint ./_dev --fix",
     "jekyll_update": "bundle update jekyll",
     "jekyll_install": "bundle install",
-    "lint-styles": "stylelint ./_dev/**/*.scss --fix"
+    "lint-styles": "stylelint ./_dev/**/*.scss --fix",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -29,25 +30,30 @@
     "@taskr/postcss": "^1.1.2",
     "@taskr/sass": "^1.1.0",
     "@taskr/watch": "^1.1.0",
-    "babel-eslint": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.28.0",
     "compress-images": "^1.4.6",
     "cssnano": "^4.1.10",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "gifsicle": "^5.1.0",
-    "pngquant-bin": "^6.0.0",
-    "prettier": "^1.18.2",
-    "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-prettier": "^1.1.2",
+    "esbuild": "^0.14.42",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "gifsicle": "^7.0.1",
+    "husky": "^8.0.1",
+    "pngquant-bin": "^8.0.1",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.8.5",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard-scss": "^4.0.0",
+    "stylelint-prettier": "^2.0.0",
     "taskr": "^1.1.0",
     "taskr-esbuild": "*",
     "taskr-servor": "^1.0.4",
-    "taskr-terser": "^1.0.0"
+    "taskr-terser": "^1.0.0",
+    "typescript": "^4.7.3"
   },
   "dependencies": {
-    "stylelint": "^13.6.1"
+    "jekyll": "*"
   }
 }

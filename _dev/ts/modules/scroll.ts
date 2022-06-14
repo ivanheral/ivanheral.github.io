@@ -1,8 +1,8 @@
 const scroll = 0;
-const find = m => import(`${m}.js`);
-const scroll_tag = async _ => {
+const find = (m) => import(`${m}.js`);
+const scroll_tag = async (_) => {
     const { $, addclss } = await find('./jquery');
-    let scroll = $('html').scrollTop;
+    const scroll = $('html').scrollTop;
     $('.tags').style.marginTop = '0px';
     $('.tags').style.marginTop = scroll > 45 && `${scroll.toString()}px`;
     scroll > 45 && addclss($('.tags'), 'fixed');
@@ -23,7 +23,7 @@ const isscroll = (
 const showitem = async () => {
     const { all, addclss, $ } = await find('./jquery');
     const { add_tag } = await find('./script');
-    let total = [].slice.call(all('.elem > div:first-child:not(.tested)'));
+    const total = [].slice.call(all('.elem > div:first-child:not(.tested)'));
     total.map(
         async (val: {
             children?: any;

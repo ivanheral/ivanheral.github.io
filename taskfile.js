@@ -4,9 +4,9 @@ import e from 'child_process';
 export async function dev(task) {
     await task
         .clear(['css', 'js', 'sw.js', 'manifest.json', '_site/sw.js', '_site/manifest.json'])
-        .parallel(['js', 'css']);
+        .parallel(['ts', 'css']);
     await task.watch('_dev/css/**', 'css');
-    await task.watch('_dev/js/**', 'js');
+    await task.watch('_dev/ts/**', 'ts');
     await task.watch('_posts/**', 'markdown');
     bs.start({
         root: '_site',
@@ -15,7 +15,7 @@ export async function dev(task) {
 }
 
 export async function prod(task) {
-    await task.clear(['css', 'js']).parallel(['js', 'css', 'pwa']);
+    await task.clear(['css', 'ts']).parallel(['ts', 'css', 'pwa']);
     bs.start({
         root: '_site',
         port: 3000,
@@ -44,11 +44,13 @@ export async function pwa(task) {
         .target(['_site', './']);
 }
 
-export async function js(task) {
+export async function ts(task) {
     await task
-        .source('_dev/js/**/*.*')
+        .source('_dev/ts/**/*.*')
         .esbuild({
-            minify: true,
+            esbuild: {
+                minify: true,
+            },
         })
         .target(['_site/js', './js']);
 }

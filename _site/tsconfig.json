@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "forceConsistentCasingInFileNames": true,
+        "allowJs": true,
+        "esModuleInterop": true,
+        "lib": ["ES2015","dom"],
+        "module": "ES2015",
+        "moduleResolution": "node",
+        "noEmit": true,
+        "strict": true,
+        "target": "ES2015"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "_dev/ts/**/*.ts"
+    ]
+}
